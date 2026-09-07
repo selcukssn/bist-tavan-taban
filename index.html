@@ -129,6 +129,27 @@ footer b{color:var(--ink);font-weight:600}
 @media (prefers-reduced-motion:no-preference){
   .rung.now{transition:background .15s ease}
 }
+
+/* geniş ekran: yan yana sütunlar, tek ekranda tüm bölümler */
+@media (min-width:960px){
+  html,body{height:100%}
+  body{overflow:hidden}
+  main{
+    max-width:1480px;height:100vh;padding:20px 28px;
+    display:flex;flex-direction:column;min-height:0;
+  }
+  h1,.lede{flex:0 0 auto}
+  .lede{max-width:none}
+  .layout{
+    flex:1 1 auto;min-height:0;
+    display:grid;grid-template-columns:360px minmax(420px,1fr) 340px;gap:18px;
+  }
+  .col{display:flex;flex-direction:column;min-height:0;gap:14px;overflow-y:auto;padding-right:4px}
+  .col-mid .panel{display:flex;flex-direction:column;min-height:0;flex:1 1 auto}
+  .col-mid .scroll{flex:1 1 auto;overflow-y:auto}
+  .ladder{overflow-y:auto}
+  footer{flex:0 0 auto;padding-top:6px}
+}
 </style>
 </head>
 <body>
@@ -136,77 +157,85 @@ footer b{color:var(--ink);font-weight:600}
   <h1>Tavan–taban serisi</h1>
   <p class="lede">Baz fiyatı gir; kademe tablosuna göre geçerli tavan, taban ve arka arkaya seans serisini hesaplar.</p>
 
-  <section class="panel">
-    <div class="grid">
-      <div class="field wide">
-        <label for="base">Baz fiyat (TL)</label>
-        <input id="base" type="text" inputmode="decimal" value="42,50" autocomplete="off">
-        <div class="hint" id="baseHint"></div>
-      </div>
-      <div class="field">
-        <label for="preset">Enstrüman</label>
-        <select id="preset">
-          <option value="pay">Pay / YPAH / GMS</option>
-          <option value="fon">BYF / GYF / GSYF</option>
-          <option value="kurus">Varant / sertifika</option>
-          <option value="ozel">Özel tablo</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="margin">Fiyat marjı (±%)</label>
-        <input id="margin" type="text" inputmode="decimal" value="10" autocomplete="off">
-      </div>
-      <div class="field">
-        <label for="count">Seans sayısı</label>
-        <input id="count" type="number" min="1" max="60" step="1" value="10">
-      </div>
-      <div class="field">
-        <label for="lot">Lot (isteğe bağlı)</label>
-        <input id="lot" type="text" inputmode="numeric" placeholder="—" autocomplete="off">
-      </div>
-      <div class="field wide">
-        <label for="cost">Lot başı maliyet (TL, isteğe bağlı)</label>
-        <input id="cost" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
-        <div class="hint" id="costHint"></div>
-      </div>
-    </div>
-  </section>
+  <div class="layout">
+    <div class="col col-left">
+      <section class="panel">
+        <div class="grid">
+          <div class="field wide">
+            <label for="base">Baz fiyat (TL)</label>
+            <input id="base" type="text" inputmode="decimal" value="42,50" autocomplete="off">
+            <div class="hint" id="baseHint"></div>
+          </div>
+          <div class="field">
+            <label for="preset">Enstrüman</label>
+            <select id="preset">
+              <option value="pay">Pay / YPAH / GMS</option>
+              <option value="fon">BYF / GYF / GSYF</option>
+              <option value="kurus">Varant / sertifika</option>
+              <option value="ozel">Özel tablo</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="margin">Fiyat marjı (±%)</label>
+            <input id="margin" type="text" inputmode="decimal" value="10" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="count">Seans sayısı</label>
+            <input id="count" type="number" min="1" max="60" step="1" value="10">
+          </div>
+          <div class="field">
+            <label for="lot">Lot (isteğe bağlı)</label>
+            <input id="lot" type="text" inputmode="numeric" placeholder="—" autocomplete="off">
+          </div>
+          <div class="field wide">
+            <label for="cost">Lot başı maliyet (TL, isteğe bağlı)</label>
+            <input id="cost" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
+            <div class="hint" id="costHint"></div>
+          </div>
+        </div>
+      </section>
 
-  <section class="panel ladder" id="ladder" aria-label="Fiyat kademeleri"></section>
+      <section class="panel ladder" id="ladder" aria-label="Fiyat kademeleri"></section>
+    </div>
 
-  <section class="panel">
-    <div class="tabs" role="group" aria-label="Seri yönü">
-      <button type="button" id="btnUp" aria-pressed="true">Tavan serisi</button>
-      <button type="button" id="btnDown" aria-pressed="false">Taban serisi</button>
+    <div class="col col-mid">
+      <section class="panel">
+        <div class="tabs" role="group" aria-label="Seri yönü">
+          <button type="button" id="btnUp" aria-pressed="true">Tavan serisi</button>
+          <button type="button" id="btnDown" aria-pressed="false">Taban serisi</button>
+        </div>
+        <div class="scroll">
+          <table id="seriesTable">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="grid" style="margin-top:12px">
+          <div class="field wide">
+            <label for="target">Hedef fiyat (isteğe bağlı)</label>
+            <input id="target" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
+            <div class="hint" id="targetHint"></div>
+          </div>
+        </div>
+      </section>
     </div>
-    <div class="scroll">
-      <table id="seriesTable">
-        <thead></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div class="grid" style="margin-top:12px">
-      <div class="field wide">
-        <label for="target">Hedef fiyat (isteğe bağlı)</label>
-        <input id="target" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
-        <div class="hint" id="targetHint"></div>
-      </div>
-    </div>
-  </section>
 
-  <details id="tickPanel">
-    <summary>Kademe tablosu</summary>
-    <div class="details-body">
-      <div class="colhead"><span>Fiyat ≥ (TL)</span><span>Adım (TL)</span><i></i></div>
-      <div id="tickRows"></div>
-      <div class="btnrow">
-        <button type="button" class="btn" id="addRow">Satır ekle</button>
-        <button type="button" class="btn primary" id="applyTicks">Tabloyu uygula</button>
-        <button type="button" class="btn" id="resetTicks">Varsayılana dön</button>
-      </div>
-      <div class="hint" id="tickHint" style="margin-top:8px"></div>
+    <div class="col col-right">
+      <details id="tickPanel">
+        <summary>Kademe tablosu</summary>
+        <div class="details-body">
+          <div class="colhead"><span>Fiyat ≥ (TL)</span><span>Adım (TL)</span><i></i></div>
+          <div id="tickRows"></div>
+          <div class="btnrow">
+            <button type="button" class="btn" id="addRow">Satır ekle</button>
+            <button type="button" class="btn primary" id="applyTicks">Tabloyu uygula</button>
+            <button type="button" class="btn" id="resetTicks">Varsayılana dön</button>
+          </div>
+          <div class="hint" id="tickHint" style="margin-top:8px"></div>
+        </div>
+      </details>
     </div>
-  </details>
+  </div>
 
   <footer>
     <p><b>Yuvarlama.</b> Limitler içeri doğru yuvarlanır: tavan bir alt kademeye, taban bir üst kademeye. Bu yüzden gerçekleşen değişim çoğu zaman marjın biraz altında kalır.</p>
