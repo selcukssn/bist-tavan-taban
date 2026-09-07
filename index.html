@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BIST tavan–taban ve kademe hesaplayıcı</title>
+<style>
+:root{
+  --bg:#E8ECF2;
+  --panel:#FFFFFF;
+  --ink:#131822;
+  --muted:#5C6A7E;
+  --rule:#C7D0DE;
+  --rule-soft:#E2E8F0;
+  --up:#0A7250;
+  --up-bg:#E4F2EC;
+  --down:#B02418;
+  --down-bg:#FBE9E7;
+  --mark:#1D3FBF;
+  --mark-bg:#E7EBFB;
+  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-text-size-adjust:100%;
+}
+main{max-width:680px;margin:0 auto;padding:20px 14px 56px}
+
+h1{font-size:1.45rem;line-height:1.15;letter-spacing:-.02em;margin:0 0 6px;font-weight:650}
+.lede{margin:0 0 20px;color:var(--muted);font-size:.92rem;max-width:46ch}
+
+.panel{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:14px;margin-bottom:14px}
+
+.grid{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.field{display:flex;flex-direction:column;gap:5px}
+.field.wide{grid-column:1 / -1}
+label{font-size:.78rem;color:var(--muted)}
+input,select{
+  font:inherit;font-family:var(--mono);font-size:1rem;
+  padding:9px 10px;border:1px solid var(--rule);border-radius:7px;
+  background:#fff;color:var(--ink);width:100%;
+}
+input:focus,select:focus,button:focus-visible,summary:focus-visible{outline:2px solid var(--mark);outline-offset:1px}
+#base{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;padding:10px}
+.hint{font-size:.76rem;color:var(--muted);min-height:1.1em}
+.hint.warn{color:var(--down)}
+
+/* ladder */
+.ladder{padding:0;overflow:hidden}
+.rung{
+  display:flex;align-items:baseline;gap:10px;
+  padding:7px 14px;border-top:1px solid var(--rule-soft);
+  font-family:var(--mono);
+}
+.rung:first-child{border-top:0}
+.rung .tag{flex:0 0 auto;font-family:var(--sans);font-size:.74rem;color:var(--muted);width:52px}
+.rung .px{flex:1;text-align:right;font-size:1.02rem;font-variant-numeric:tabular-nums}
+.rung .pct{flex:0 0 auto;width:74px;text-align:right;font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.rung.top{background:var(--up-bg)}
+.rung.top .px,.rung.top .pct,.rung.top .tag{color:var(--up);font-weight:650}
+.rung.bot{background:var(--down-bg)}
+.rung.bot .px,.rung.bot .pct,.rung.bot .tag{color:var(--down);font-weight:650}
+.rung.now{background:var(--mark-bg);box-shadow:inset 3px 0 0 var(--mark)}
+.rung.now .px{color:var(--mark);font-weight:650}
+.rung.now .tag{color:var(--mark)}
+.gap{
+  padding:5px 14px;border-top:1px solid var(--rule-soft);
+  font-size:.76rem;color:var(--muted);text-align:center;font-family:var(--sans);
+}
+
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));border-top:1px solid var(--rule);background:#FAFBFD}
+.summary div{padding:9px 12px;box-shadow:inset 1px 0 0 var(--rule-soft)}
+.summary div:first-child{box-shadow:none}
+.summary b{display:block;font-family:var(--mono);font-size:.98rem;font-weight:650;font-variant-numeric:tabular-nums}
+.summary span{font-size:.72rem;color:var(--muted)}
+
+/* series */
+.tabs{display:flex;gap:6px;margin-bottom:10px}
+.tabs button{
+  font:inherit;font-size:.86rem;padding:6px 12px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--rule);background:#fff;color:var(--muted);
+}
+.tabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.87rem;font-variant-numeric:tabular-nums}
+th,td{padding:6px 4px;text-align:right;border-bottom:1px solid var(--rule-soft)}
+th{font-family:var(--sans);font-size:.72rem;font-weight:500;color:var(--muted);border-bottom:1px solid var(--rule)}
+th:first-child,td:first-child{text-align:left;color:var(--muted)}
+td.val{font-weight:600}
+.pos{color:var(--up)}
+.neg{color:var(--down)}
+.scroll{overflow-x:auto}
+
+details{background:var(--panel);border:1px solid var(--rule);border-radius:10px;margin-bottom:14px}
+summary{padding:12px 14px;cursor:pointer;font-size:.9rem;font-weight:550;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--muted);font-family:var(--mono)}
+details[open] summary::after{content:"–"}
+.details-body{padding:0 14px 14px}
+.tickrow{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:7px;align-items:center}
+.tickrow input{font-size:.9rem;padding:7px 8px}
+.tickrow .rm{
+  font:inherit;width:34px;height:34px;border:1px solid var(--rule);background:#fff;
+  border-radius:7px;color:var(--muted);cursor:pointer;line-height:1
+}
+.btnrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.btn{font:inherit;font-size:.85rem;padding:7px 12px;border:1px solid var(--rule);background:#fff;border-radius:7px;cursor:pointer;color:var(--ink)}
+.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
+.colhead{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:6px}
+.colhead span{font-size:.74rem;color:var(--muted)}
+.colhead i{width:34px}
+
+footer{font-size:.78rem;color:var(--muted);line-height:1.6}
+footer p{margin:0 0 8px}
+footer b{color:var(--ink);font-weight:600}
+
+@media (max-width:420px){
+  .rung .pct{width:64px}
+  .rung .tag{width:46px}
+  .summary{flex-wrap:wrap}
+  .summary div{flex:1 0 50%}
+}
+@media (prefers-reduced-motion:no-preference){
+  .rung.now{transition:background .15s ease}
+}
+</style>
+</head>
+<body>
+<main>
+  <h1>Tavan–taban serisi</h1>
+  <p class="lede">Baz fiyatı gir; kademe tablosuna göre geçerli tavan, taban ve arka arkaya seans serisini hesaplar.</p>
+
+  <section class="panel">
+    <div class="grid">
+      <div class="field wide">
+        <label for="base">Baz fiyat (TL)</label>
+        <input id="base" type="text" inputmode="decimal" value="42,50" autocomplete="off">
+        <div class="hint" id="baseHint"></div>
+      </div>
+      <div class="field">
+        <label for="preset">Enstrüman</label>
+        <select id="preset">
+          <option value="pay">Pay / YPAH / GMS</option>
+          <option value="fon">BYF / GYF / GSYF</option>
+          <option value="kurus">Varant / sertifika</option>
+          <option value="ozel">Özel tablo</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="margin">Fiyat marjı (±%)</label>
+        <input id="margin" type="text" inputmode="decimal" value="10" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="count">Seans sayısı</label>
+        <input id="count" type="number" min="1" max="60" step="1" value="10">
+      </div>
+      <div class="field">
+        <label for="lot">Lot (isteğe bağlı)</label>
+        <input id="lot" type="text" inputmode="numeric" placeholder="—" autocomplete="off">
+      </div>
+      <div class="field wide">
+        <label for="cost">Lot başı maliyet (TL, isteğe bağlı)</label>
+        <input id="cost" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
+        <div class="hint" id="costHint"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel ladder" id="ladder" aria-label="Fiyat kademeleri"></section>
+
+  <section class="panel">
+    <div class="tabs" role="group" aria-label="Seri yönü">
+      <button type="button" id="btnUp" aria-pressed="true">Tavan serisi</button>
+      <button type="button" id="btnDown" aria-pressed="false">Taban serisi</button>
+    </div>
+    <div class="scroll">
+      <table id="seriesTable">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="grid" style="margin-top:12px">
+      <div class="field wide">
+        <label for="target">Hedef fiyat (isteğe bağlı)</label>
+        <input id="target" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
+        <div class="hint" id="targetHint"></div>
+      </div>
+    </div>
+  </section>
+
+  <details id="tickPanel">
+    <summary>Kademe tablosu</summary>
+    <div class="details-body">
+      <div class="colhead"><span>Fiyat ≥ (TL)</span><span>Adım (TL)</span><i></i></div>
+      <div id="tickRows"></div>
+      <div class="btnrow">
+        <button type="button" class="btn" id="addRow">Satır ekle</button>
+        <button type="button" class="btn primary" id="applyTicks">Tabloyu uygula</button>
+        <button type="button" class="btn" id="resetTicks">Varsayılana dön</button>
+      </div>
+      <div class="hint" id="tickHint" style="margin-top:8px"></div>
+    </div>
+  </details>
+
+  <footer>
+    <p><b>Yuvarlama.</b> Limitler içeri doğru yuvarlanır: tavan bir alt kademeye, taban bir üst kademeye. Bu yüzden gerçekleşen değişim çoğu zaman marjın biraz altında kalır.</p>
+    <p><b>Baz fiyat.</b> Bir önceki seansın kapanış fiyatıdır. Seri hesabında her seansın tavanı ertesi seansın baz fiyatı olarak alınır.</p>
+    <p><b>Kademe tablosu.</b> Varsayılan değerler, Borsa İstanbul'un 6 Kasım 2023'te yürürlüğe giren pay fiyat adımı düzenlemesine dayanır. Borsa bu tabloyu ve marjları değiştirebildiği için hesaplamadan önce güncel duyuruyu kontrol et; tabloyu yukarıdan düzenleyebilirsin.</p>
+    <p>Yatırım tavsiyesi değildir.</p>
+  </footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+
+  // ---- kademe tabloları (kuruş cinsinden: min fiyat -> adım) ----
+  var PRESETS = {
+    pay:   [[0,1],[2000,2],[5000,5],[10000,10],[25000,25],[50000,50],[100000,100]],
+    fon:   [[0,1],[5000,2],[10000,5],[25000,10],[50000,25],[100000,50]],
+    kurus: [[0,1]]
+  };
+  var ticks = clone(PRESETS.pay);
+  var dir = 1; // 1 tavan, -1 taban
+
+  function clone(a){ return a.map(function(r){ return [r[0],r[1]]; }); }
+
+  // ---- yardımcılar ----
+  function parseNum(s){
+    if(s===null||s===undefined) return NaN;
+    s = String(s).trim().replace(/\s/g,"");
+    if(!s) return NaN;
+    if(s.indexOf(",")>-1) s = s.replace(/\./g,"").replace(",",".");
+    var v = parseFloat(s);
+    return isFinite(v) ? v : NaN;
+  }
+  function toCents(v){ return Math.round(v*100); }
+  function fmt(c){
+    return (c/100).toLocaleString("tr-TR",{minimumFractionDigits:2,maximumFractionDigits:2});
+  }
+  function fmtPct(p){
+    return (p>=0?"+":"") + p.toLocaleString("tr-TR",{minimumFractionDigits:2,maximumFractionDigits:2}) + "%";
+  }
+  function fmtBig(v){
+    return v.toLocaleString("tr-TR",{minimumFractionDigits:0,maximumFractionDigits:0});
+  }
+
+  function tickAt(c){
+    var t = ticks[0][1];
+    for(var i=0;i<ticks.length;i++){ if(c >= ticks[i][0]) t = ticks[i][1]; else break; }
+    return t;
+  }
+  function snapDown(c){
+    var p = c;
+    for(var i=0;i<8;i++){
+      var t = tickAt(p);
+      var q = Math.floor(c/t)*t;
+      if(q === p) break;
+      p = q;
+    }
+    return p;
+  }
+  function snapUp(c){
+    var p = c;
+    for(var i=0;i<8;i++){
+      var t = tickAt(p);
+      var q = Math.ceil(c/t)*t;
+      if(q === p) break;
+      p = q;
+    }
+    return p;
+  }
+  function snapNearest(c){
+    var d = snapDown(c), u = snapUp(c);
+    return (c-d) <= (u-c) ? d : u;
+  }
+  function stepUp(p){
+    var t = tickAt(p), q = p + t;
+    if(tickAt(q) !== t) q = snapUp(p+1);
+    return q;
+  }
+  function stepDown(p){
+    if(p <= 0) return 0;
+    var t = tickAt(p), q = p - t;
+    if(q < 0) q = 0;
+    if(q > 0 && tickAt(q) !== t) q = snapDown(p-1);
+    return q;
+  }
+
+  function limits(base, marginPct){
+    var m = marginPct/100;
+    var rawUp = Math.round(base*(1+m)*1e4)/1e4;
+    var rawDn = Math.round(base*(1-m)*1e4)/1e4;
+    var top = snapDown(rawUp);
+    var bot = snapUp(rawDn);
+    if(bot < 1) bot = Math.max(1, snapUp(1));
+    if(top < base) top = base;
+    if(bot > base) bot = base;
+    return {top:top, bot:bot};
+  }
+  function countSteps(from, to){
+    var n = 0, p = from;
+    if(to > from){ while(p < to && n < 5000){ p = stepUp(p); n++; } }
+    else { while(p > to && n < 5000){ p = stepDown(p); n++; } }
+    return n;
+  }
+
+  // ---- DOM ----
+  var $ = function(id){ return document.getElementById(id); };
+  var elBase=$("base"), elMargin=$("margin"), elCount=$("count"), elLot=$("lot"), elCost=$("cost"), elCostHint=$("costHint"),
+      elPreset=$("preset"), elLadder=$("ladder"), elHint=$("baseHint"),
+      elTarget=$("target"), elTargetHint=$("targetHint"),
+      elThead=document.querySelector("#seriesTable thead"),
+      elTbody=document.querySelector("#seriesTable tbody"),
+      elTickRows=$("tickRows"), elTickHint=$("tickHint");
+
+  function row(cls, tag, price, pct){
+    var d = document.createElement("div");
+    d.className = "rung" + (cls ? " "+cls : "");
+    d.innerHTML = '<span class="tag">'+tag+'</span><span class="px">'+fmt(price)+'</span>'+
+                  '<span class="pct">'+(pct===null?"":pct)+'</span>';
+    return d;
+  }
+  function gapRow(n){
+    var d = document.createElement("div");
+    d.className = "gap";
+    d.textContent = n + " kademe";
+    return d;
+  }
+
+  function drawLadder(base, L, cost){
+    elLadder.innerHTML = "";
+    var upN = countSteps(base, L.top);
+    var dnN = countSteps(base, L.bot);
+    var pctOf = function(p){ return (p-base)/base*100; };
+
+    // üst taraf
+    if(L.top > base){
+      elLadder.appendChild(row("top","tavan",L.top,fmtPct(pctOf(L.top))));
+      var upList = [], p = L.top, i;
+      for(i=0;i<3 && p>base;i++){ p = stepDown(p); if(p>base) upList.push(p); }
+      var shownUp = upList.length;
+      var hiddenUp = upN - 1 - shownUp;
+      if(hiddenUp > 0){
+        elLadder.appendChild(row("", "", upList[0], fmtPct(pctOf(upList[0]))));
+        elLadder.appendChild(gapRow(hiddenUp));
+        var q = stepUp(base);
+        elLadder.appendChild(row("", "", q, fmtPct(pctOf(q))));
+      } else {
+        for(i=0;i<upList.length;i++) elLadder.appendChild(row("", "", upList[i], fmtPct(pctOf(upList[i]))));
+      }
+    } else {
+      elLadder.appendChild(row("top","tavan",L.top,"kademe yetersiz"));
+    }
+
+    elLadder.appendChild(row("now","baz",base,"—"));
+
+    // alt taraf
+    if(L.bot < base){
+      var dnList = [], d = base, j;
+      for(j=0;j<3;j++){ d = stepDown(d); if(d>L.bot) dnList.push(d); else break; }
+      var hiddenDn = dnN - 1 - dnList.length;
+      if(hiddenDn > 0){
+        elLadder.appendChild(row("", "", dnList[0], fmtPct(pctOf(dnList[0]))));
+        elLadder.appendChild(gapRow(hiddenDn));
+        var r = stepUp(L.bot);
+        elLadder.appendChild(row("", "", r, fmtPct(pctOf(r))));
+      } else {
+        for(j=0;j<dnList.length;j++) elLadder.appendChild(row("", "", dnList[j], fmtPct(pctOf(dnList[j]))));
+      }
+      elLadder.appendChild(row("bot","taban",L.bot,fmtPct(pctOf(L.bot))));
+    } else {
+      elLadder.appendChild(row("bot","taban",L.bot,"kademe yetersiz"));
+    }
+
+    var s = document.createElement("div");
+    s.className = "summary";
+    var html =
+      '<div><b>'+fmt(tickAt(base))+'</b><span>fiyat adımı</span></div>'+
+      '<div><b>'+upN+'</b><span>kademe yukarı</span></div>'+
+      '<div><b>'+dnN+'</b><span>kademe aşağı</span></div>';
+    if(cost > 0){
+      var pl = (base-cost)/cost*100;
+      html += '<div><b class="'+(pl>=0?"pos":"neg")+'">'+fmtPct(pl)+'</b><span>maliyete göre</span></div>';
+    }
+    s.innerHTML = html;
+    elLadder.appendChild(s);
+  }
+
+  function drawSeries(base, marginPct, n, lot, cost){
+    var up = dir > 0;
+    var cols = 5 + (cost?1:0) + (lot?1:0) + (lot&&cost?1:0);
+    var head = '<tr><th>Seans</th><th>Baz</th><th>'+(up?"Tavan":"Taban")+'</th><th>Değişim</th><th>Toplam</th>'+
+               (cost?'<th>Maliyete göre</th>':'')+
+               (lot?'<th>Değer</th>':'')+
+               (lot&&cost?'<th>Kâr / zarar</th>':'')+'</tr>';
+    elThead.innerHTML = head;
+
+    var rows = "", p = base, k;
+    for(k=1;k<=n;k++){
+      var L = limits(p, marginPct);
+      var next = up ? L.top : L.bot;
+      var stepPct = (next-p)/p*100;
+      var totPct = (next-base)/base*100;
+      var cls = up ? "pos" : "neg";
+      rows += '<tr><td>'+k+'</td><td>'+fmt(p)+'</td><td class="val '+cls+'">'+fmt(next)+'</td>'+
+              '<td class="'+cls+'">'+fmtPct(stepPct)+'</td><td class="'+cls+'">'+fmtPct(totPct)+'</td>';
+      if(cost){
+        var pl = (next-cost)/cost*100;
+        rows += '<td class="'+(pl>=0?"pos":"neg")+'">'+fmtPct(pl)+'</td>';
+      }
+      if(lot) rows += '<td>'+fmtBig(next/100*lot)+'</td>';
+      if(lot && cost){
+        var amt = (next-cost)/100*lot;
+        rows += '<td class="'+(amt>=0?"pos":"neg")+'">'+(amt>=0?"+":"−")+fmtBig(Math.abs(amt))+'</td>';
+      }
+      rows += '</tr>';
+      if(next === p) { rows += '<tr><td colspan="'+cols+'" style="text-align:left;color:var(--muted)">Fiyat sabitlendi; kademe hareket üretmiyor.</td></tr>'; break; }
+      p = next;
+    }
+    elTbody.innerHTML = rows;
+  }
+
+  function drawTarget(base, marginPct, target){
+    if(!isFinite(target) || target<=0){ elTargetHint.textContent=""; return; }
+    var tc = snapNearest(toCents(target));
+    var p = base, n = 0, up = tc > base;
+    if(tc === base){ elTargetHint.textContent = "Hedef baz fiyata eşit."; return; }
+    while(n < 400){
+      var L = limits(p, marginPct);
+      var next = up ? L.top : L.bot;
+      if(next === p) break;
+      p = next; n++;
+      if(up ? p >= tc : p <= tc) break;
+    }
+    if(up ? p >= tc : p <= tc){
+      elTargetHint.textContent = fmt(tc)+" TL için "+n+" "+(up?"tavan":"taban")+" gerekir (seri sonu "+fmt(p)+" TL).";
+    } else {
+      elTargetHint.textContent = "Hedefe bu yönde ulaşılamıyor.";
+    }
+  }
+
+  function renderTickEditor(){
+    elTickRows.innerHTML = "";
+    ticks.forEach(function(r, i){
+      var d = document.createElement("div");
+      d.className = "tickrow";
+      d.innerHTML =
+        '<input type="text" inputmode="decimal" data-k="min" value="'+ (r[0]/100).toString().replace(".",",") +'">'+
+        '<input type="text" inputmode="decimal" data-k="tick" value="'+ (r[1]/100).toString().replace(".",",") +'">'+
+        '<button type="button" class="rm" aria-label="Satırı sil">×</button>';
+      d.querySelector(".rm").addEventListener("click", function(){
+        if(ticks.length<=1) return;
+        readEditor(); ticks.splice(i,1); renderTickEditor();
+      });
+      elTickRows.appendChild(d);
+    });
+  }
+  function readEditor(){
+    var out = [];
+    Array.prototype.forEach.call(elTickRows.querySelectorAll(".tickrow"), function(d){
+      var mn = parseNum(d.querySelector('[data-k="min"]').value);
+      var tk = parseNum(d.querySelector('[data-k="tick"]').value);
+      if(isFinite(mn) && isFinite(tk) && tk > 0) out.push([toCents(mn), Math.max(1,toCents(tk))]);
+    });
+    if(out.length){
+      out.sort(function(a,b){ return a[0]-b[0]; });
+      out[0][0] = 0;
+      ticks = out;
+    }
+  }
+
+  function update(){
+    var bv = parseNum(elBase.value);
+    var mv = parseNum(elMargin.value);
+    var n  = parseInt(elCount.value,10);
+    var lot = parseNum(elLot.value);
+    if(!isFinite(lot) || lot<=0) lot = 0;
+    var costV = parseNum(elCost.value);
+    var cost = (isFinite(costV) && costV>0) ? toCents(costV) : 0;
+    if(!isFinite(mv) || mv<0) mv = 10;
+    if(!isFinite(n) || n<1) n = 10;
+    if(n>60) n = 60;
+
+    if(!isFinite(bv) || bv<=0){
+      elHint.className="hint warn";
+      elHint.textContent="Geçerli bir fiyat gir.";
+      elLadder.innerHTML=""; elThead.innerHTML=""; elTbody.innerHTML="";
+      return;
+    }
+    var raw = toCents(bv);
+    if(raw < 1) raw = 1;
+    var base = snapNearest(raw);
+    if(base !== raw){
+      elHint.className="hint warn";
+      elHint.textContent = "Kademeye uymuyor. "+fmt(base)+" TL üzerinden hesaplandı (adım "+fmt(tickAt(base))+").";
+    } else {
+      elHint.className="hint";
+      elHint.textContent = "Fiyat adımı "+fmt(tickAt(base))+" TL.";
+    }
+
+    if(cost){
+      var plNow = (base-cost)/cost*100;
+      var txt = "Maliyet "+fmt(cost)+" TL · baz fiyatta "+fmtPct(plNow);
+      if(lot) txt += " · "+((base-cost)/100*lot >= 0 ? "+" : "−")+fmtBig(Math.abs((base-cost)/100*lot))+" TL";
+      elCostHint.className = "hint";
+      elCostHint.textContent = txt;
+    } else {
+      elCostHint.textContent = "";
+    }
+
+    var L = limits(base, mv);
+    drawLadder(base, L, cost);
+    drawSeries(base, mv, n, lot, cost);
+    drawTarget(base, mv, parseNum(elTarget.value));
+  }
+
+  // ---- olaylar ----
+  ["input","change"].forEach(function(ev){
+    [elBase,elMargin,elCount,elLot,elCost,elTarget].forEach(function(el){ el.addEventListener(ev, update); });
+  });
+  elPreset.addEventListener("change", function(){
+    var v = elPreset.value;
+    if(v !== "ozel"){ ticks = clone(PRESETS[v]); renderTickEditor(); }
+    elTickHint.textContent = "";
+    update();
+  });
+  $("btnUp").addEventListener("click", function(){
+    dir = 1; this.setAttribute("aria-pressed","true"); $("btnDown").setAttribute("aria-pressed","false"); update();
+  });
+  $("btnDown").addEventListener("click", function(){
+    dir = -1; this.setAttribute("aria-pressed","true"); $("btnUp").setAttribute("aria-pressed","false"); update();
+  });
+  $("addRow").addEventListener("click", function(){
+    readEditor();
+    var last = ticks[ticks.length-1];
+    ticks.push([last[0]*2 || 100, last[1]]);
+    renderTickEditor();
+  });
+  $("applyTicks").addEventListener("click", function(){
+    readEditor(); renderTickEditor();
+    elPreset.value = "ozel";
+    elTickHint.textContent = "Tablo uygulandı.";
+    update();
+  });
+  $("resetTicks").addEventListener("click", function(){
+    ticks = clone(PRESETS.pay); elPreset.value="pay"; renderTickEditor();
+    elTickHint.textContent = "Pay tablosu geri yüklendi.";
+    update();
+  });
+
+  renderTickEditor();
+  update();
+})();
+</script>
+</body>
+</html>
