@@ -2,8 +2,10 @@ name: BIST kapanışları
 
 on:
   schedule:
-    # Hafta içi 18:45 (İstanbul, UTC+3) — seans kapanışından sonra
-    - cron: "45 15 * * 1-5"
+    # Hafta içi 18:25 (İstanbul, UTC+3): kapanış + Yahoo'nun 15 dk gecikmesi sonrası.
+    # 20:00'deki ikinci çalıştırma, ilkinde eksik/gecikmeli gelen veriyi tamamlar.
+    - cron: "25 15 * * 1-5"
+    - cron: "0 17 * * 1-5"
   workflow_dispatch:
   push:
     paths:

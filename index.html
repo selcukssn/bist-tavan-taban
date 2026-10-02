@@ -48,7 +48,12 @@ input,select{
   background:#fff;color:var(--ink);width:100%;
 }
 input:focus,select:focus,button:focus-visible,summary:focus-visible{outline:2px solid var(--mark);outline-offset:1px}
-#base{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;padding:10px}
+#base,#stock{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;padding:10px}
+#stock{text-transform:uppercase}
+#stock::placeholder{font-size:1rem;font-weight:400;text-transform:none;letter-spacing:0}
+#seriesTable td.date{font-family:var(--sans);font-size:.8rem;white-space:nowrap;text-align:left}
+#seriesTable th.date{text-align:left}
+#seriesTable .half{color:var(--down);margin-left:3px;cursor:help}
 .hint{font-size:.76rem;color:var(--muted);min-height:1.1em}
 .hint.warn{color:var(--down)}
 
@@ -207,10 +212,18 @@ footer b{color:var(--ink);font-weight:600}
     <div class="col col-left">
       <section class="panel">
         <div class="grid">
-          <div class="field wide">
+          <div class="field">
             <label for="base">Baz fiyat (TL)</label>
             <input id="base" type="text" inputmode="decimal" value="42,50" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="stock">Hisse (kapanış)</label>
+            <input id="stock" type="text" list="stockList" placeholder="Sembol seç" autocomplete="off" autocapitalize="characters" spellcheck="false">
+            <datalist id="stockList"></datalist>
+          </div>
+          <div class="field wide">
             <div class="hint" id="baseHint"></div>
+            <div class="hint" id="stockHint"></div>
           </div>
           <div class="field">
             <label for="preset">Enstrüman</label>
@@ -286,6 +299,7 @@ footer b{color:var(--ink);font-weight:600}
   <footer>
     <p><b>Yuvarlama.</b> Limitler içeri doğru yuvarlanır: tavan bir alt kademeye, taban bir üst kademeye. Bu yüzden gerçekleşen değişim çoğu zaman marjın biraz altında kalır.</p>
     <p><b>Baz fiyat.</b> Bir önceki seansın kapanış fiyatıdır. Seri hesabında her seansın tavanı ertesi seansın baz fiyatı olarak alınır.</p>
+    <p><b>Tarihler.</b> Hisse seçilince baz, o hissenin verideki kapanış günüdür; elle girilen fiyat ise bilgisayarın saatine göre son seansın kapanışı sayılır (işlem günü 18.15'ten, arife yarım gün seanslarında 13.00'ten sonra o günün kapanışı). Seans tarihleri hafta sonları ve Borsa İstanbul'un kapalı olduğu resmi ve dini bayramlar atlanarak hesaplanır; ½ işareti yarım gün seansı gösterir.</p>
     <p><b>Kademe tablosu.</b> Varsayılan değerler, Borsa İstanbul'un 6 Kasım 2023'te yürürlüğe giren pay fiyat adımı düzenlemesine dayanır. Borsa bu tabloyu ve marjları değiştirebildiği için hesaplamadan önce güncel duyuruyu kontrol et; tabloyu yukarıdan düzenleyebilirsin.</p>
     <p>Yatırım tavsiyesi değildir.</p>
   </footer>
@@ -417,6 +431,56 @@ footer b{color:var(--ink);font-weight:600}
     return n;
   }
 
+  // ---- Borsa İstanbul takvimi ----
+  // Seansın kapalı olduğu resmi tatiller (hafta sonuna denk gelenler de yazıldı, zararı yok).
+  // Dini bayram tarihleri her yıl değişir: yeni yıl için Borsa İstanbul'un tatil duyurusundan eklenmeli.
+  var BIST_HOLIDAYS = {
+    "2026-01-01":1,"2026-03-20":1,"2026-03-21":1,"2026-03-22":1,"2026-04-23":1,"2026-05-01":1,
+    "2026-05-19":1,"2026-05-27":1,"2026-05-28":1,"2026-05-29":1,"2026-05-30":1,"2026-07-15":1,
+    "2026-08-30":1,"2026-10-29":1,
+    "2027-01-01":1,"2027-03-09":1,"2027-03-10":1,"2027-03-11":1,"2027-04-23":1,"2027-05-01":1,
+    "2027-05-16":1,"2027-05-17":1,"2027-05-18":1,"2027-05-19":1,"2027-07-15":1,"2027-08-30":1,
+    "2027-10-29":1,
+    "2028-01-01":1,"2028-04-23":1,"2028-05-01":1,"2028-05-19":1,"2028-07-15":1,"2028-08-30":1,
+    "2028-10-29":1
+  };
+  // Yarım gün seans (arife): işlem günüdür ama seans öğlen biter
+  var BIST_HALF_DAYS = {
+    "2026-03-19":1,"2026-05-26":1,"2026-10-28":1,
+    "2027-03-08":1,"2027-05-15":1,"2027-10-28":1,
+    "2028-10-28":1
+  };
+  var CLOSE_MIN = 18*60+15, HALF_CLOSE_MIN = 13*60; // bu saatten sonra günün kapanışı kesinleşmiş sayılır
+
+  function ymd(dt){ return dt.toISOString().slice(0,10); }
+  function addDays(d, n){ var dt = new Date(d+"T00:00:00Z"); dt.setUTCDate(dt.getUTCDate()+n); return ymd(dt); }
+  function isTradingDay(d){
+    var w = new Date(d+"T00:00:00Z").getUTCDay();
+    return w !== 0 && w !== 6 && !BIST_HOLIDAYS[d];
+  }
+  function nextTradingDay(d){ do { d = addDays(d, 1); } while(!isTradingDay(d)); return d; }
+  function prevTradingDay(d){ do { d = addDays(d, -1); } while(!isTradingDay(d)); return d; }
+  // Bilgisayarın saati, İstanbul saatine çevrilerek kullanılır
+  function istanbulNow(){
+    var parts = {};
+    new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Istanbul",year:"numeric",month:"2-digit",day:"2-digit",
+      hour:"2-digit",minute:"2-digit",hourCycle:"h23"}).formatToParts(new Date())
+      .forEach(function(x){ parts[x.type] = x.value; });
+    return {d: parts.year+"-"+parts.month+"-"+parts.day, min: (+parts.hour)*60 + (+parts.minute)};
+  }
+  // Kapanışı kesinleşmiş en son seans
+  function lastClosedSession(){
+    var now = istanbulNow();
+    var cut = BIST_HALF_DAYS[now.d] ? HALF_CLOSE_MIN : CLOSE_MIN;
+    if(isTradingDay(now.d) && now.min >= cut) return now.d;
+    return prevTradingDay(now.d);
+  }
+  function fmtDay(d, long){
+    return new Date(d+"T12:00:00Z").toLocaleDateString("tr-TR",
+      long ? {weekday:"long",day:"numeric",month:"long",year:"numeric",timeZone:"UTC"}
+           : {weekday:"short",day:"numeric",month:"short",timeZone:"UTC"});
+  }
+
   // ---- DOM ----
   var $ = function(id){ return document.getElementById(id); };
   var elBase=$("base"), elMargin=$("margin"), elCount=$("count"), elLot=$("lot"), elCost=$("cost"), elCostHint=$("costHint"),
@@ -424,7 +488,9 @@ footer b{color:var(--ink);font-weight:600}
       elTarget=$("target"), elTargetHint=$("targetHint"),
       elThead=document.querySelector("#seriesTable thead"),
       elTbody=document.querySelector("#seriesTable tbody"),
-      elTickRows=$("tickRows"), elTickHint=$("tickHint");
+      elTickRows=$("tickRows"), elTickHint=$("tickHint"),
+      elStock=$("stock"), elStockHint=$("stockHint"), elStockList=$("stockList"),
+      selected = null; // seçili hisse (fiyatı ve kapanış tarihiyle)
 
   function row(cls, tag, price, pct){
     var d = document.createElement("div");
@@ -499,23 +565,25 @@ footer b{color:var(--ink);font-weight:600}
     elLadder.appendChild(s);
   }
 
-  function drawSeries(base, marginPct, n, lot, cost){
+  function drawSeries(base, marginPct, n, lot, cost, baseDate){
     var up = dir > 0;
-    var cols = 5 + (cost?1:0) + (lot?1:0) + (lot&&cost?1:0);
-    var head = '<tr><th>Seans</th><th>Baz</th><th>'+(up?"Tavan":"Taban")+'</th><th>Değişim</th><th>Toplam</th>'+
+    var cols = 6 + (cost?1:0) + (lot?1:0) + (lot&&cost?1:0);
+    var head = '<tr><th>Seans</th><th class="date">Tarih</th><th>Baz</th><th>'+(up?"Tavan":"Taban")+'</th><th>Değişim</th><th>Toplam</th>'+
                (cost?'<th>Maliyete göre</th>':'')+
                (lot?'<th>Değer</th>':'')+
                (lot&&cost?'<th>Kâr / zarar</th>':'')+'</tr>';
     elThead.innerHTML = head;
 
-    var rows = "", p = base, k;
+    var rows = "", p = base, k, day = baseDate;
     for(k=1;k<=n;k++){
+      day = nextTradingDay(day);
       var L = limits(p, marginPct);
       var next = up ? L.top : L.bot;
       var stepPct = (next-p)/p*100;
       var totPct = (next-base)/base*100;
       var cls = up ? "pos" : "neg";
-      rows += '<tr><td>'+k+'</td><td>'+fmt(p)+'</td><td class="val '+cls+'">'+fmt(next)+'</td>'+
+      rows += '<tr><td>'+k+'</td><td class="date">'+fmtDay(day)+
+              (BIST_HALF_DAYS[day] ? '<span class="half" title="Yarım gün seans">½</span>' : '')+'</td><td>'+fmt(p)+'</td><td class="val '+cls+'">'+fmt(next)+'</td>'+
               '<td class="'+cls+'">'+fmtPct(stepPct)+'</td><td class="'+cls+'">'+fmtPct(totPct)+'</td>';
       if(cost){
         var pl = (next-cost)/cost*100;
@@ -533,7 +601,7 @@ footer b{color:var(--ink);font-weight:600}
     elTbody.innerHTML = rows;
   }
 
-  function drawTarget(base, marginPct, target){
+  function drawTarget(base, marginPct, target, baseDate){
     if(!isFinite(target) || target<=0){ elTargetHint.textContent=""; return; }
     var tc = snapNearest(toCents(target));
     var p = base, n = 0, up = tc > base;
@@ -546,7 +614,9 @@ footer b{color:var(--ink);font-weight:600}
       if(up ? p >= tc : p <= tc) break;
     }
     if(up ? p >= tc : p <= tc){
-      elTargetHint.textContent = fmt(tc)+" TL için "+n+" "+(up?"tavan":"taban")+" gerekir (seri sonu "+fmt(p)+" TL).";
+      var endDay = baseDate; for(var j=0;j<n;j++) endDay = nextTradingDay(endDay);
+      elTargetHint.textContent = fmt(tc)+" TL için "+n+" "+(up?"tavan":"taban")+" gerekir; en erken "+
+        fmtDay(endDay, true)+" (seri sonu "+fmt(p)+" TL).";
     } else {
       elTargetHint.textContent = "Hedefe bu yönde ulaşılamıyor.";
     }
@@ -621,13 +691,38 @@ footer b{color:var(--ink);font-weight:600}
       elCostHint.textContent = "";
     }
 
+    var lastDay = lastClosedSession(), baseDate;
+    if(selected){
+      baseDate = selected.d;
+      elStockHint.className = "hint" + (selected.d < lastDay ? " warn" : "");
+      elStockHint.textContent = selected.s+(selected.n ? " ("+selected.n+")" : "")+" · "+fmtDay(selected.d, true)+" kapanışı"+
+        (selected.d < lastDay ? " · "+fmtDay(lastDay)+" kapanışı henüz veride yok" : "");
+    } else {
+      baseDate = lastDay;
+      elStockHint.className = "hint";
+      elStockHint.textContent = "Baz fiyat "+fmtDay(lastDay, true)+" kapanışı sayılır.";
+    }
+
     var L = limits(base, mv);
     drawLadder(base, L, cost);
-    drawSeries(base, mv, n, lot, cost);
-    drawTarget(base, mv, parseNum(elTarget.value));
+    drawSeries(base, mv, n, lot, cost, baseDate);
+    drawTarget(base, mv, parseNum(elTarget.value), baseDate);
   }
 
   // ---- olaylar ----
+  // Fiyat elle değiştirilirse seçili hissenin kapanış tarihi artık geçerli değil
+  elBase.addEventListener("input", function(){
+    if(selected && toCents(parseNum(elBase.value)) !== selected.c){ selected = null; elStock.value = ""; }
+  });
+  elStock.addEventListener("input", function(){
+    var v = fold(elStock.value.trim());
+    if(!v){ if(selected){ selected = null; update(); } return; }
+    var o = stocks && stocks.filter(function(x){ return fold(x.s) === v; })[0];
+    if(o) selectStock(o);
+  });
+  elStock.addEventListener("change", function(){
+    if(!selected || fold(elStock.value.trim()) !== fold(selected.s)) elStock.value = selected ? selected.s : "";
+  });
   ["input","change"].forEach(function(ev){
     [elBase,elMargin,elCount,elLot,elCost,elTarget].forEach(function(el){ el.addEventListener(ev, update); });
   });
@@ -733,6 +828,15 @@ footer b{color:var(--ink);font-weight:600}
     }).join("");
   }
 
+  function selectStock(o){
+    selected = o;
+    elStock.value = o.s;
+    elBase.value = (o.c/100).toFixed(2).replace(".", ",");
+    elMargin.value = "10";
+    if(elPreset.value !== "pay"){ elPreset.value = "pay"; ticks = clone(PRESETS.pay); renderTickEditor(); }
+    update();
+  }
+
   function loadStocks(){
     if(stocks || stocksLoading) return;
     stocksLoading = true;
@@ -740,6 +844,9 @@ footer b{color:var(--ink);font-weight:600}
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(data){
         stocks = prepareStocks(data.rows || []);
+        elStockList.innerHTML = stocks.map(function(o){
+          return '<option value="'+esc(o.s)+'">'+esc((o.n ? o.n+" · " : "")+fmt(o.c)+" TL")+'</option>';
+        }).join("");
         var last = stocks.reduce(function(m,o){ return o.d > m ? o.d : m; }, "");
         var ups = stocks.filter(function(o){ return o.flag === 1; }).length;
         var dns = stocks.filter(function(o){ return o.flag === -1; }).length;
@@ -775,11 +882,8 @@ footer b{color:var(--ink);font-weight:600}
     if(!tr) return;
     var o = stocks.filter(function(x){ return x.s === tr.getAttribute("data-s"); })[0];
     if(!o) return;
-    elBase.value = (o.c/100).toFixed(2).replace(".", ",");
-    elMargin.value = "10";
-    if(elPreset.value !== "pay"){ elPreset.value = "pay"; ticks = clone(PRESETS.pay); renderTickEditor(); }
     location.hash = "";
-    update();
+    selectStock(o);
   });
 
   function route(){
@@ -794,6 +898,7 @@ footer b{color:var(--ink);font-weight:600}
   renderTickEditor();
   update();
   route();
+  loadStocks();
 })();
 </script>
 </body>
