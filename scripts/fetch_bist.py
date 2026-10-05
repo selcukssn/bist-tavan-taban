@@ -65,6 +65,9 @@ def screen_all():
                 if is_final(d, now):
                     ok_pc = isinstance(pc, (int, float)) and pc > 0
                     quotes_out[s] = {"c": round(c, 2), "pc": round(pc, 2) if ok_pc else None, "d": d}
+                    vol = qt.get("regularMarketVolume")
+                    if isinstance(vol, (int, float)) and vol >= 0:
+                        quotes_out[s]["v"] = int(vol)
         total = res.get("total") or 0
         offset += len(quotes)
         if not quotes or offset >= total:
@@ -115,7 +118,19 @@ def fetch_closes(symbols):
             close = close[[is_final(ix.strftime("%Y-%m-%d"), now) for ix in close.index]]
             if close.empty:
                 continue
-            hist[s] = {ix.strftime("%Y-%m-%d"): round(float(v), 2)
+            try:
+                volume = df[y]["Volume"]
+            except KeyError:
+                volume = None
+
+            def vol_at(ix):
+                if volume is None or ix not in volume.index:
+                    return None
+                v = volume.loc[ix]
+                return int(v) if math.isfinite(v) and v >= 0 else None
+
+            # {tarih: (kapanış, hacim)}
+            hist[s] = {ix.strftime("%Y-%m-%d"): (round(float(v), 2), vol_at(ix))
                        for ix, v in close.items() if math.isfinite(v) and v > 0}
             c = float(close.iloc[-1])
             pc = float(close.iloc[-2]) if len(close) > 1 else None
@@ -126,17 +141,24 @@ def fetch_closes(symbols):
                 "pc": round(pc, 2) if pc and math.isfinite(pc) else None,
                 "d": close.index[-1].strftime("%Y-%m-%d"),
             }
+            if vol_at(close.index[-1]) is not None:
+                out[s]["v"] = vol_at(close.index[-1])
         print(f"{min(i + BATCH, len(symbols))}/{len(symbols)}", file=sys.stderr)
     return out, hist
 
 
 def write_hist(hist):
     """Tüm hisselerin geçmişini ortak tarih ekseniyle tek dosyaya yazar:
-    {"d": [tarihler], "c": {sembol: [kapanış veya null, ...]}}"""
+    {"d": [tarihler], "c": {sembol: [kapanış veya null, ...]}, "v": {sembol: [hacim (adet) veya null, ...]}}"""
     days = sorted({d for h in hist.values() for d in h})
     if not days:
         return
-    data = {"d": days, "c": {s: [h.get(d) for d in days] for s, h in sorted(hist.items()) if h}}
+    syms = [s for s, h in sorted(hist.items()) if h]
+    data = {
+        "d": days,
+        "c": {s: [hist[s][d][0] if d in hist[s] else None for d in days] for s in syms},
+        "v": {s: [hist[s][d][1] if d in hist[s] else None for d in days] for s in syms},
+    }
     text = json.dumps(data, separators=(",", ":")) + "\n"
     try:
         with open(HIST, encoding="utf-8") as f:
@@ -171,7 +193,7 @@ def main():
             closes[s] = q
             newer += 1
         elif q["d"] == h["d"]:
-            closes[s] = {**h, "c": q["c"]}
+            closes[s] = {**h, **{k: q[k] for k in ("c", "v") if k in q}}
     print(f"{newer} hissede kote geçmiş veriden yeni", file=sys.stderr)
     if len(closes) < max(50, len(prev) // 2):
         sys.exit(f"çok az veri geldi ({len(closes)}), dosya güncellenmedi")
