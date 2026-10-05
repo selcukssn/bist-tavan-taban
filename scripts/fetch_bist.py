@@ -21,6 +21,8 @@ from yfinance import EquityQuery
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "data", "bist.json")
 SEED = os.path.join(ROOT, "data", "tickers.txt")
+HIST = os.path.join(ROOT, "data", "hist.json")
+HIST_PERIOD = "1y"  # grafik için saklanan geçmiş
 BATCH = 80
 IST = ZoneInfo("Europe/Istanbul")
 # Bu saatten önce bugüne ait bar/kote seans içi fiyattır, kapanış değildir
@@ -88,7 +90,8 @@ def load_seed():
 
 
 def fetch_closes(symbols):
-    out = {}
+    """Son kapanışlar ve grafik için günlük kapanış geçmişi ({sembol: {tarih: kapanış}})."""
+    out, hist = {}, {}
     now = datetime.now(IST)
     for i in range(0, len(symbols), BATCH):
         chunk = symbols[i:i + BATCH]
@@ -96,7 +99,7 @@ def fetch_closes(symbols):
         df = None
         for attempt in range(3):
             try:
-                df = yf.download(yahoo, period="15d", interval="1d", auto_adjust=False,
+                df = yf.download(yahoo, period=HIST_PERIOD, interval="1d", auto_adjust=False,
                                  group_by="ticker", threads=True, progress=False)
                 break
             except Exception as e:
@@ -112,6 +115,8 @@ def fetch_closes(symbols):
             close = close[[is_final(ix.strftime("%Y-%m-%d"), now) for ix in close.index]]
             if close.empty:
                 continue
+            hist[s] = {ix.strftime("%Y-%m-%d"): round(float(v), 2)
+                       for ix, v in close.items() if math.isfinite(v) and v > 0}
             c = float(close.iloc[-1])
             pc = float(close.iloc[-2]) if len(close) > 1 else None
             if not math.isfinite(c) or c <= 0:
@@ -122,7 +127,27 @@ def fetch_closes(symbols):
                 "d": close.index[-1].strftime("%Y-%m-%d"),
             }
         print(f"{min(i + BATCH, len(symbols))}/{len(symbols)}", file=sys.stderr)
-    return out
+    return out, hist
+
+
+def write_hist(hist):
+    """Tüm hisselerin geçmişini ortak tarih ekseniyle tek dosyaya yazar:
+    {"d": [tarihler], "c": {sembol: [kapanış veya null, ...]}}"""
+    days = sorted({d for h in hist.values() for d in h})
+    if not days:
+        return
+    data = {"d": days, "c": {s: [h.get(d) for d in days] for s, h in sorted(hist.items()) if h}}
+    text = json.dumps(data, separators=(",", ":")) + "\n"
+    try:
+        with open(HIST, encoding="utf-8") as f:
+            if f.read() == text:
+                print("geçmiş değişmedi", file=sys.stderr)
+                return
+    except OSError:
+        pass
+    with open(HIST, "w", encoding="utf-8") as f:
+        f.write(text)
+    print(f"geçmiş yazıldı: {len(data['c'])} hisse, {len(days)} gün", file=sys.stderr)
 
 
 def main():
@@ -133,7 +158,9 @@ def main():
     if not symbols:
         sys.exit("hisse listesi boş")
 
-    closes = fetch_closes(symbols)
+    closes, hist = fetch_closes(symbols)
+    if len(hist) >= max(50, len(prev) // 2):
+        write_hist(hist)
     # Kote geçmiş veriden daha yeniyse (genellikle öyle) onu kullan
     newer = 0
     for s, q in quotes.items():
