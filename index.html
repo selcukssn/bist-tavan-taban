@@ -131,8 +131,11 @@ details[open] summary::after{content:"–"}
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend i{display:inline-block;width:16px;border-top:2px solid}
 .legend i.dash{border-top-style:dashed}
+.legend b.volkey{display:inline-block;width:8px;height:10px;border-radius:2px 2px 0 0;background:#1D3FBF;opacity:.35}
+.chart-head .tabs + .tabs{margin-left:auto}
+.chart-head h2{margin-right:auto}
 .chart-wrap{position:relative}
-.chart-wrap svg{display:block;width:100%;height:240px;touch-action:pan-y}
+.chart-wrap svg{display:block;width:100%;height:auto;touch-action:pan-y}
 .chart-wrap text{font-family:var(--sans);font-size:11px;fill:var(--muted)}
 .chart-wrap text.val{font-family:var(--mono);fill:var(--ink);font-weight:600}
 .chart-tip{
@@ -315,12 +318,17 @@ footer b{color:var(--ink);font-weight:600}
             <button type="button" data-r="126" aria-pressed="false">6A</button>
             <button type="button" data-r="0" aria-pressed="false">1Y</button>
           </div>
+          <div class="tabs" role="group" aria-label="Fiyat ekseni" id="scaleTabs">
+            <button type="button" data-s="lin" aria-pressed="true">Normal</button>
+            <button type="button" data-s="log" aria-pressed="false">Log</button>
+          </div>
           <div class="sub" id="chartSub"></div>
         </div>
         <div class="legend" aria-hidden="true">
           <span><i style="border-color:var(--mark)"></i>Kapanış</span>
           <span><i class="dash" style="border-color:var(--up)"></i>Tavan serisi</span>
           <span><i class="dash" style="border-color:var(--down)"></i>Taban serisi</span>
+          <span id="volKey"><b class="volkey"></b>Hacim</span>
         </div>
         <div class="chart-wrap" id="chartWrap">
           <svg id="chart" role="img" aria-labelledby="chartTitle chartSub"></svg>
@@ -762,7 +770,10 @@ footer b{color:var(--ink);font-weight:600}
   // ---- fiyat grafiği ----
   var elChart = $("chart"), elChartWrap = $("chartWrap"), elChartTip = $("chartTip"),
       elChartSub = $("chartSub"), elChartNote = $("chartNote"),
-      hist = null, histLoading = false, chartRange = 63, chartArgs = null, chartModel = null;
+      hist = null, histLoading = false, chartRange = 63, chartArgs = null, chartModel = null,
+      chartLog = false;
+  try { chartLog = localStorage.getItem("chartScale") === "log"; } catch(e){}
+  var fmtCompact = function(v){ return v.toLocaleString("tr-TR",{notation:"compact",maximumFractionDigits:1}); };
   var SVGNS = "http://www.w3.org/2000/svg";
 
   function loadHist(){
@@ -806,27 +817,35 @@ footer b{color:var(--ink);font-weight:600}
     var past = [];
     if(selected){
       loadHist();
-      var arr = hist && hist.c[selected.s];
+      var arr = hist && hist.c[selected.s], vols = hist && hist.v && hist.v[selected.s];
       if(arr){
         for(var i=0;i<hist.d.length;i++){
-          if(arr[i] != null && hist.d[i] < selected.d) past.push({d:hist.d[i], c:toCents(arr[i])});
+          if(arr[i] != null && hist.d[i] < selected.d) past.push({d:hist.d[i], c:toCents(arr[i]), v:vols ? vols[i] : null});
         }
       }
       if(chartRange && past.length > chartRange) past = past.slice(past.length - chartRange);
     }
-    past.push({d:baseDate, c:base});
+    past.push({d:baseDate, c:base, v:selected && selected.d === baseDate ? selected.v : null});
     var up = projection(base, marginPct, n, baseDate, true);
     var dn = projection(base, marginPct, n, baseDate, false);
     var b = past.length - 1, total = b + Math.max(up.length, dn.length) + 1;
 
-    var W = Math.max(240, elChartWrap.clientWidth), H = 240;
+    var maxV = 0;
+    past.forEach(function(pt){ if(pt.v > maxV) maxV = pt.v; });
+    var volH = maxV > 0 ? 48 : 0;
+    $("volKey").hidden = !volH;
+    var W = Math.max(240, elChartWrap.clientWidth), H = 236 + (volH ? volH + 10 : 0);
     var m = {l:8, r:62, t:10, b:22};
+    var priceBottom = H - m.b - (volH ? volH + 10 : 0);
     var all = past.concat(up, dn).map(function(x){ return x.c; });
-    // logaritmik fiyat ekseni: art arda tavan/taban yüzdesel (bileşik) hareket olduğu için
-    // eşit yüzdeler eşit yükseklikte görünür
+    // Log ölçekte art arda tavan/taban (bileşik yüzde hareket) eşit adımlarla görünür;
+    // Normal ölçek fiyatı doğrudan gösterir
     var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all);
-    var lLo = Math.log(lo), lHi = Math.log(hi), lPad = (lHi - lLo) * 0.06 || 0.05;
+    var tf = chartLog ? Math.log : function(v){ return v; };
+    var inv = chartLog ? Math.exp : function(v){ return v; };
+    var lLo = tf(lo), lHi = tf(hi), lPad = (lHi - lLo) * 0.06 || (chartLog ? 0.05 : hi * 0.05);
     lLo -= lPad; lHi += lPad;
+    if(!chartLog && lLo < 0) lLo = 0;
     var nProj = total - 1 - b, plotW = W - m.l - m.r;
     // geçmiş genişliğin %70'ini, projeksiyon %30'unu kaplar (geçmiş yoksa projeksiyon tamamını)
     var split = b > 0 ? (nProj > 0 ? 0.7 : 1) : 0;
@@ -834,7 +853,7 @@ footer b{color:var(--ink);font-weight:600}
       if(i <= b) return m.l + (b > 0 ? i/b : 0) * split * plotW;
       return m.l + split*plotW + (i-b)/nProj * (1-split) * plotW;
     };
-    var y = function(c){ return m.t + (1 - (Math.log(c) - lLo)/(lHi - lLo)) * (H - m.t - m.b); };
+    var y = function(c){ return m.t + (1 - (tf(c) - lLo)/(lHi - lLo)) * (priceBottom - m.t); };
     var endYs = [];
     if(up.length) endYs.push(y(up[up.length-1].c));
     if(dn.length) endYs.push(y(dn[dn.length-1].c));
@@ -843,7 +862,7 @@ footer b{color:var(--ink);font-weight:600}
     elChart.innerHTML = "";
     var g = svgEl("g", {}, elChart);
     // yatay ızgara ve fiyat etiketleri (sağda)
-    var eLo = Math.exp(lLo), eHi = Math.exp(lHi), step = niceStep(eHi - eLo, 5), lastY = Infinity;
+    var eLo = inv(lLo), eHi = inv(lHi), step = niceStep(eHi - eLo, 5), lastY = Infinity;
     for(var t = Math.ceil(eLo/step)*step; t <= eHi; t += step){
       var ty = y(t);
       if(lastY - ty < 22) continue; // log eksende üstteki çizgiler sıklaşır
@@ -855,6 +874,19 @@ footer b{color:var(--ink);font-weight:600}
     }
     // baz günü ayracı
     svgEl("line", {x1:x(b), x2:x(b), y1:m.t, y2:H-m.b, stroke:"#C7D0DE", "stroke-width":1}, g);
+    // hacim paneli: fiyatın altında, kendi ölçeğiyle (sıfırdan başlayan çubuklar)
+    if(volH){
+      var vTop = priceBottom + 10, vBot = H - m.b;
+      var slot = b > 0 ? x(1) - x(0) : 8, bw = Math.max(1, Math.min(6, slot * 0.6));
+      svgEl("line", {x1:m.l, x2:W-m.r, y1:vBot, y2:vBot, stroke:"#E2E8F0", "stroke-width":1}, g);
+      past.forEach(function(pt, i){
+        if(!(pt.v > 0)) return;
+        var h = Math.max(1, pt.v / maxV * volH);
+        svgEl("rect", {x:x(i) - bw/2, y:vBot - h, width:bw, height:h, rx:Math.min(2, bw/2), fill:"#1D3FBF", "fill-opacity":.35}, g);
+      });
+      var vl = svgEl("text", {x:W-m.r+6, y:vTop+8}, g); vl.textContent = fmtCompact(maxV);
+      var vn = svgEl("text", {x:W-m.r+6, y:vBot}, g); vn.textContent = "hacim";
+    }
     // tarih etiketleri: ilk gün, baz günü, son seans
     function dateLabel(i, d, anchor){
       var e = svgEl("text", {x:x(i), y:H-6, "text-anchor":anchor}, g);
@@ -878,7 +910,7 @@ footer b{color:var(--ink);font-weight:600}
     // alan dolgusu sadece geçmişte, çok hafif
     if(past.length > 1){
       var area = past.map(function(pt, i){ return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(pt.c).toFixed(1); }).join("") +
-                 "L"+x(b).toFixed(1)+" "+(H-m.b)+"L"+x(0).toFixed(1)+" "+(H-m.b)+"Z";
+                 "L"+x(b).toFixed(1)+" "+priceBottom+"L"+x(0).toFixed(1)+" "+priceBottom+"Z";
       svgEl("path", {d:area, fill:"#1D3FBF", "fill-opacity":.08}, g);
     }
     path(past, 0, "#1D3FBF", false);
@@ -916,7 +948,11 @@ footer b{color:var(--ink);font-weight:600}
     var i = 0, best = Infinity;
     for(var k=0;k<M.total;k++){ var dx = Math.abs(M.x(k) - px); if(dx < best){ best = dx; i = k; } }
     var rowsOut = [], day;
-    if(i <= M.b){ day = M.past[i].d; rowsOut.push(["#1D3FBF", M.past[i].c, i === M.b ? "Baz" : "Kapanış", null]); }
+    if(i <= M.b){
+      var pt = M.past[i]; day = pt.d;
+      rowsOut.push(["#1D3FBF", pt.c, i === M.b ? "Baz" : "Kapanış", null]);
+      if(pt.v > 0) rowsOut.push([null, pt.v, "lot · ≈ "+fmtCompact(pt.v * pt.c / 100)+" TL", null]);
+    }
     else {
       var u = M.up[i-M.b-1], d = M.dn[i-M.b-1];
       day = (u || d).d;
@@ -929,8 +965,9 @@ footer b{color:var(--ink);font-weight:600}
     var dd = document.createElement("div"); dd.className = "d"; dd.textContent = fmtDay(day); elChartTip.appendChild(dd);
     rowsOut.forEach(function(rw){
       var row = document.createElement("div"); row.className = "r";
-      var key = document.createElement("i"); key.style.borderColor = rw[0];
-      var val = document.createElement("b"); val.textContent = fmt(rw[1]);
+      var key = document.createElement("i");
+      if(rw[0]) key.style.borderColor = rw[0]; else key.style.borderColor = "transparent";
+      var val = document.createElement("b"); val.textContent = rw[0] ? fmt(rw[1]) : fmtCompact(rw[1]);
       var lab = document.createElement("span"); lab.textContent = rw[2] + (rw[3] === null ? "" : " · " + fmtPct(rw[3]));
       row.appendChild(key); row.appendChild(val); row.appendChild(lab); elChartTip.appendChild(row);
     });
@@ -948,6 +985,15 @@ footer b{color:var(--ink);font-weight:600}
   Array.prototype.forEach.call(document.querySelectorAll("#rangeTabs button"), function(btn, _, all){
     btn.addEventListener("click", function(){
       chartRange = +btn.getAttribute("data-r");
+      Array.prototype.forEach.call(all, function(x2){ x2.setAttribute("aria-pressed", x2 === btn ? "true" : "false"); });
+      if(chartArgs) drawChart.apply(null, chartArgs);
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("#scaleTabs button"), function(btn, _, all){
+    btn.setAttribute("aria-pressed", (btn.getAttribute("data-s") === "log") === chartLog ? "true" : "false");
+    btn.addEventListener("click", function(){
+      chartLog = btn.getAttribute("data-s") === "log";
+      try { localStorage.setItem("chartScale", chartLog ? "log" : "lin"); } catch(e){}
       Array.prototype.forEach.call(all, function(x2){ x2.setAttribute("aria-pressed", x2 === btn ? "true" : "false"); });
       if(chartArgs) drawChart.apply(null, chartArgs);
     });
@@ -1031,7 +1077,7 @@ footer b{color:var(--ink);font-weight:600}
       return rows.map(function(r){
         var c = snapNearest(Math.max(1, toCents(r.c)));
         var L = limits(c, 10);
-        var o = {s:r.s, n:r.n||"", d:r.d, c:c, top:L.top, bot:L.bot, chg:null, flag:0,
+        var o = {s:r.s, n:r.n||"", d:r.d, c:c, v:(r.v >= 0 ? r.v : null), top:L.top, bot:L.bot, chg:null, flag:0,
                  key:fold(r.s+" "+(r.n||""))};
         if(r.pc > 0){
           var pc = snapNearest(Math.max(1, toCents(r.pc)));
