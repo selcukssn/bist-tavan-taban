@@ -121,6 +121,32 @@ details[open] summary::after{content:"–"}
 .colhead span{font-size:.74rem;color:var(--muted)}
 .colhead i{width:34px}
 
+/* fiyat grafiği */
+.chart-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
+.chart-head h2{font-size:.95rem;font-weight:600;margin:0}
+.chart-head .sub{font-size:.76rem;color:var(--muted);flex-basis:100%;margin-top:-4px}
+.chart-head .tabs{margin:0;gap:4px}
+.chart-head .tabs button{padding:3px 9px;font-size:.76rem}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.74rem;color:var(--muted);margin:0 0 4px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:16px;border-top:2px solid}
+.legend i.dash{border-top-style:dashed}
+.chart-wrap{position:relative}
+.chart-wrap svg{display:block;width:100%;height:240px;touch-action:pan-y}
+.chart-wrap text{font-family:var(--sans);font-size:11px;fill:var(--muted)}
+.chart-wrap text.val{font-family:var(--mono);fill:var(--ink);font-weight:600}
+.chart-tip{
+  position:absolute;top:0;pointer-events:none;background:var(--panel);border:1px solid var(--rule);
+  border-radius:7px;padding:6px 8px;font-size:.74rem;line-height:1.35;box-shadow:0 2px 8px rgba(19,24,34,.12);
+  white-space:nowrap;
+}
+.chart-tip .d{color:var(--muted);margin-bottom:2px}
+.chart-tip .r{display:flex;align-items:center;gap:6px}
+.chart-tip .r i{display:inline-block;width:12px;border-top:2px solid}
+.chart-tip .r b{font-family:var(--mono);font-weight:650}
+.chart-tip .r span{color:var(--muted)}
+.chart-note{font-size:.72rem;color:var(--muted);margin:6px 0 0}
+
 /* üst sekmeler */
 .viewtabs{display:flex;gap:4px;margin:0 0 16px;border-bottom:1px solid var(--rule)}
 .viewtabs a{
@@ -187,7 +213,7 @@ footer b{color:var(--ink);font-weight:600}
   .lede{max-width:none}
   .layout{
     flex:1 1 auto;min-height:0;
-    display:grid;grid-template-columns:360px minmax(420px,1fr) 340px;gap:18px;
+    display:grid;grid-template-columns:340px minmax(400px,1fr) 400px;gap:18px;
   }
   .col{display:flex;flex-direction:column;min-height:0;gap:14px;overflow-y:auto;padding-right:4px}
   .col-mid .panel{display:flex;flex-direction:column;min-height:0;flex:1 1 auto}
@@ -280,6 +306,29 @@ footer b{color:var(--ink);font-weight:600}
     </div>
 
     <div class="col col-right">
+      <section class="panel" aria-labelledby="chartTitle">
+        <div class="chart-head">
+          <h2 id="chartTitle">Fiyat grafiği</h2>
+          <div class="tabs" role="group" aria-label="Grafik aralığı" id="rangeTabs">
+            <button type="button" data-r="21" aria-pressed="false">1A</button>
+            <button type="button" data-r="63" aria-pressed="true">3A</button>
+            <button type="button" data-r="126" aria-pressed="false">6A</button>
+            <button type="button" data-r="0" aria-pressed="false">1Y</button>
+          </div>
+          <div class="sub" id="chartSub"></div>
+        </div>
+        <div class="legend" aria-hidden="true">
+          <span><i style="border-color:var(--mark)"></i>Kapanış</span>
+          <span><i class="dash" style="border-color:var(--up)"></i>Tavan serisi</span>
+          <span><i class="dash" style="border-color:var(--down)"></i>Taban serisi</span>
+        </div>
+        <div class="chart-wrap" id="chartWrap">
+          <svg id="chart" role="img" aria-labelledby="chartTitle chartSub"></svg>
+          <div class="chart-tip" id="chartTip" hidden></div>
+        </div>
+        <p class="chart-note" id="chartNote"></p>
+      </section>
+
       <details id="tickPanel">
         <summary>Kademe tablosu</summary>
         <div class="details-body">
@@ -707,6 +756,208 @@ footer b{color:var(--ink);font-weight:600}
     drawLadder(base, L, cost);
     drawSeries(base, mv, n, lot, cost, baseDate);
     drawTarget(base, mv, parseNum(elTarget.value), baseDate);
+    drawChart(base, mv, n, baseDate);
+  }
+
+  // ---- fiyat grafiği ----
+  var elChart = $("chart"), elChartWrap = $("chartWrap"), elChartTip = $("chartTip"),
+      elChartSub = $("chartSub"), elChartNote = $("chartNote"),
+      hist = null, histLoading = false, chartRange = 63, chartArgs = null, chartModel = null;
+  var SVGNS = "http://www.w3.org/2000/svg";
+
+  function loadHist(){
+    if(hist || histLoading) return;
+    histLoading = true;
+    fetch("data/hist.json", {cache:"no-cache"})
+      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(data){ hist = data; if(chartArgs) drawChart.apply(null, chartArgs); })
+      .catch(function(){ hist = {d:[], c:{}}; })
+      .then(function(){ histLoading = false; });
+  }
+
+  // Seri hesabının aynısı: baz günden itibaren her seans tavan (taban) olursa
+  function projection(base, marginPct, n, baseDate, up){
+    var out = [], p = base, day = baseDate;
+    for(var k=1;k<=n;k++){
+      var L = limits(p, marginPct), next = up ? L.top : L.bot;
+      day = nextTradingDay(day);
+      out.push({d:day, c:next});
+      if(next === p) break;
+      p = next;
+    }
+    return out;
+  }
+
+  function svgEl(name, attrs, parent){
+    var e = document.createElementNS(SVGNS, name);
+    for(var k in attrs) e.setAttribute(k, attrs[k]);
+    if(parent) parent.appendChild(e);
+    return e;
+  }
+  function niceStep(span, count){
+    var raw = span / count, mag = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / mag;
+    return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * mag;
+  }
+
+  function drawChart(base, marginPct, n, baseDate){
+    chartArgs = [base, marginPct, n, baseDate];
+    $("rangeTabs").hidden = !selected;
+    // geçmiş: seçili hissenin kapanışları (kuruş), baz günü dahil
+    var past = [];
+    if(selected){
+      loadHist();
+      var arr = hist && hist.c[selected.s];
+      if(arr){
+        for(var i=0;i<hist.d.length;i++){
+          if(arr[i] != null && hist.d[i] < selected.d) past.push({d:hist.d[i], c:toCents(arr[i])});
+        }
+      }
+      if(chartRange && past.length > chartRange) past = past.slice(past.length - chartRange);
+    }
+    past.push({d:baseDate, c:base});
+    var up = projection(base, marginPct, n, baseDate, true);
+    var dn = projection(base, marginPct, n, baseDate, false);
+    var b = past.length - 1, total = b + Math.max(up.length, dn.length) + 1;
+
+    var W = Math.max(240, elChartWrap.clientWidth), H = 240;
+    var m = {l:8, r:62, t:10, b:22};
+    var all = past.concat(up, dn).map(function(x){ return x.c; });
+    // logaritmik fiyat ekseni: art arda tavan/taban yüzdesel (bileşik) hareket olduğu için
+    // eşit yüzdeler eşit yükseklikte görünür
+    var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all);
+    var lLo = Math.log(lo), lHi = Math.log(hi), lPad = (lHi - lLo) * 0.06 || 0.05;
+    lLo -= lPad; lHi += lPad;
+    var nProj = total - 1 - b, plotW = W - m.l - m.r;
+    // geçmiş genişliğin %70'ini, projeksiyon %30'unu kaplar (geçmiş yoksa projeksiyon tamamını)
+    var split = b > 0 ? (nProj > 0 ? 0.7 : 1) : 0;
+    var x = function(i){
+      if(i <= b) return m.l + (b > 0 ? i/b : 0) * split * plotW;
+      return m.l + split*plotW + (i-b)/nProj * (1-split) * plotW;
+    };
+    var y = function(c){ return m.t + (1 - (Math.log(c) - lLo)/(lHi - lLo)) * (H - m.t - m.b); };
+    var endYs = [];
+    if(up.length) endYs.push(y(up[up.length-1].c));
+    if(dn.length) endYs.push(y(dn[dn.length-1].c));
+
+    elChart.setAttribute("viewBox", "0 0 "+W+" "+H);
+    elChart.innerHTML = "";
+    var g = svgEl("g", {}, elChart);
+    // yatay ızgara ve fiyat etiketleri (sağda)
+    var eLo = Math.exp(lLo), eHi = Math.exp(lHi), step = niceStep(eHi - eLo, 5), lastY = Infinity;
+    for(var t = Math.ceil(eLo/step)*step; t <= eHi; t += step){
+      var ty = y(t);
+      if(lastY - ty < 22) continue; // log eksende üstteki çizgiler sıklaşır
+      lastY = ty;
+      svgEl("line", {x1:m.l, x2:W-m.r, y1:ty, y2:ty, stroke:"#E2E8F0", "stroke-width":1}, g);
+      if(endYs.some(function(ey){ return Math.abs(ey - ty) < 14; })) continue;
+      var tx = svgEl("text", {x:W-m.r+6, y:ty+4}, g);
+      tx.textContent = fmt(t).replace(/,00$/, "");
+    }
+    // baz günü ayracı
+    svgEl("line", {x1:x(b), x2:x(b), y1:m.t, y2:H-m.b, stroke:"#C7D0DE", "stroke-width":1}, g);
+    // tarih etiketleri: ilk gün, baz günü, son seans
+    function dateLabel(i, d, anchor){
+      var e = svgEl("text", {x:x(i), y:H-6, "text-anchor":anchor}, g);
+      e.textContent = new Date(d+"T12:00:00Z").toLocaleDateString("tr-TR",{day:"numeric",month:"short",timeZone:"UTC"});
+    }
+    var lastProj = up.length >= dn.length ? up : dn;
+    if(b > 0 && x(b) - x(0) > 70) dateLabel(0, past[0].d, "start");
+    dateLabel(b, baseDate, b > 0 ? "middle" : "start");
+    if(lastProj.length && x(total-1) - x(b) > 70) dateLabel(total-1, lastProj[lastProj.length-1].d, "end");
+
+    function path(points, offset, color, dashed){
+      if(points.length < 2) return;
+      var d = points.map(function(pt, i){ return (i ? "L" : "M") + x(offset+i).toFixed(1) + " " + y(pt.c).toFixed(1); }).join("");
+      var a = {d:d, fill:"none", stroke:color, "stroke-width":2, "stroke-linejoin":"round", "stroke-linecap":"round"};
+      if(dashed) a["stroke-dasharray"] = "5 4";
+      svgEl("path", a, g);
+    }
+    function dot(i, c, color){
+      svgEl("circle", {cx:x(i), cy:y(c), r:4, fill:color, stroke:"#fff", "stroke-width":2}, g);
+    }
+    // alan dolgusu sadece geçmişte, çok hafif
+    if(past.length > 1){
+      var area = past.map(function(pt, i){ return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(pt.c).toFixed(1); }).join("") +
+                 "L"+x(b).toFixed(1)+" "+(H-m.b)+"L"+x(0).toFixed(1)+" "+(H-m.b)+"Z";
+      svgEl("path", {d:area, fill:"#1D3FBF", "fill-opacity":.08}, g);
+    }
+    path(past, 0, "#1D3FBF", false);
+    path([past[b]].concat(up), b, "#0A7250", true);
+    path([past[b]].concat(dn), b, "#B02418", true);
+    function endLabel(c){
+      var e = svgEl("text", {x:W-m.r+6, y:y(c)+4, "class":"val"}, g);
+      e.textContent = fmt(c);
+    }
+    if(up.length){ dot(total-1 - (Math.max(up.length,dn.length)-up.length), up[up.length-1].c, "#0A7250"); endLabel(up[up.length-1].c); }
+    if(dn.length){ dot(total-1 - (Math.max(up.length,dn.length)-dn.length), dn[dn.length-1].c, "#B02418"); endLabel(dn[dn.length-1].c); }
+    dot(b, base, "#1D3FBF");
+
+    var hover = svgEl("g", {visibility:"hidden"}, elChart);
+    var cross = svgEl("line", {y1:m.t, y2:H-m.b, stroke:"#5C6A7E", "stroke-width":1}, hover);
+    chartModel = {x:x, y:y, W:W, m:m, total:total, b:b, past:past, up:up, dn:dn, hover:hover, cross:cross};
+
+    // başlık ve not
+    var dayOnly = function(d){
+      return new Date(d+"T12:00:00Z").toLocaleDateString("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
+    };
+    elChartSub.textContent = (selected ? selected.s : "Elle girilen fiyat") + " · " +
+      (b > 0 ? dayOnly(past[0].d) + " – " : "baz ") + dayOnly(baseDate);
+    var tail = up.length ? " Uç değerler: tavan serisi "+fmt(up[up.length-1].c)+" TL, taban serisi "+fmt(dn[dn.length-1].c)+" TL." : "";
+    elChartNote.textContent = (selected
+      ? (hist && !(hist.c[selected.s]) ? "Bu hisse için geçmiş veri yok. " : "")
+      : "Geçmiş kapanışları görmek için hisse seç. ") +
+      "Kesikli çizgiler, sonraki "+Math.max(up.length, dn.length)+" seansın hepsi tavan ya da taban olursa izlenecek yoldur." + tail;
+  }
+
+  function chartHover(evt){
+    var M = chartModel; if(!M) return;
+    var r = elChart.getBoundingClientRect();
+    var px = (evt.clientX - r.left) * (M.W / r.width);
+    var i = 0, best = Infinity;
+    for(var k=0;k<M.total;k++){ var dx = Math.abs(M.x(k) - px); if(dx < best){ best = dx; i = k; } }
+    var rowsOut = [], day;
+    if(i <= M.b){ day = M.past[i].d; rowsOut.push(["#1D3FBF", M.past[i].c, i === M.b ? "Baz" : "Kapanış", null]); }
+    else {
+      var u = M.up[i-M.b-1], d = M.dn[i-M.b-1];
+      day = (u || d).d;
+      if(u) rowsOut.push(["#0A7250", u.c, "Tavan serisi", (u.c - M.past[M.b].c)/M.past[M.b].c*100]);
+      if(d) rowsOut.push(["#B02418", d.c, "Taban serisi", (d.c - M.past[M.b].c)/M.past[M.b].c*100]);
+    }
+    M.cross.setAttribute("x1", M.x(i)); M.cross.setAttribute("x2", M.x(i));
+    M.hover.setAttribute("visibility", "visible");
+    elChartTip.textContent = "";
+    var dd = document.createElement("div"); dd.className = "d"; dd.textContent = fmtDay(day); elChartTip.appendChild(dd);
+    rowsOut.forEach(function(rw){
+      var row = document.createElement("div"); row.className = "r";
+      var key = document.createElement("i"); key.style.borderColor = rw[0];
+      var val = document.createElement("b"); val.textContent = fmt(rw[1]);
+      var lab = document.createElement("span"); lab.textContent = rw[2] + (rw[3] === null ? "" : " · " + fmtPct(rw[3]));
+      row.appendChild(key); row.appendChild(val); row.appendChild(lab); elChartTip.appendChild(row);
+    });
+    elChartTip.hidden = false;
+    var left = M.x(i) * (r.width / M.W), tw = elChartTip.offsetWidth;
+    elChartTip.style.left = Math.max(0, Math.min(r.width - tw, left + 12 + tw > r.width ? left - tw - 12 : left + 12)) + "px";
+  }
+  function chartLeave(){
+    if(chartModel) chartModel.hover.setAttribute("visibility", "hidden");
+    elChartTip.hidden = true;
+  }
+  elChart.addEventListener("pointermove", chartHover);
+  elChart.addEventListener("pointerdown", chartHover);
+  elChart.addEventListener("pointerleave", chartLeave);
+  Array.prototype.forEach.call(document.querySelectorAll("#rangeTabs button"), function(btn, _, all){
+    btn.addEventListener("click", function(){
+      chartRange = +btn.getAttribute("data-r");
+      Array.prototype.forEach.call(all, function(x2){ x2.setAttribute("aria-pressed", x2 === btn ? "true" : "false"); });
+      if(chartArgs) drawChart.apply(null, chartArgs);
+    });
+  });
+  if(window.ResizeObserver){
+    var lastW = 0;
+    new ResizeObserver(function(){
+      var w = elChartWrap.clientWidth;
+      if(w && w !== lastW && chartArgs){ lastW = w; drawChart.apply(null, chartArgs); }
+    }).observe(elChartWrap);
   }
 
   // ---- olaylar ----
