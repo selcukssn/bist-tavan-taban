@@ -2,10 +2,12 @@ name: BIST kapanışları
 
 on:
   schedule:
-    # Hafta içi 18:25 (İstanbul, UTC+3): kapanış + Yahoo'nun 15 dk gecikmesi sonrası.
-    # 20:00'deki ikinci çalıştırma, ilkinde eksik/gecikmeli gelen veriyi tamamlar.
-    - cron: "25 15 * * 1-5"
-    - cron: "0 17 * * 1-5"
+    # GitHub zamanlanmış işleri yoğunlukta saatlerce geciktirebiliyor (ör. 18:25 işi
+    # 22:59'da çalıştı). Bu yüzden kapanıştan sonra her 20 dakikada bir denenir:
+    # hafta içi 18:17–23:57 (İstanbul, UTC+3); veri değişmediyse commit atılmaz.
+    # Sabah 08:17'deki çalıştırma, akşamki denemelerin hepsi kaçarsa yedektir.
+    - cron: "17,37,57 15-20 * * 1-5"
+    - cron: "17 5 * * 1-5"
   workflow_dispatch:
   push:
     paths:

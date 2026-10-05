@@ -156,6 +156,10 @@ def main():
         name = names.get(s) or prev.get(s, {}).get("n", "")
         rows.append({"s": s, "n": name, **closes[s]})
 
+    if rows == list(prev.values()):
+        print("veri değişmedi, dosyaya dokunulmadı", file=sys.stderr)
+        return
+
     data = {
         "updated": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source": "Yahoo Finance",
