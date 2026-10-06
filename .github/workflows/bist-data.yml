@@ -2,12 +2,12 @@ name: BIST kapanışları
 
 on:
   schedule:
-    # GitHub zamanlanmış işleri yoğunlukta saatlerce geciktirebiliyor (ör. 18:25 işi
-    # 22:59'da çalıştı). Bu yüzden kapanıştan sonra her 20 dakikada bir denenir:
-    # hafta içi 18:17–23:57 (İstanbul, UTC+3); veri değişmediyse commit atılmaz.
-    # Sabah 08:17'deki çalıştırma, akşamki denemelerin hepsi kaçarsa yedektir.
-    - cron: "17,37,57 15-20 * * 1-5"
-    - cron: "17 5 * * 1-5"
+    # Saatler UTC; İstanbul = UTC+3. GitHub zamanlanmış işleri saatlerce geç (bazen hiç)
+    # başlatabiliyor. Bu yüzden gün boyunca denenir: kapanıştan önce başlayan iş
+    # 18:20'ye kadar bekleyip o günün kapanışı gelene kadar tekrar dener (--watch).
+    - cron: "17 9-14 * * 1-5"            # 12:17–17:17 İstanbul: bekleyen işler
+    - cron: "17,37,57 15-20 * * 1-5"     # 18:17–23:57 İstanbul: kapanış sonrası
+    - cron: "17 5 * * 1-5"               # 08:17 İstanbul: önceki gün kaçtıysa
   workflow_dispatch:
   push:
     paths:
@@ -17,24 +17,31 @@ on:
 permissions:
   contents: write
 
+# Bekleyen (uyuyan) işi yeni gelen çalıştırma iptal etmesin; sıraya girsin
 concurrency:
   group: bist-data-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install "yfinance>=0.2.54"
-      - run: python scripts/fetch_bist.py
+      - run: python scripts/fetch_bist.py ${{ github.event_name == 'schedule' && '--watch' || '' }}
       - name: Commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # İş saatlerce sürmüş olabilir; dal bu arada ilerlediyse onun üstüne yaz
+          mkdir -p "$RUNNER_TEMP/data" && cp data/bist.json data/hist.json "$RUNNER_TEMP/data/"
+          git fetch -q origin "$GITHUB_REF_NAME"
+          git reset -q --hard "origin/$GITHUB_REF_NAME"
+          cp "$RUNNER_TEMP/data/"*.json data/
           git add data/bist.json data/hist.json
           if git diff --cached --quiet; then echo "değişiklik yok"; exit 0; fi
           git commit -m "BIST kapanışlarını güncelle"
