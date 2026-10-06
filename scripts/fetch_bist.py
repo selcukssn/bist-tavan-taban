@@ -220,5 +220,45 @@ def main():
     print(f"{len(rows)} hisse yazıldı -> {OUT}", file=sys.stderr)
 
 
+def today_done():
+    """Bugünün (İstanbul) kapanışı hisselerin çoğunda veride var mı?"""
+    today = datetime.now(IST).strftime("%Y-%m-%d")
+    rows = list(load_previous().values())
+    return bool(rows) and sum(r.get("d") == today for r in rows) >= len(rows) // 2
+
+
+def watch():
+    """GitHub zamanlanmış işleri saatlerce geç başlatabiliyor; ama başlamış bir iş
+    6 saate kadar sürebilir. Bu yüzden gün içinde başlayan bir çalıştırma kapanışa
+    kadar bekler, sonra o günün kapanışı gelene kadar 10 dakikada bir tekrar dener."""
+    start = time.time()
+    budget = 5.5 * 3600  # GitHub iş süresi sınırı 6 saat
+    now = datetime.now(IST)
+    target = now.replace(hour=CLOSE_AFTER[0], minute=CLOSE_AFTER[1] + 10, second=0, microsecond=0)
+    weekday = now.weekday() < 5
+    if weekday and now < target:
+        wait = (target - now).total_seconds()
+        if wait > budget - 3600:
+            print(f"kapanışa {wait / 3600:.1f} saat var, beklemek için çok erken; "
+                  "yalnızca önceki kapanışlar kontrol ediliyor", file=sys.stderr)
+            main()
+            return
+        print(f"kapanış bekleniyor: {wait / 60:.0f} dk", file=sys.stderr)
+        time.sleep(wait)
+    while True:
+        try:
+            main()
+        except SystemExit as e:  # çok az veri vb.; tekrar denenir
+            print(f"deneme başarısız: {e}", file=sys.stderr)
+        if not weekday or today_done():
+            return
+        now = datetime.now(IST)
+        if time.time() - start > budget - 900 or now.hour >= 23:
+            print("bugünün kapanışı henüz gelmedi; sonraki çalıştırma deneyecek", file=sys.stderr)
+            return
+        print("bugünün kapanışı henüz yok, 10 dk sonra tekrar", file=sys.stderr)
+        time.sleep(600)
+
+
 if __name__ == "__main__":
-    main()
+    watch() if "--watch" in sys.argv else main()
