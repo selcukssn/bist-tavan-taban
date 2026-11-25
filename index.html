@@ -1,375 +1,2012 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BIST tavan–taban ve kademe hesaplayıcı</title>
+<title>BIST Tavan–Taban ve Kademe Terminali</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#E8ECF2;
-  --panel:#FFFFFF;
-  --ink:#131822;
-  --muted:#5C6A7E;
-  --rule:#C7D0DE;
-  --rule-soft:#E2E8F0;
-  --up:#0A7250;
-  --up-bg:#E4F2EC;
-  --down:#B02418;
-  --down-bg:#FBE9E7;
-  --mark:#1D3FBF;
-  --mark-bg:#E7EBFB;
-  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
-  --sans:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--sans);
-  font-size:16px;
-  line-height:1.5;
-  -webkit-text-size-adjust:100%;
-}
-main{max-width:680px;margin:0 auto;padding:20px 14px 56px}
+/* =====================================================================
+   MİZAN — Fintables × Fey Design System
+   Nocturnal Bloomberg terminal, matte-black with luminous type
+   ===================================================================== */
+:root, html[data-theme="dark"] {
+  /* Fey Core Palette Tokens */
+  --color-fey-white: #ffffff;
+  --color-fey-ink: #0b0b0b;
+  --color-fey-charcoal: #191919;
+  --color-fey-obsidian: #131313;
+  --color-fey-graphite: #868f97;
+  --color-fey-mist: #cccccc;
+  --color-fey-smoke: #525252;
+  --color-fey-pale: #e6e6e6;
+  --color-fey-ash: #999999;
+  --color-fey-ember: #ffa16c;
+  --gradient-fey-ember: linear-gradient(97.13deg, rgb(255, 161, 108) 8.47%, rgb(85, 27, 16) 108.41%);
+  --color-fey-signal: #479ffa;
+  --color-fey-growth: #4ebe96;
+  --color-fey-neg: #e06c75;
+  --color-fey-abyss: #000000;
 
-h1{font-size:1.45rem;line-height:1.15;letter-spacing:-.02em;margin:0 0 6px;font-weight:650}
-.lede{margin:0 0 20px;color:var(--muted);font-size:.92rem;max-width:46ch}
+  /* Typography — Sole Geometric Sans Voice */
+  --font-calibre: 'Calibre', 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
-.panel{background:var(--panel);border:1px solid var(--rule);border-radius:10px;padding:14px;margin-bottom:14px}
+  /* Geometry */
+  --radius-cards: 16px;
+  --radius-small: 10px;
+  --radius-icons: 6px;
+  --radius-buttons: 99px;
 
-.grid{display:grid;gap:10px;grid-template-columns:1fr 1fr}
-.field{display:flex;flex-direction:column;gap:5px}
-.field.wide{grid-column:1 / -1}
-label{font-size:.78rem;color:var(--muted)}
-input,select{
-  font:inherit;font-family:var(--mono);font-size:1rem;
-  padding:9px 10px;border:1px solid var(--rule);border-radius:7px;
-  background:#fff;color:var(--ink);width:100%;
-}
-input:focus,select:focus,button:focus-visible,summary:focus-visible{outline:2px solid var(--mark);outline-offset:1px}
-#base,#stock{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;padding:10px}
-#stock{text-transform:uppercase}
-#stock::placeholder{font-size:1rem;font-weight:400;text-transform:none;letter-spacing:0}
-#seriesTable td.date{font-family:var(--sans);font-size:.8rem;white-space:nowrap;text-align:left}
-#seriesTable th.date{text-align:left}
-#seriesTable .half{color:var(--down);margin-left:3px;cursor:help}
-.hint{font-size:.76rem;color:var(--muted);min-height:1.1em}
-.hint.warn{color:var(--down)}
+  /* Surfaces (Fey Ink -> Obsidian -> Charcoal) */
+  --surface-canvas: #0b0b0b;
+  --surface-card: #191919;
+  --surface-elevated: #131313;
+  --surface-hover: #212121;
+  --surface-glass: rgba(11, 11, 11, 0.84);
+  --surface-tooltip: rgba(19, 19, 19, 0.96);
 
-/* ladder */
-.ladder{padding:0;overflow:hidden}
-.rung{
-  display:flex;align-items:baseline;gap:10px;
-  padding:7px 14px;border-top:1px solid var(--rule-soft);
-  font-family:var(--mono);
-}
-.rung:first-child{border-top:0}
-.rung .tag{flex:0 0 auto;font-family:var(--sans);font-size:.74rem;color:var(--muted);width:52px}
-.rung .px{flex:1;text-align:right;font-size:1.02rem;font-variant-numeric:tabular-nums}
-.rung .pct{flex:0 0 auto;width:74px;text-align:right;font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.rung.top{background:var(--up-bg)}
-.rung.top .px,.rung.top .pct,.rung.top .tag{color:var(--up);font-weight:650}
-.rung.bot{background:var(--down-bg)}
-.rung.bot .px,.rung.bot .pct,.rung.bot .tag{color:var(--down);font-weight:650}
-.rung.now{background:var(--mark-bg);box-shadow:inset 3px 0 0 var(--mark)}
-.rung.now .px{color:var(--mark);font-weight:650}
-.rung.now .tag{color:var(--mark)}
-.gap{
-  padding:5px 14px;border-top:1px solid var(--rule-soft);
-  font-size:.76rem;color:var(--muted);text-align:center;font-family:var(--sans);
-}
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.08);
+  --border-soft: rgba(255, 255, 255, 0.055);
+  --border-strong: rgba(255, 255, 255, 0.18);
+  --border-focus: rgba(255, 255, 255, 0.34);
 
-.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(108px,1fr));border-top:1px solid var(--rule);background:#FAFBFD}
-.summary div{padding:9px 12px;box-shadow:inset 1px 0 0 var(--rule-soft)}
-.summary div:first-child{box-shadow:none}
-.summary b{display:block;font-family:var(--mono);font-size:.98rem;font-weight:650;font-variant-numeric:tabular-nums}
-.summary span{font-size:.72rem;color:var(--muted)}
+  /* Text Hierarchy */
+  --text-main: #ffffff;
+  --text-mist: #cccccc;
+  --text-sec: #868f97;
+  --text-ash: #999999;
 
-/* series */
-.tabs{display:flex;gap:6px;margin-bottom:10px}
-.tabs button{
-  font:inherit;font-size:.86rem;padding:6px 12px;border-radius:999px;cursor:pointer;
-  border:1px solid var(--rule);background:#fff;color:var(--muted);
-}
-.tabs button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:.87rem;font-variant-numeric:tabular-nums}
-th,td{padding:6px 4px;text-align:right;border-bottom:1px solid var(--rule-soft)}
-th{font-family:var(--sans);font-size:.72rem;font-weight:500;color:var(--muted);border-bottom:1px solid var(--rule)}
-th:first-child,td:first-child{text-align:left;color:var(--muted)}
-td.val{font-weight:600}
-.pos{color:var(--up)}
-.neg{color:var(--down)}
-.scroll{overflow-x:auto}
+  /* Signal Tints (Meaning-Carriers Only) */
+  --up: var(--color-fey-growth);
+  --up-bg: rgba(78, 190, 150, 0.10);
+  --up-border: rgba(78, 190, 150, 0.28);
+  --down: var(--color-fey-neg);
+  --down-bg: rgba(224, 108, 117, 0.10);
+  --down-border: rgba(224, 108, 117, 0.28);
+  --signal: var(--color-fey-signal);
+  --signal-bg: rgba(71, 159, 250, 0.11);
+  --signal-border: rgba(71, 159, 250, 0.30);
+  --ember: var(--color-fey-ember);
 
-details{background:var(--panel);border:1px solid var(--rule);border-radius:10px;margin-bottom:14px}
-summary{padding:12px 14px;cursor:pointer;font-size:.9rem;font-weight:550;list-style:none}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";float:right;color:var(--muted);font-family:var(--mono)}
-details[open] summary::after{content:"–"}
-.details-body{padding:0 14px 14px}
-.tickrow{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:7px;align-items:center}
-.tickrow input{font-size:.9rem;padding:7px 8px}
-.tickrow .rm{
-  font:inherit;width:34px;height:34px;border:1px solid var(--rule);background:#fff;
-  border-radius:7px;color:var(--muted);cursor:pointer;line-height:1
-}
-.btnrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
-.btn{font:inherit;font-size:.85rem;padding:7px 12px;border:1px solid var(--rule);background:#fff;border-radius:7px;cursor:pointer;color:var(--ink)}
-.btn.primary{background:var(--ink);border-color:var(--ink);color:#fff}
-.colhead{display:grid;grid-template-columns:1fr 1fr auto;gap:8px;margin-bottom:6px}
-.colhead span{font-size:.74rem;color:var(--muted)}
-.colhead i{width:34px}
+  /* Floating Halos & Shadows */
+  --shadow-xl: rgba(0, 0, 0, 0.8) 0px 0px 44px 0px;
+  --shadow-subtle: rgba(0, 0, 0, 0.85) 0px 1px 0px 0px;
+  --shadow-btn: rgba(0, 0, 0, 0.85) 0px 1px 0px 0px, rgba(255, 255, 255, 0.25) 0px 0px 14px 0px;
+  --shadow-btn-hover: rgba(0, 0, 0, 0.85) 0px 1px 0px 0px, rgba(255, 255, 255, 0.38) 0px 0px 18px 0px;
+  --shadow-tip: rgba(0, 0, 0, 0.85) 0px 14px 36px 0px;
+  --spotlight-color: rgba(255, 255, 255, 0.045);
 
-/* fiyat grafiği */
-.chart-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:6px}
-.chart-head h2{font-size:.95rem;font-weight:600;margin:0}
-.chart-head .sub{font-size:.76rem;color:var(--muted);flex-basis:100%;margin-top:-4px}
-.chart-head .tabs{margin:0;gap:4px}
-.chart-head .tabs button{padding:3px 9px;font-size:.76rem}
-.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.74rem;color:var(--muted);margin:0 0 4px}
-.legend span{display:inline-flex;align-items:center;gap:6px}
-.legend i{display:inline-block;width:16px;border-top:2px solid}
-.legend i.dash{border-top-style:dashed}
-.legend b.volkey{display:inline-block;width:8px;height:10px;border-radius:2px 2px 0 0;background:#1D3FBF;opacity:.35}
-.chart-head .tabs + .tabs{margin-left:auto}
-.chart-head h2{margin-right:auto}
-.chart-wrap{position:relative}
-.chart-wrap svg{display:block;width:100%;height:auto;touch-action:pan-y}
-.chart-wrap text{font-family:var(--sans);font-size:11px;fill:var(--muted)}
-.chart-wrap text.val{font-family:var(--mono);fill:var(--ink);font-weight:600}
-.chart-tip{
-  position:absolute;top:0;pointer-events:none;background:var(--panel);border:1px solid var(--rule);
-  border-radius:7px;padding:6px 8px;font-size:.74rem;line-height:1.35;box-shadow:0 2px 8px rgba(19,24,34,.12);
-  white-space:nowrap;
-}
-.chart-tip .d{color:var(--muted);margin-bottom:2px}
-.chart-tip .r{display:flex;align-items:center;gap:6px}
-.chart-tip .r i{display:inline-block;width:12px;border-top:2px solid}
-.chart-tip .r b{font-family:var(--mono);font-weight:650}
-.chart-tip .r span{color:var(--muted)}
-.chart-note{font-size:.72rem;color:var(--muted);margin:6px 0 0}
-
-/* üst sekmeler */
-.viewtabs{display:flex;gap:4px;margin:0 0 16px;border-bottom:1px solid var(--rule)}
-.viewtabs a{
-  padding:8px 12px;margin-bottom:-1px;font-size:.9rem;color:var(--muted);text-decoration:none;
-  border-bottom:2px solid transparent;
-}
-.viewtabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ink);font-weight:600}
-.viewtabs a:focus-visible{outline:2px solid var(--mark);outline-offset:1px}
-[hidden]{display:none !important}
-
-/* tüm hisseler */
-.stocks-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
-.stocks-bar input{flex:1 1 200px;width:auto}
-.stocks-bar .tabs{margin:0}
-.stocks-meta{font-size:.76rem;color:var(--muted);margin:0 0 8px}
-#stocksTable th{cursor:pointer;user-select:none;white-space:nowrap}
-#stocksTable th[aria-sort="ascending"]::after{content:" ↑"}
-#stocksTable th[aria-sort="descending"]::after{content:" ↓"}
-#stocksTable tbody tr{cursor:pointer}
-#stocksTable tbody tr:hover td{background:var(--mark-bg)}
-#stocksTable td:first-child{color:var(--ink);font-weight:600;white-space:nowrap;width:40%}
-#stocksTable td:first-child small{
-  display:block;font-family:var(--sans);font-weight:400;font-size:.72rem;color:var(--muted);
-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46ch;
-}
-@media (max-width:600px){
-  #stocksTable{font-size:.8rem}
-  #stocksTable th,#stocksTable td{padding:6px 3px}
-  #stocksTable td:first-child small{max-width:11ch}
-  #stocksTable .flag{display:block;width:max-content;margin:2px 0 0}
-}
-#stocksTable .flag{font-family:var(--sans);font-size:.66rem;font-weight:650;padding:1px 5px;border-radius:4px;margin-left:5px;vertical-align:1px}
-#stocksTable .flag.pos{background:var(--up-bg)}
-#stocksTable .flag.neg{background:var(--down-bg)}
-.stocks-empty{padding:18px 4px;color:var(--muted);font-size:.88rem;text-align:center}
-
-footer{font-size:.78rem;color:var(--muted);line-height:1.6}
-footer p{margin:0 0 8px}
-footer b{color:var(--ink);font-weight:600}
-
-@media (max-width:420px){
-  .rung .pct{width:64px}
-  .rung .tag{width:46px}
-  .summary{flex-wrap:wrap}
-  .summary div{flex:1 0 50%}
-}
-@media (prefers-reduced-motion:no-preference){
-  .rung.now{transition:background .15s ease}
+  /* Atmospheric Hero Wash */
+  --hero-bg:
+    radial-gradient(ellipse 65% 40% at 50% -10%, rgba(255, 161, 108, 0.085), transparent 62%),
+    radial-gradient(ellipse 46% 34% at 86% 8%, rgba(71, 159, 250, 0.065), transparent 58%),
+    radial-gradient(ellipse 42% 30% at 12% 14%, rgba(78, 190, 150, 0.045), transparent 55%);
 }
 
-/* geniş ekran: yan yana sütunlar, tek ekranda tüm bölümler */
-@media (min-width:960px){
-  html,body{height:100%}
-  body{overflow:hidden}
-  main{
-    max-width:1480px;height:100vh;padding:20px 28px;
-    display:flex;flex-direction:column;min-height:0;
+html[data-theme="light"] {
+  --color-fey-ember: #d96b27;
+  --color-fey-signal: #2563eb;
+  --color-fey-growth: #1f9d73;
+  --color-fey-neg: #d14351;
+
+  --surface-canvas: #f5f5f5;
+  --surface-card: #ffffff;
+  --surface-elevated: #f2f3f5;
+  --surface-hover: #ebebee;
+  --surface-glass: rgba(255, 255, 255, 0.86);
+  --surface-tooltip: rgba(255, 255, 255, 0.97);
+
+  --border: rgba(11, 11, 11, 0.09);
+  --border-soft: rgba(11, 11, 11, 0.06);
+  --border-strong: rgba(11, 11, 11, 0.20);
+  --border-focus: rgba(11, 11, 11, 0.42);
+
+  --text-main: #0b0b0b;
+  --text-mist: #3b4046;
+  --text-sec: #5c646c;
+  --text-ash: #767f88;
+
+  --up-bg: rgba(31, 157, 115, 0.09);
+  --up-border: rgba(31, 157, 115, 0.28);
+  --down-bg: rgba(209, 67, 81, 0.09);
+  --down-border: rgba(209, 67, 81, 0.28);
+  --signal-bg: rgba(37, 99, 235, 0.09);
+  --signal-border: rgba(37, 99, 235, 0.28);
+
+  --shadow-xl: rgba(11, 11, 11, 0.06) 0px 6px 28px 0px;
+  --shadow-subtle: rgba(11, 11, 11, 0.08) 0px 1px 0px 0px;
+  --shadow-btn: rgba(11, 11, 11, 0.14) 0px 2px 10px 0px;
+  --shadow-btn-hover: rgba(11, 11, 11, 0.22) 0px 4px 16px 0px;
+  --shadow-tip: rgba(11, 11, 11, 0.16) 0px 12px 30px 0px;
+  --spotlight-color: rgba(11, 11, 11, 0.03);
+
+  --hero-bg:
+    radial-gradient(ellipse 65% 40% at 50% -10%, rgba(217, 107, 39, 0.065), transparent 60%),
+    radial-gradient(ellipse 46% 34% at 86% 8%, rgba(37, 99, 235, 0.055), transparent 56%);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+
+body {
+  background-color: var(--surface-canvas);
+  background-image: var(--hero-bg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-calibre);
+  font-feature-settings: "ss01" on, "tnum" on;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "ss01" on, "tnum" on;
+}
+
+/* Custom Thin Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-sec); }
+
+/* =====================================================================
+   Top Terminal Bar (Glass Sticky + Fey Pill Nav)
+   ===================================================================== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  width: 100%;
+  background: var(--surface-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 18px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  flex: 0 0 auto;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.brand-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text-main);
+}
+
+.brand-sub {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-sec);
+  margin-top: 2px;
+}
+
+/* Fey Pill Navigation (Active = Signal Blue underline) */
+.viewtabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.viewtabs a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 13px;
+  border-radius: var(--radius-buttons);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sec);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  transition: color 0.14s ease, border-color 0.14s ease, background-color 0.14s ease;
+  white-space: nowrap;
+}
+
+.viewtabs a:hover {
+  color: var(--text-main);
+  background: var(--surface-elevated);
+}
+
+.viewtabs a[aria-current="page"] {
+  color: var(--text-main);
+  font-weight: 600;
+  background: var(--surface-elevated);
+  border-color: var(--border);
+  border-bottom-color: var(--signal);
+}
+
+.viewtabs a:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+.nav-count {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 7px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  font-variant-numeric: tabular-nums;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-mist);
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--up);
+  box-shadow: 0 0 8px rgba(78, 190, 150, 0.55);
+}
+
+/* =====================================================================
+   Main Shell & Hero Header
+   ===================================================================== */
+main {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 18px 16px 48px;
+}
+
+.hero {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+h1 {
+  font-size: clamp(1.65rem, 3vw, 2.15rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -0.055em;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.fey-ember { color: var(--ember); }
+
+.lede {
+  margin: 0;
+  color: var(--text-sec);
+  font-size: 13.5px;
+  font-weight: 400;
+  max-width: 64ch;
+}
+
+/* =====================================================================
+   Fey Cards & Specular Pointer Spotlight
+   ===================================================================== */
+.panel, details.card-details {
+  position: relative;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-cards);
+  box-shadow: var(--shadow-xl);
+  margin-bottom: 16px;
+}
+
+.panel { padding: 16px 18px; }
+
+.fey-spotlight {
+  overflow: hidden;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.fey-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), var(--spotlight-color), transparent 65%);
+  z-index: 0;
+}
+
+.fey-spotlight:hover::before { opacity: 1; }
+.fey-spotlight:hover { border-color: rgba(255, 255, 255, 0.13); }
+html[data-theme="light"] .fey-spotlight:hover { border-color: rgba(11, 11, 11, 0.15); }
+.fey-spotlight > * { position: relative; z-index: 1; }
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.card-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-sec);
+}
+
+.card-meta {
+  font-size: 12px;
+  color: var(--text-sec);
+  font-variant-numeric: tabular-nums;
+}
+
+/* =====================================================================
+   Form Controls — Obsidian Input Wells
+   ===================================================================== */
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.field.wide { grid-column: 1 / -1; }
+
+label {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-sec);
+  letter-spacing: -0.005em;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-suffix {
+  position: absolute;
+  right: 11px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-sec);
+  pointer-events: none;
+}
+
+input, select {
+  font-family: var(--font-calibre);
+  font-feature-settings: "ss01" on, "tnum" on;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 11px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: var(--surface-elevated);
+  color: var(--text-main);
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+input::placeholder { color: var(--color-fey-smoke); }
+html[data-theme="light"] input::placeholder { color: #9ca3af; }
+.input-wrap input { padding-right: 34px; }
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 28px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23868f97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+}
+
+input:hover, select:hover { border-color: var(--border-strong); }
+
+input:focus, select:focus {
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10), 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+html[data-theme="light"] input:focus, html[data-theme="light"] select:focus {
+  box-shadow: 0 0 0 3px rgba(11, 11, 11, 0.06);
+}
+
+button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+#base, #stock {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  padding: 9px 12px;
+}
+
+#base { padding-right: 34px; }
+
+#stock {
+  text-transform: uppercase;
+  padding-right: 52px;
+  cursor: pointer;
+}
+
+#stock::placeholder {
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.stock-kbd-btn {
+  position: absolute;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+  padding: 0 7px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  font-family: var(--font-calibre);
+  font-size: 10.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.14s ease, border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.stock-kbd-btn:hover {
+  color: var(--text-main);
+  border-color: var(--border-strong);
+}
+
+.stock-clear-btn {
+  position: absolute;
+  right: 8px;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  font-size: 14px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.14s ease, border-color 0.14s ease, background-color 0.14s ease;
+}
+
+.stock-clear-btn:hover {
+  color: var(--down);
+  border-color: var(--down-border);
+  background: var(--down-bg);
+}
+
+/* =====================================================================
+   Fey Command Palette (Cmd+K / Ctrl+K) — MİZAN Style
+   ===================================================================== */
+@keyframes feyCmdIn {
+  from { opacity: 0; transform: translateY(-8px) scale(0.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cmdk-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 11vh 16px 24px;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+html[data-theme="light"] .cmdk-backdrop {
+  background: rgba(11, 11, 11, 0.42);
+}
+
+.cmdk-dialog {
+  width: 100%;
+  max-width: 580px;
+  border-radius: var(--radius-cards);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-strong);
+  box-shadow: rgba(0, 0, 0, 0.88) 0px 24px 64px 0px, rgba(255, 255, 255, 0.08) 0px 0px 0px 1px;
+  overflow: hidden;
+  animation: feyCmdIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html[data-theme="light"] .cmdk-dialog {
+  background: #ffffff;
+  box-shadow: rgba(11, 11, 11, 0.20) 0px 24px 64px 0px, rgba(11, 11, 11, 0.08) 0px 0px 0px 1px;
+}
+
+.cmdk-head {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cmdk-head svg {
+  color: var(--text-sec);
+  flex: 0 0 auto;
+}
+
+#cmdk-input {
+  flex: 1 1 auto;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-main);
+  font-size: 14.5px;
+  font-weight: 500;
+  box-shadow: none !important;
+}
+
+#cmdk-input::placeholder {
+  color: var(--text-sec);
+  font-weight: 400;
+}
+
+.cmdk-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  font-family: var(--font-calibre);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.cmdk-kbd:hover {
+  color: var(--text-main);
+  border-color: var(--border-strong);
+}
+
+.cmdk-results {
+  max-height: min(380px, 56vh);
+  overflow-y: auto;
+}
+
+.cmdk-section {
+  padding: 8px 16px 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-sec);
+  background: var(--surface-elevated);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+html[data-theme="light"] .cmdk-section {
+  background: var(--surface-elevated);
+}
+
+.cmdk-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--border-soft);
+  border-left: 2px solid transparent;
+  background: transparent;
+  color: var(--text-main);
+  font-family: var(--font-calibre);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.1s ease, border-left-color 0.1s ease;
+}
+
+.cmdk-row:last-child { border-bottom: 0; }
+
+.cmdk-row:hover, .cmdk-row.is-active {
+  background: var(--surface-hover);
+}
+
+.cmdk-row.is-active {
+  border-left-color: var(--signal);
+}
+
+.cmdk-row-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.cmdk-ticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  padding: 3px 8px;
+  border-radius: 7px;
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+  flex: 0 0 auto;
+}
+
+.cmdk-row.is-active .cmdk-ticker {
+  border-color: var(--border-strong);
+}
+
+.cmdk-name {
+  font-size: 12.5px;
+  color: var(--text-sec);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cmdk-row-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+  font-variant-numeric: tabular-nums;
+}
+
+.cmdk-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.cmdk-chg {
+  font-size: 11.5px;
+  font-weight: 600;
+  min-width: 56px;
+  text-align: right;
+  color: var(--text-sec);
+}
+
+.cmdk-flag {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 1px 7px;
+  border-radius: var(--radius-buttons);
+}
+
+.cmdk-flag.pos { background: var(--up-bg); border: 1px solid var(--up-border); color: var(--up); }
+.cmdk-flag.neg { background: var(--down-bg); border: 1px solid var(--down-border); color: var(--down); }
+
+.cmdk-act-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+.cmdk-act-hint {
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 2px 9px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+}
+
+.cmdk-empty {
+  padding: 32px 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-sec);
+}
+
+.cmdk-foot {
+  padding: 9px 16px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--text-sec);
+  background: var(--surface-card);
+}
+
+.cmdk-trigger-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px 5px 12px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  color: var(--text-sec);
+  font-family: var(--font-calibre);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.14s ease;
+  white-space: nowrap;
+}
+
+.cmdk-trigger-pill:hover {
+  color: var(--text-main);
+  border-color: var(--border-strong);
+  background: var(--surface-card);
+}
+
+.cmdk-trigger-pill kbd {
+  padding: 1px 6px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  font-family: var(--font-calibre);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-mist);
+}
+
+.hints-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hint {
+  font-size: 11.5px;
+  color: var(--text-sec);
+  min-height: 1.15em;
+  line-height: 1.4;
+}
+
+.hint.warn { color: var(--down); }
+.hint.ok { color: var(--up); }
+
+/* =====================================================================
+   Fey Pill Controls & Ghost-Halo Buttons (99px Radius)
+   ===================================================================== */
+.btn, .pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-family: var(--font-calibre);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 13px;
+  border-radius: var(--radius-buttons);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-sec);
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease, background-color 0.14s ease, color 0.14s ease;
+  white-space: nowrap;
+}
+
+.btn:hover, .pill-btn:hover {
+  color: var(--text-main);
+  border-color: var(--border-strong);
+  background: var(--surface-elevated);
+}
+
+.btn:active, .pill-btn:active { transform: scale(0.97); }
+
+/* Primary Ghost + Luminous White Halo */
+.btn.primary {
+  background: var(--surface-canvas);
+  color: var(--text-main);
+  border: 1px solid var(--border-strong);
+  box-shadow: var(--shadow-btn);
+}
+
+.btn.primary:hover {
+  border-color: rgba(255, 255, 255, 0.36);
+  background: var(--surface-elevated);
+  box-shadow: var(--shadow-btn-hover);
+}
+
+html[data-theme="light"] .btn.primary {
+  background: #0b0b0b;
+  color: #ffffff;
+  border-color: #0b0b0b;
+}
+
+html[data-theme="light"] .btn.primary:hover { background: #222222; }
+
+.btnrow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+/* =====================================================================
+   Fey Segmented Control Track (99px Pills)
+   ===================================================================== */
+.tabs {
+  display: inline-flex;
+  padding: 3px;
+  gap: 2px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+}
+
+.tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-calibre);
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: var(--radius-buttons);
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-sec);
+  cursor: pointer;
+  transition: all 0.14s ease;
+  white-space: nowrap;
+}
+
+.tabs button:hover { color: var(--text-main); }
+
+.tabs button[aria-pressed="true"] {
+  background: var(--surface-card);
+  color: var(--text-main);
+  border-color: var(--border-strong);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.07);
+}
+
+html[data-theme="light"] .tabs button[aria-pressed="true"] {
+  background: #0b0b0b;
+  color: #ffffff;
+  border-color: #0b0b0b;
+  box-shadow: none;
+}
+
+.tabs button .dir-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--text-sec);
+  opacity: 0.45;
+  transition: opacity 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+#btnUp[aria-pressed="true"] .dir-dot,
+#viewStocks .tabs button[data-f="up"][aria-pressed="true"] .dir-dot {
+  background: var(--up);
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(78, 190, 150, 0.65);
+}
+
+#btnDown[aria-pressed="true"] .dir-dot,
+#viewStocks .tabs button[data-f="down"][aria-pressed="true"] .dir-dot {
+  background: var(--down);
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(224, 108, 117, 0.65);
+}
+
+/* =====================================================================
+   Price Ladder (Kademe Merdiveni)
+   ===================================================================== */
+.ladder-panel {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ladder-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 18px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.ladder-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.rung {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 18px;
+  border-top: 1px solid var(--border-soft);
+  font-variant-numeric: tabular-nums;
+  transition: background-color 0.14s ease;
+}
+
+.rung:first-child { border-top: 0; }
+.rung:hover { background: var(--surface-hover); }
+
+.rung .tag {
+  flex: 0 0 auto;
+  min-width: 54px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-sec);
+}
+
+.rung .tag-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 9px;
+  border-radius: var(--radius-buttons);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.rung .px {
+  flex: 1;
+  text-align: right;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-mist);
+  letter-spacing: -0.01em;
+}
+
+.rung .pct {
+  flex: 0 0 auto;
+  width: 74px;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-sec);
+}
+
+.rung.top {
+  background: var(--up-bg);
+  box-shadow: inset 2px 0 0 var(--up);
+}
+.rung.top:hover { background: rgba(78, 190, 150, 0.15); }
+.rung.top .tag-pill { background: var(--up-bg); border: 1px solid var(--up-border); color: var(--up); }
+.rung.top .px { color: var(--up); font-weight: 700; font-size: 15.5px; }
+.rung.top .pct { color: var(--up); font-weight: 600; }
+
+.rung.bot {
+  background: var(--down-bg);
+  box-shadow: inset 2px 0 0 var(--down);
+}
+.rung.bot:hover { background: rgba(224, 108, 117, 0.15); }
+.rung.bot .tag-pill { background: var(--down-bg); border: 1px solid var(--down-border); color: var(--down); }
+.rung.bot .px { color: var(--down); font-weight: 700; font-size: 15.5px; }
+.rung.bot .pct { color: var(--down); font-weight: 600; }
+
+.rung.now {
+  background: var(--signal-bg);
+  box-shadow: inset 2px 0 0 var(--signal);
+}
+.rung.now:hover { background: rgba(71, 159, 250, 0.16); }
+.rung.now .tag-pill { background: var(--signal-bg); border: 1px solid var(--signal-border); color: var(--signal); }
+.rung.now .px { color: var(--text-main); font-weight: 700; font-size: 15.5px; }
+.rung.now .pct { color: var(--signal); font-weight: 500; }
+
+.gap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 18px;
+  border-top: 1px solid var(--border-soft);
+  font-size: 11px;
+  color: var(--text-sec);
+}
+
+.gap::before, .gap::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--border-soft);
+}
+
+.gap span {
+  padding: 1px 9px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-soft);
+  font-variant-numeric: tabular-nums;
+}
+
+.summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+  border-top: 1px solid var(--border);
+  background: var(--surface-elevated);
+}
+
+.summary div {
+  padding: 10px 13px;
+  border-left: 1px solid var(--border-soft);
+}
+.summary div:first-child { border-left: 0; }
+
+.summary b {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums;
+}
+
+.summary span {
+  display: block;
+  font-size: 10.5px;
+  color: var(--text-sec);
+  margin-top: 1px;
+}
+
+/* =====================================================================
+   Series Table & Target Box
+   ===================================================================== */
+.series-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.series-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  font-size: 11.5px;
+  color: var(--text-mist);
+  font-variant-numeric: tabular-nums;
+}
+
+.scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  background: var(--surface-elevated);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--surface-elevated);
+  color: var(--text-sec);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 9px 8px;
+  text-align: right;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 8px 8px;
+  text-align: right;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-mist);
+  white-space: nowrap;
+}
+
+tbody tr { transition: background-color 0.12s ease; }
+tbody tr:hover { background: var(--surface-hover); }
+tbody tr:last-child td { border-bottom: 0; }
+
+th:first-child, td:first-child { text-align: left; padding-left: 12px; }
+th:last-child, td:last-child { padding-right: 12px; }
+
+#seriesTable th.date, #seriesTable td.date {
+  text-align: left;
+  color: var(--text-sec);
+  font-size: 12px;
+}
+
+#seriesTable .half {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: var(--radius-buttons);
+  background: var(--down-bg);
+  border: 1px solid var(--down-border);
+  color: var(--down);
+  font-size: 10px;
+  font-weight: 600;
+  cursor: help;
+}
+
+.seans-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-buttons);
+  background: var(--surface-card);
+  border: 1px solid var(--border);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-sec);
+}
+
+td.val { font-weight: 700; color: var(--text-main); }
+.pos { color: var(--up) !important; }
+.neg { color: var(--down) !important; }
+
+.target-box {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.target-result {
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--text-mist);
+  min-height: 1.3em;
+  line-height: 1.45;
+}
+
+.target-result.has-val {
+  padding: 8px 12px;
+  border-radius: var(--radius-small);
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+}
+
+.target-result.is-up { border-color: var(--up-border); color: var(--up); }
+.target-result.is-down { border-color: var(--down-border); color: var(--down); }
+
+/* =====================================================================
+   Price & Volume Chart (Fey Nocturnal SVG Chart)
+   ===================================================================== */
+.chart-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.chart-head h2 {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  margin-right: auto;
+  color: var(--text-main);
+}
+
+.chart-controls {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.chart-head .tabs { padding: 2px; }
+.chart-head .tabs button { padding: 3px 9px; font-size: 11px; }
+
+.chart-head .sub {
+  font-size: 11.5px;
+  color: var(--text-sec);
+  flex-basis: 100%;
+  margin-top: -2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  font-size: 11px;
+  color: var(--text-sec);
+  margin: 0 0 8px;
+}
+
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 14px; border-top: 2px solid; }
+.legend i.dash { border-top-style: dashed; }
+.legend b.volkey {
+  display: inline-block;
+  width: 8px;
+  height: 10px;
+  border-radius: 2px 2px 0 0;
+  background: var(--signal);
+  opacity: 0.42;
+}
+
+.chart-wrap {
+  position: relative;
+  border-radius: 12px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-soft);
+  padding: 6px 4px 2px;
+}
+
+.chart-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  touch-action: pan-y;
+}
+
+.chart-wrap text {
+  font-family: var(--font-calibre);
+  font-feature-settings: "ss01" on, "tnum" on;
+  font-variant-numeric: tabular-nums;
+  font-size: 10.5px;
+  fill: var(--text-sec);
+}
+
+.chart-wrap text.val {
+  fill: var(--text-main);
+  font-weight: 600;
+}
+
+/* MİZAN Floating Glass Tooltip */
+.chart-tip {
+  position: absolute;
+  top: 8px;
+  pointer-events: none;
+  background: var(--surface-tooltip);
+  border: 1px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 8px 11px;
+  font-size: 11.5px;
+  line-height: 1.4;
+  box-shadow: var(--shadow-tip);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.chart-tip .d {
+  color: var(--text-sec);
+  font-size: 10.5px;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.chart-tip .r {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.chart-tip .r i { display: inline-block; width: 10px; border-top: 2px solid; }
+.chart-tip .r b { font-weight: 700; color: var(--text-main); }
+.chart-tip .r span { color: var(--text-sec); }
+
+.chart-note {
+  font-size: 11px;
+  color: var(--text-sec);
+  margin: 8px 0 0;
+  line-height: 1.45;
+}
+
+/* =====================================================================
+   Tick Table Editor & Methodology Notes
+   ===================================================================== */
+details.card-details { overflow: hidden; }
+
+details.card-details summary {
+  padding: 14px 18px;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+details.card-details summary::-webkit-details-marker { display: none; }
+
+details.card-details summary .sum-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-buttons);
+  border: 1px solid var(--border);
+  background: var(--surface-elevated);
+  color: var(--text-sec);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 1;
+  transition: border-color 0.14s ease, color 0.14s ease;
+}
+
+details.card-details summary:hover .sum-icon {
+  border-color: var(--border-strong);
+  color: var(--text-main);
+}
+
+details.card-details summary .sum-icon::before { content: "+"; }
+details.card-details[open] summary .sum-icon::before { content: "–"; }
+
+.details-body {
+  padding: 0 18px 16px;
+  border-top: 1px solid var(--border-soft);
+}
+
+.colhead {
+  display: grid;
+  grid-template-columns: 1fr 1fr 32px;
+  gap: 8px;
+  margin: 11px 0 6px;
+}
+
+.colhead span {
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--text-sec);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tickrow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 32px;
+  gap: 8px;
+  margin-bottom: 6px;
+  align-items: center;
+}
+
+.tickrow input { font-size: 13px; padding: 6px 9px; }
+
+.tickrow .rm {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-buttons);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-sec);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  line-height: 1;
+  transition: all 0.14s ease;
+}
+
+.tickrow .rm:hover {
+  color: var(--down);
+  border-color: var(--down-border);
+  background: var(--down-bg);
+}
+
+/* Notes Card */
+.notes-card {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-cards);
+  padding: 14px 16px;
+  font-size: 12px;
+  color: var(--text-sec);
+  line-height: 1.55;
+}
+
+.notes-card p {
+  margin: 0 0 9px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.notes-card p:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+  color: var(--text-ash);
+  font-size: 11px;
+}
+
+.notes-card b { color: var(--text-main); font-weight: 600; }
+
+/* =====================================================================
+   All Stocks View (#viewStocks)
+   ===================================================================== */
+.stocks-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.stocks-search-wrap {
+  position: relative;
+  flex: 1 1 240px;
+}
+
+.stocks-search-wrap svg {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-sec);
+  pointer-events: none;
+}
+
+#stockSearch {
+  padding-left: 36px;
+  border-radius: var(--radius-buttons);
+}
+
+.stocks-bar .tabs { margin: 0; }
+
+.stocks-meta {
+  font-size: 12px;
+  color: var(--text-sec);
+  margin: 0 0 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+#stocksTable th {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: color 0.12s ease;
+}
+#stocksTable th:hover { color: var(--text-main); }
+#stocksTable th[aria-sort="ascending"] { color: var(--text-main); }
+#stocksTable th[aria-sort="descending"] { color: var(--text-main); }
+#stocksTable th[aria-sort="ascending"]::after { content: " ↑"; color: var(--signal); }
+#stocksTable th[aria-sort="descending"]::after { content: " ↓"; color: var(--signal); }
+
+#stocksTable tbody tr { cursor: pointer; }
+#stocksTable tbody tr:hover { background: var(--surface-hover); }
+
+#stocksTable td:first-child {
+  color: var(--text-main);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  width: 42%;
+}
+
+#stocksTable td:first-child small {
+  display: block;
+  font-weight: 400;
+  font-size: 11.5px;
+  color: var(--text-sec);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 46ch;
+  margin-top: 1px;
+}
+
+#stocksTable .flag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 1px 7px;
+  border-radius: var(--radius-buttons);
+  margin-left: 7px;
+  vertical-align: 1px;
+}
+
+#stocksTable .flag.pos {
+  background: var(--up-bg);
+  border: 1px solid var(--up-border);
+  color: var(--up);
+}
+
+#stocksTable .flag.neg {
+  background: var(--down-bg);
+  border: 1px solid var(--down-border);
+  color: var(--down);
+}
+
+.stocks-empty {
+  padding: 28px 8px;
+  color: var(--text-sec);
+  font-size: 13.5px;
+  text-align: center;
+}
+
+.stocks-footer {
+  margin-top: 12px;
+}
+
+/* =====================================================================
+   Fey Staggered Motion (GPU-only)
+   ===================================================================== */
+@keyframes feyFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fey-stagger {
+  opacity: 0;
+  animation: feyFadeUp 0.44s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.fey-d1 { animation-delay: 25ms; }
+.fey-d2 { animation-delay: 70ms; }
+.fey-d3 { animation-delay: 115ms; }
+.fey-d4 { animation-delay: 160ms; }
+
+/* =====================================================================
+   Responsive Layouts
+   ===================================================================== */
+@media (max-width: 780px) {
+  .cmdk-trigger-label { display: none; }
+}
+
+@media (max-width: 600px) {
+  .brand-sub { display: none; }
+  .status-pill { display: none; }
+  .cmdk-trigger-pill kbd { display: none; }
+  .cmdk-trigger-pill { padding: 6px 10px; }
+  .topbar-inner { padding: 0 12px; gap: 8px; }
+  .topbar-left { gap: 10px; }
+  .viewtabs a { padding: 5px 10px; font-size: 12.5px; }
+  .nav-count { display: none; }
+  #stocksTable { font-size: 12px; }
+  #stocksTable th, #stocksTable td { padding: 7px 5px; }
+  #stocksTable td:first-child small { max-width: 14ch; }
+  #stocksTable .flag { display: inline-flex; margin: 2px 0 0; }
+}
+
+@media (max-width: 440px) {
+  .rung { padding: 7px 14px; }
+  .rung .pct { width: 64px; }
+  .panel { padding: 14px; }
+  .summary { grid-template-columns: 1fr 1fr; }
+  .summary div { border-top: 1px solid var(--border-soft); }
+  .summary div:nth-child(1), .summary div:nth-child(2) { border-top: 0; }
+  .summary div:nth-child(odd) { border-left: 0; }
+}
+
+/* Desktop 3-Column Nocturnal Terminal Fitting Single Viewport */
+@media (min-width: 1024px) {
+  html, body { height: 100%; }
+  body {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
   }
-  h1,.lede,.viewtabs{flex:0 0 auto}
-  .view{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
-  #viewStocks .panel{flex:1 1 auto;min-height:0;display:flex;flex-direction:column;margin:0}
-  #viewStocks .scroll{flex:1 1 auto;overflow-y:auto}
-  #stocksTable thead th{position:sticky;top:0;background:var(--panel)}
-  .lede{max-width:none}
-  .layout{
-    flex:1 1 auto;min-height:0;
-    display:grid;grid-template-columns:340px minmax(400px,1fr) 400px;gap:18px;
+  .topbar { flex: 0 0 auto; }
+  main {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 1520px;
+    min-height: 0;
+    padding: 16px 24px 18px;
+    display: flex;
+    flex-direction: column;
   }
-  .col{display:flex;flex-direction:column;min-height:0;gap:14px;overflow-y:auto;padding-right:4px}
-  .col-mid .panel{display:flex;flex-direction:column;min-height:0;flex:1 1 auto}
-  .col-mid .scroll{flex:1 1 auto;overflow-y:auto}
-  .ladder{overflow-y:auto}
-  footer{flex:0 0 auto;padding-top:6px}
+  .view {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 14px;
+  }
+  h1 { font-size: 26px; }
+  .lede { font-size: 13px; text-align: right; max-width: none; }
+
+  .layout {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 350px minmax(420px, 1fr) 410px;
+    gap: 16px;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    gap: 14px;
+    overflow-y: auto;
+    padding-right: 3px;
+  }
+  .col > .panel, .col > details.card-details {
+    margin-bottom: 0;
+    flex: 0 0 auto;
+  }
+  .col-left .ladder-panel {
+    flex: 1 1 auto;
+    min-height: 250px;
+  }
+  .col-left .ladder-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+  }
+  .col-mid .panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1 1 auto;
+  }
+  .col-mid .scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+
+  #viewStocks .panel {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  #viewStocks .scroll {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+  }
+  .stocks-footer {
+    flex: 0 0 auto;
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .fey-stagger { opacity: 1; }
 }
 </style>
 </head>
 <body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <a href="#" class="brand" aria-label="BIST Tavan-Taban Ana Sayfa">
+        <svg class="brand-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect x="0.75" y="0.75" width="30.5" height="30.5" rx="8" fill="#131313" stroke="rgba(255,255,255,0.20)" stroke-width="1.2"/>
+          <path d="M9 22H14V16H19V10H23" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="23" cy="10" r="2" fill="#ffa16c"/>
+        </svg>
+        <div>
+          <span class="brand-title">BIST KADEME</span>
+          <span class="brand-sub">Tavan–Taban Terminali</span>
+        </div>
+      </a>
+
+      <nav class="viewtabs" aria-label="Sekmeler">
+        <a href="#" id="tabCalc" aria-current="page">Hesaplayıcı</a>
+        <a href="#hisseler" id="tabStocks">Tüm hisseler <span class="nav-count" id="navStockCount" hidden></span></a>
+      </nav>
+    </div>
+
+    <div class="topbar-actions">
+      <button type="button" class="cmdk-trigger-pill" id="topCmdkBtn" title="Hisse ara veya komut çalıştır (Ctrl+K)">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span class="cmdk-trigger-label">Hisse ara</span>
+        <kbd>Ctrl K</kbd>
+      </button>
+      <div class="status-pill tnum" id="topStatus">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="topStatusText">Pay · ±10%</span>
+      </div>
+      <button type="button" class="pill-btn" id="themeToggle" aria-label="Temayı değiştir">
+        <svg id="themeIconSun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg id="themeIconMoon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        <span id="themeLabel">Açık</span>
+      </button>
+    </div>
+  </div>
+</header>
+
 <main>
-  <nav class="viewtabs" aria-label="Sekmeler">
-    <a href="#" id="tabCalc" aria-current="page">Hesaplayıcı</a>
-    <a href="#hisseler" id="tabStocks">Tüm hisseler</a>
-  </nav>
-
+  <!-- ===================================================================== -->
+  <!-- VIEW 1: HESAPLAYICI                                                   -->
+  <!-- ===================================================================== -->
   <div class="view" id="viewCalc">
-  <h1>Tavan–taban serisi</h1>
-  <p class="lede">Baz fiyatı gir; kademe tablosuna göre geçerli tavan, taban ve arka arkaya seans serisini hesaplar.</p>
-
-  <div class="layout">
-    <div class="col col-left">
-      <section class="panel">
-        <div class="grid">
-          <div class="field">
-            <label for="base">Baz fiyat (TL)</label>
-            <input id="base" type="text" inputmode="decimal" value="42,50" autocomplete="off">
-          </div>
-          <div class="field">
-            <label for="stock">Hisse (kapanış)</label>
-            <input id="stock" type="text" list="stockList" placeholder="Sembol seç" autocomplete="off" autocapitalize="characters" spellcheck="false">
-            <datalist id="stockList"></datalist>
-          </div>
-          <div class="field wide">
-            <div class="hint" id="baseHint"></div>
-            <div class="hint" id="stockHint"></div>
-          </div>
-          <div class="field">
-            <label for="preset">Enstrüman</label>
-            <select id="preset">
-              <option value="pay">Pay / YPAH / GMS</option>
-              <option value="fon">BYF / GYF / GSYF</option>
-              <option value="kurus">Varant / sertifika</option>
-              <option value="ozel">Özel tablo</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="margin">Fiyat marjı (±%)</label>
-            <input id="margin" type="text" inputmode="decimal" value="10" autocomplete="off">
-          </div>
-          <div class="field">
-            <label for="count">Seans sayısı</label>
-            <input id="count" type="number" min="1" max="60" step="1" value="10">
-          </div>
-          <div class="field">
-            <label for="lot">Lot (isteğe bağlı)</label>
-            <input id="lot" type="text" inputmode="numeric" placeholder="—" autocomplete="off">
-          </div>
-          <div class="field wide">
-            <label for="cost">Lot başı maliyet (TL, isteğe bağlı)</label>
-            <input id="cost" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
-            <div class="hint" id="costHint"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="panel ladder" id="ladder" aria-label="Fiyat kademeleri"></section>
+    <div class="hero fey-stagger fey-d1">
+      <h1>Tavan–<span class="fey-ember">taban</span> serisi</h1>
+      <p class="lede">Hisse seç ya da baz fiyatı gir; kademe tablosu ve BIST iş günü takvimine göre seri ve fiyat projeksiyonunu hesaplar.</p>
     </div>
 
-    <div class="col col-mid">
-      <section class="panel">
-        <div class="tabs" role="group" aria-label="Seri yönü">
-          <button type="button" id="btnUp" aria-pressed="true">Tavan serisi</button>
-          <button type="button" id="btnDown" aria-pressed="false">Taban serisi</button>
-        </div>
-        <div class="scroll">
-          <table id="seriesTable">
-            <thead></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-        <div class="grid" style="margin-top:12px">
-          <div class="field wide">
-            <label for="target">Hedef fiyat (isteğe bağlı)</label>
-            <input id="target" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
-            <div class="hint" id="targetHint"></div>
+    <div class="layout">
+      <!-- Left Column: Parameters + Ladder -->
+      <div class="col col-left fey-stagger fey-d2">
+        <section class="panel fey-spotlight" aria-label="Hesaplama parametreleri">
+          <div class="card-head">
+            <span class="card-kicker">Parametreler</span>
+            <span class="card-meta" id="stepBadge">Adım: 0,02 TL</span>
           </div>
-        </div>
-      </section>
-    </div>
+          <div class="grid">
+            <div class="field">
+              <label for="base">Baz fiyat</label>
+              <div class="input-wrap">
+                <input id="base" type="text" inputmode="decimal" value="42,50" autocomplete="off">
+                <span class="input-suffix">TL</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="stock">Hisse (kapanış)</label>
+              <div class="input-wrap">
+                <input id="stock" type="text" placeholder="Hisse seç…" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-haspopup="dialog" aria-controls="cmdk-modal">
+                <button type="button" class="stock-kbd-btn" id="stockKbdBtn" title="Komut Paleti (Ctrl+K)">⌘K</button>
+                <button type="button" class="stock-clear-btn" id="stockClearBtn" title="Seçili hisseyi temizle" aria-label="Seçili hisseyi temizle" hidden>×</button>
+              </div>
+            </div>
+            <div class="field wide hints-stack">
+              <div class="hint" id="baseHint"></div>
+              <div class="hint" id="stockHint"></div>
+            </div>
+            <div class="field">
+              <label for="preset">Enstrüman</label>
+              <select id="preset">
+                <option value="pay">Pay / YPAH / GMS</option>
+                <option value="fon">BYF / GYF / GSYF</option>
+                <option value="kurus">Varant / sertifika</option>
+                <option value="ozel">Özel tablo</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="margin">Fiyat marjı (±%)</label>
+              <div class="input-wrap">
+                <input id="margin" type="text" inputmode="decimal" value="10" autocomplete="off">
+                <span class="input-suffix">%</span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="count">Seans sayısı</label>
+              <input id="count" type="number" min="1" max="60" step="1" value="10">
+            </div>
+            <div class="field">
+              <label for="lot">Lot (isteğe bağlı)</label>
+              <input id="lot" type="text" inputmode="numeric" placeholder="—" autocomplete="off">
+            </div>
+            <div class="field wide">
+              <label for="cost">Lot başı maliyet (isteğe bağlı)</label>
+              <div class="input-wrap">
+                <input id="cost" type="text" inputmode="decimal" placeholder="—" autocomplete="off">
+                <span class="input-suffix">TL</span>
+              </div>
+              <div class="hint" id="costHint"></div>
+            </div>
+          </div>
+        </section>
 
-    <div class="col col-right">
-      <section class="panel" aria-labelledby="chartTitle">
-        <div class="chart-head">
-          <h2 id="chartTitle">Fiyat grafiği</h2>
-          <div class="tabs" role="group" aria-label="Grafik aralığı" id="rangeTabs">
-            <button type="button" data-r="21" aria-pressed="false">1A</button>
-            <button type="button" data-r="63" aria-pressed="true">3A</button>
-            <button type="button" data-r="126" aria-pressed="false">6A</button>
-            <button type="button" data-r="0" aria-pressed="false">1Y</button>
-          </div>
-          <div class="tabs" role="group" aria-label="Fiyat ekseni" id="scaleTabs">
-            <button type="button" data-s="lin" aria-pressed="true">Normal</button>
-            <button type="button" data-s="log" aria-pressed="false">Log</button>
-          </div>
-          <div class="sub" id="chartSub"></div>
-        </div>
-        <div class="legend" aria-hidden="true">
-          <span><i style="border-color:var(--mark)"></i>Kapanış</span>
-          <span><i class="dash" style="border-color:var(--up)"></i>Tavan serisi</span>
-          <span><i class="dash" style="border-color:var(--down)"></i>Taban serisi</span>
-          <span id="volKey"><b class="volkey"></b>Hacim</span>
-        </div>
-        <div class="chart-wrap" id="chartWrap">
-          <svg id="chart" role="img" aria-labelledby="chartTitle chartSub"></svg>
-          <div class="chart-tip" id="chartTip" hidden></div>
-        </div>
-        <p class="chart-note" id="chartNote"></p>
-      </section>
+        <section class="panel ladder-panel fey-spotlight" id="ladder" aria-label="Fiyat kademeleri"></section>
+      </div>
 
-      <details id="tickPanel">
-        <summary>Kademe tablosu</summary>
-        <div class="details-body">
-          <div class="colhead"><span>Fiyat ≥ (TL)</span><span>Adım (TL)</span><i></i></div>
-          <div id="tickRows"></div>
-          <div class="btnrow">
-            <button type="button" class="btn" id="addRow">Satır ekle</button>
-            <button type="button" class="btn primary" id="applyTicks">Tabloyu uygula</button>
-            <button type="button" class="btn" id="resetTicks">Varsayılana dön</button>
+      <!-- Middle Column: Multi-session Series + Target -->
+      <div class="col col-mid fey-stagger fey-d3">
+        <section class="panel fey-spotlight" aria-label="Seans serisi">
+          <div class="series-head">
+            <div class="tabs" role="group" aria-label="Seri yönü">
+              <button type="button" id="btnUp" aria-pressed="true"><span class="dir-dot" aria-hidden="true"></span>Tavan serisi</button>
+              <button type="button" id="btnDown" aria-pressed="false"><span class="dir-dot" aria-hidden="true"></span>Taban serisi</button>
+            </div>
+            <div class="series-pill tnum" id="seriesSummary">—</div>
           </div>
-          <div class="hint" id="tickHint" style="margin-top:8px"></div>
-        </div>
-      </details>
+
+          <div class="scroll">
+            <table id="seriesTable">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
+          <div class="target-box">
+            <div class="field wide">
+              <label for="target">Hedef fiyat (isteğe bağlı)</label>
+              <div class="input-wrap">
+                <input id="target" type="text" inputmode="decimal" placeholder="Hedef fiyat gir (ör. 100)" autocomplete="off">
+                <span class="input-suffix">TL</span>
+              </div>
+              <div class="target-result tnum" id="targetHint"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Column: Price & Volume Chart + Tick Table + Methodology Notes -->
+      <div class="col col-right fey-stagger fey-d4">
+        <section class="panel fey-spotlight" aria-labelledby="chartTitle">
+          <div class="chart-head">
+            <h2 id="chartTitle">Fiyat grafiği</h2>
+            <div class="chart-controls">
+              <div class="tabs" role="group" aria-label="Grafik aralığı" id="rangeTabs">
+                <button type="button" data-r="21" aria-pressed="false">1A</button>
+                <button type="button" data-r="63" aria-pressed="true">3A</button>
+                <button type="button" data-r="126" aria-pressed="false">6A</button>
+                <button type="button" data-r="0" aria-pressed="false">1Y</button>
+              </div>
+              <div class="tabs" role="group" aria-label="Fiyat ekseni" id="scaleTabs">
+                <button type="button" data-s="lin" aria-pressed="true">Normal</button>
+                <button type="button" data-s="log" aria-pressed="false">Log</button>
+              </div>
+            </div>
+            <div class="sub" id="chartSub"></div>
+          </div>
+          <div class="legend" aria-hidden="true">
+            <span><i style="border-color:var(--signal)"></i>Kapanış</span>
+            <span><i class="dash" style="border-color:var(--up)"></i>Tavan serisi</span>
+            <span><i class="dash" style="border-color:var(--down)"></i>Taban serisi</span>
+            <span id="volKey"><b class="volkey"></b>Hacim</span>
+          </div>
+          <div class="chart-wrap" id="chartWrap">
+            <svg id="chart" role="img" aria-labelledby="chartTitle chartSub"></svg>
+            <div class="chart-tip" id="chartTip" hidden></div>
+          </div>
+          <p class="chart-note" id="chartNote"></p>
+        </section>
+
+        <details class="card-details fey-spotlight" id="tickPanel">
+          <summary>
+            <span>Kademe tablosu</span>
+            <span class="sum-icon" aria-hidden="true"></span>
+          </summary>
+          <div class="details-body">
+            <div class="colhead"><span>Fiyat ≥ (TL)</span><span>Adım (TL)</span><i></i></div>
+            <div id="tickRows"></div>
+            <div class="btnrow">
+              <button type="button" class="btn primary" id="applyTicks">Tabloyu uygula</button>
+              <button type="button" class="btn" id="addRow">Satır ekle</button>
+              <button type="button" class="btn" id="resetTicks">Varsayılan</button>
+            </div>
+            <div class="hint" id="tickHint" style="margin-top:8px"></div>
+          </div>
+        </details>
+
+        <footer class="notes-card">
+          <p><b>Yuvarlama.</b> Limitler içeri doğru yuvarlanır: tavan bir alt kademeye, taban bir üst kademeye. Bu yüzden gerçekleşen değişim çoğu zaman marjın biraz altında kalır.</p>
+          <p><b>Baz fiyat.</b> Bir önceki seansın kapanış fiyatıdır. Seri hesabında her seansın tavanı ertesi seansın baz fiyatı olarak alınır.</p>
+          <p><b>Tarihler.</b> Hisse seçilince baz, o hissenin verideki kapanış günüdür; elle girilen fiyat ise bilgisayarın saatine göre son seansın kapanışı sayılır (işlem günü 18.15'ten, arife yarım gün seanslarında 13.00'ten sonra o günün kapanışı). Seans tarihleri hafta sonları ve Borsa İstanbul'un kapalı olduğu resmi ve dini bayramlar atlanarak hesaplanır; ½ işareti yarım gün seansı gösterir.</p>
+          <p><b>Kademe tablosu.</b> Varsayılan değerler, Borsa İstanbul'un 6 Kasım 2023'te yürürlüğe giren pay fiyat adımı düzenlemesine dayanır. Borsa bu tabloyu ve marjları değiştirebildiği için hesaplamadan önce güncel duyuruyu kontrol et; tabloyu yukarıdan düzenleyebilirsin.</p>
+          <p>Yatırım tavsiyesi değildir.</p>
+        </footer>
+      </div>
     </div>
   </div>
 
-  <footer>
-    <p><b>Yuvarlama.</b> Limitler içeri doğru yuvarlanır: tavan bir alt kademeye, taban bir üst kademeye. Bu yüzden gerçekleşen değişim çoğu zaman marjın biraz altında kalır.</p>
-    <p><b>Baz fiyat.</b> Bir önceki seansın kapanış fiyatıdır. Seri hesabında her seansın tavanı ertesi seansın baz fiyatı olarak alınır.</p>
-    <p><b>Tarihler.</b> Hisse seçilince baz, o hissenin verideki kapanış günüdür; elle girilen fiyat ise bilgisayarın saatine göre son seansın kapanışı sayılır (işlem günü 18.15'ten, arife yarım gün seanslarında 13.00'ten sonra o günün kapanışı). Seans tarihleri hafta sonları ve Borsa İstanbul'un kapalı olduğu resmi ve dini bayramlar atlanarak hesaplanır; ½ işareti yarım gün seansı gösterir.</p>
-    <p><b>Kademe tablosu.</b> Varsayılan değerler, Borsa İstanbul'un 6 Kasım 2023'te yürürlüğe giren pay fiyat adımı düzenlemesine dayanır. Borsa bu tabloyu ve marjları değiştirebildiği için hesaplamadan önce güncel duyuruyu kontrol et; tabloyu yukarıdan düzenleyebilirsin.</p>
-    <p>Yatırım tavsiyesi değildir.</p>
-  </footer>
-  </div>
-
+  <!-- ===================================================================== -->
+  <!-- VIEW 2: TÜM HİSSELER                                                  -->
+  <!-- ===================================================================== -->
   <div class="view" id="viewStocks" hidden>
-    <section class="panel">
+    <div class="hero">
+      <h1>Tüm BIST <span class="fey-ember">hisseleri</span></h1>
+      <p class="lede">Günlük kapanışlar ve sonraki seans limitleri. Bir hisseye tıkla; grafiği ve serisiyle hesaplayıcıda açılsın.</p>
+    </div>
+
+    <section class="panel fey-spotlight">
       <div class="stocks-bar">
-        <input id="stockSearch" type="search" placeholder="Sembol veya şirket ara" autocomplete="off" aria-label="Hisse ara">
+        <div class="stocks-search-wrap">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="stockSearch" type="search" placeholder="Sembol veya şirket ara (ör. THYAO, Aselsan)" autocomplete="off" aria-label="Hisse ara">
+        </div>
         <div class="tabs" role="group" aria-label="Filtre">
           <button type="button" data-f="all" aria-pressed="true">Tümü</button>
-          <button type="button" data-f="up" aria-pressed="false">Tavan</button>
-          <button type="button" data-f="down" aria-pressed="false">Taban</button>
+          <button type="button" data-f="up" aria-pressed="false"><span class="dir-dot" aria-hidden="true"></span>Tavan</button>
+          <button type="button" data-f="down" aria-pressed="false"><span class="dir-dot" aria-hidden="true"></span>Taban</button>
         </div>
       </div>
       <p class="stocks-meta" id="stocksMeta">Yükleniyor…</p>
@@ -386,22 +2023,104 @@ footer b{color:var(--ink);font-weight:600}
         </table>
       </div>
     </section>
-    <footer>
+
+    <footer class="notes-card stocks-footer">
       <p><b>Veri.</b> Günlük kapanışlar Yahoo Finance'ten her iş günü seans sonrasında otomatik çekilir; gecikmeli veya hatalı olabilir. Tavan ve taban sütunları sonraki seans içindir: kapanış baz alınarak pay kademe tablosu ve ±%10 marjla hesaplanır. Bir satıra dokununca hesaplayıcıda açılır.</p>
       <p>Yatırım tavsiyesi değildir.</p>
     </footer>
   </div>
 </main>
 
+<!-- Fey Command Palette (Cmd+K / Ctrl+K) -->
+<div id="cmdk-modal" class="cmdk-backdrop" hidden role="dialog" aria-modal="true" aria-label="Hisse ara ve komut paleti">
+  <div class="cmdk-dialog">
+    <div class="cmdk-head">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="cmdk-input" type="text" autocomplete="off" spellcheck="false" placeholder="Hisse ara veya komut çalıştır (THYAO, ASELS, Tavan, Tema…)">
+      <button type="button" class="cmdk-kbd" id="cmdk-esc">ESC</button>
+    </div>
+    <div id="cmdk-results" class="cmdk-results" role="listbox"></div>
+    <div class="cmdk-foot">
+      <span>↑↓ gezin · Enter seç · Esc kapat</span>
+      <span id="cmdk-count" class="tnum">BIST Hisseleri · Ctrl+K</span>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   "use strict";
+
+  // ---- tema yönetimi (MİZAN dark-first + clean monochrome light) ----
+  var htmlEl = document.documentElement;
+  var themeToggle = document.getElementById("themeToggle");
+  var themeLabel = document.getElementById("themeLabel");
+  var iconSun = document.getElementById("themeIconSun");
+  var iconMoon = document.getElementById("themeIconMoon");
+
+  function chartPalette(){
+    var isLight = htmlEl.getAttribute("data-theme") === "light";
+    return isLight ? {
+      grid: "rgba(11, 11, 11, 0.08)",
+      axis: "rgba(11, 11, 11, 0.22)",
+      signal: "#2563eb",
+      up: "#1f9d73",
+      down: "#d14351",
+      dotStroke: "#ffffff",
+      cross: "#5c646c",
+      areaOpacity: 0.10,
+      volOpacity: 0.34
+    } : {
+      grid: "rgba(255, 255, 255, 0.065)",
+      axis: "rgba(255, 255, 255, 0.20)",
+      signal: "#479ffa",
+      up: "#4ebe96",
+      down: "#e06c75",
+      dotStroke: "#131313",
+      cross: "#868f97",
+      areaOpacity: 0.14,
+      volOpacity: 0.38
+    };
+  }
+
+  function applyTheme(t){
+    htmlEl.setAttribute("data-theme", t);
+    var isDark = t === "dark";
+    themeLabel.textContent = isDark ? "Açık" : "Koyu";
+    iconSun.style.display = isDark ? "inline-block" : "none";
+    iconMoon.style.display = isDark ? "none" : "inline-block";
+    try { localStorage.setItem("bist_tt_theme", t); } catch(_){}
+    if(typeof chartArgs !== "undefined" && chartArgs) drawChart.apply(null, chartArgs);
+  }
+
+  var savedTheme = "dark";
+  try {
+    var st = localStorage.getItem("bist_tt_theme");
+    if(st === "light" || st === "dark") savedTheme = st;
+  } catch(_){}
+
+  // ---- Fey specular mouse-tracking spotlight ----
+  if(!window.matchMedia || !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    Array.prototype.forEach.call(document.querySelectorAll(".fey-spotlight"), function(card){
+      card.addEventListener("pointermove", function(e){
+        var rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - rect.left) + "px");
+        card.style.setProperty("--my", (e.clientY - rect.top) + "px");
+      });
+    });
+  }
 
   // ---- kademe tabloları (kuruş cinsinden: min fiyat -> adım) ----
   var PRESETS = {
     pay:   [[0,1],[2000,2],[5000,5],[10000,10],[25000,25],[50000,50],[100000,100]],
     fon:   [[0,1],[5000,2],[10000,5],[25000,10],[50000,25],[100000,50]],
     kurus: [[0,1]]
+  };
+  var PRESET_LABELS = {
+    pay: "Pay",
+    fon: "BYF / Fon",
+    kurus: "Varant",
+    ozel: "Özel"
   };
   var ticks = clone(PRESETS.pay);
   var dir = 1; // 1 tavan, -1 taban
@@ -489,8 +2208,6 @@ footer b{color:var(--ink);font-weight:600}
   }
 
   // ---- Borsa İstanbul takvimi ----
-  // Seansın kapalı olduğu resmi tatiller (hafta sonuna denk gelenler de yazıldı, zararı yok).
-  // Dini bayram tarihleri her yıl değişir: yeni yıl için Borsa İstanbul'un tatil duyurusundan eklenmeli.
   var BIST_HOLIDAYS = {
     "2026-01-01":1,"2026-03-20":1,"2026-03-21":1,"2026-03-22":1,"2026-04-23":1,"2026-05-01":1,
     "2026-05-19":1,"2026-05-27":1,"2026-05-28":1,"2026-05-29":1,"2026-05-30":1,"2026-07-15":1,
@@ -501,13 +2218,12 @@ footer b{color:var(--ink);font-weight:600}
     "2028-01-01":1,"2028-04-23":1,"2028-05-01":1,"2028-05-19":1,"2028-07-15":1,"2028-08-30":1,
     "2028-10-29":1
   };
-  // Yarım gün seans (arife): işlem günüdür ama seans öğlen biter
   var BIST_HALF_DAYS = {
     "2026-03-19":1,"2026-05-26":1,"2026-10-28":1,
     "2027-03-08":1,"2027-05-15":1,"2027-10-28":1,
     "2028-10-28":1
   };
-  var CLOSE_MIN = 18*60+15, HALF_CLOSE_MIN = 13*60; // bu saatten sonra günün kapanışı kesinleşmiş sayılır
+  var CLOSE_MIN = 18*60+15, HALF_CLOSE_MIN = 13*60;
 
   function ymd(dt){ return dt.toISOString().slice(0,10); }
   function addDays(d, n){ var dt = new Date(d+"T00:00:00Z"); dt.setUTCDate(dt.getUTCDate()+n); return ymd(dt); }
@@ -517,7 +2233,6 @@ footer b{color:var(--ink);font-weight:600}
   }
   function nextTradingDay(d){ do { d = addDays(d, 1); } while(!isTradingDay(d)); return d; }
   function prevTradingDay(d){ do { d = addDays(d, -1); } while(!isTradingDay(d)); return d; }
-  // Bilgisayarın saati, İstanbul saatine çevrilerek kullanılır
   function istanbulNow(){
     var parts = {};
     new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/Istanbul",year:"numeric",month:"2-digit",day:"2-digit",
@@ -525,7 +2240,6 @@ footer b{color:var(--ink);font-weight:600}
       .forEach(function(x){ parts[x.type] = x.value; });
     return {d: parts.year+"-"+parts.month+"-"+parts.day, min: (+parts.hour)*60 + (+parts.minute)};
   }
-  // Kapanışı kesinleşmiş en son seans
   function lastClosedSession(){
     var now = istanbulNow();
     var cut = BIST_HALF_DAYS[now.d] ? HALF_CLOSE_MIN : CLOSE_MIN;
@@ -546,20 +2260,30 @@ footer b{color:var(--ink);font-weight:600}
       elThead=document.querySelector("#seriesTable thead"),
       elTbody=document.querySelector("#seriesTable tbody"),
       elTickRows=$("tickRows"), elTickHint=$("tickHint"),
-      elStock=$("stock"), elStockHint=$("stockHint"), elStockList=$("stockList"),
-      selected = null; // seçili hisse (fiyatı ve kapanış tarihiyle)
+      elStock=$("stock"), elStockHint=$("stockHint"),
+      elStockKbdBtn=$("stockKbdBtn"), elStockClearBtn=$("stockClearBtn"),
+      elStepBadge=$("stepBadge"), elTopStatusText=$("topStatusText"),
+      elSeriesSummary=$("seriesSummary"), elNavStockCount=$("navStockCount"),
+      selected = null;
+
+  function syncStockControls(){
+    var has = !!selected;
+    elStockKbdBtn.hidden = has;
+    elStockClearBtn.hidden = !has;
+  }
 
   function row(cls, tag, price, pct){
     var d = document.createElement("div");
     d.className = "rung" + (cls ? " "+cls : "");
-    d.innerHTML = '<span class="tag">'+tag+'</span><span class="px">'+fmt(price)+'</span>'+
+    var tagHtml = tag ? '<span class="tag"><span class="tag-pill">'+tag+'</span></span>' : '<span class="tag"></span>';
+    d.innerHTML = tagHtml + '<span class="px">'+fmt(price)+'</span>' +
                   '<span class="pct">'+(pct===null?"":pct)+'</span>';
     return d;
   }
   function gapRow(n){
     var d = document.createElement("div");
     d.className = "gap";
-    d.textContent = n + " kademe";
+    d.innerHTML = '<span>'+n+' kademe</span>';
     return d;
   }
 
@@ -569,44 +2293,53 @@ footer b{color:var(--ink);font-weight:600}
     var dnN = countSteps(base, L.bot);
     var pctOf = function(p){ return (p-base)/base*100; };
 
-    // üst taraf
+    var head = document.createElement("div");
+    head.className = "ladder-head";
+    head.innerHTML = '<span class="card-kicker">Fiyat kademeleri</span>' +
+                     '<span class="card-meta tnum">'+fmt(L.bot)+' – '+fmt(L.top)+' TL</span>';
+    elLadder.appendChild(head);
+
+    var body = document.createElement("div");
+    body.className = "ladder-body";
+
     if(L.top > base){
-      elLadder.appendChild(row("top","tavan",L.top,fmtPct(pctOf(L.top))));
+      body.appendChild(row("top","tavan",L.top,fmtPct(pctOf(L.top))));
       var upList = [], p = L.top, i;
       for(i=0;i<3 && p>base;i++){ p = stepDown(p); if(p>base) upList.push(p); }
       var shownUp = upList.length;
       var hiddenUp = upN - 1 - shownUp;
       if(hiddenUp > 0){
-        elLadder.appendChild(row("", "", upList[0], fmtPct(pctOf(upList[0]))));
-        elLadder.appendChild(gapRow(hiddenUp));
+        body.appendChild(row("", "", upList[0], fmtPct(pctOf(upList[0]))));
+        body.appendChild(gapRow(hiddenUp));
         var q = stepUp(base);
-        elLadder.appendChild(row("", "", q, fmtPct(pctOf(q))));
+        body.appendChild(row("", "", q, fmtPct(pctOf(q))));
       } else {
-        for(i=0;i<upList.length;i++) elLadder.appendChild(row("", "", upList[i], fmtPct(pctOf(upList[i]))));
+        for(i=0;i<upList.length;i++) body.appendChild(row("", "", upList[i], fmtPct(pctOf(upList[i]))));
       }
     } else {
-      elLadder.appendChild(row("top","tavan",L.top,"kademe yetersiz"));
+      body.appendChild(row("top","tavan",L.top,"kademe yetersiz"));
     }
 
-    elLadder.appendChild(row("now","baz",base,"—"));
+    body.appendChild(row("now","baz",base,"0,00%"));
 
-    // alt taraf
     if(L.bot < base){
       var dnList = [], d = base, j;
       for(j=0;j<3;j++){ d = stepDown(d); if(d>L.bot) dnList.push(d); else break; }
       var hiddenDn = dnN - 1 - dnList.length;
       if(hiddenDn > 0){
-        elLadder.appendChild(row("", "", dnList[0], fmtPct(pctOf(dnList[0]))));
-        elLadder.appendChild(gapRow(hiddenDn));
+        body.appendChild(row("", "", dnList[0], fmtPct(pctOf(dnList[0]))));
+        body.appendChild(gapRow(hiddenDn));
         var r = stepUp(L.bot);
-        elLadder.appendChild(row("", "", r, fmtPct(pctOf(r))));
+        body.appendChild(row("", "", r, fmtPct(pctOf(r))));
       } else {
-        for(j=0;j<dnList.length;j++) elLadder.appendChild(row("", "", dnList[j], fmtPct(pctOf(dnList[j]))));
+        for(j=0;j<dnList.length;j++) body.appendChild(row("", "", dnList[j], fmtPct(pctOf(dnList[j]))));
       }
-      elLadder.appendChild(row("bot","taban",L.bot,fmtPct(pctOf(L.bot))));
+      body.appendChild(row("bot","taban",L.bot,fmtPct(pctOf(L.bot))));
     } else {
-      elLadder.appendChild(row("bot","taban",L.bot,"kademe yetersiz"));
+      body.appendChild(row("bot","taban",L.bot,"kademe yetersiz"));
     }
+
+    elLadder.appendChild(body);
 
     var s = document.createElement("div");
     s.className = "summary";
@@ -631,7 +2364,7 @@ footer b{color:var(--ink);font-weight:600}
                (lot&&cost?'<th>Kâr / zarar</th>':'')+'</tr>';
     elThead.innerHTML = head;
 
-    var rows = "", p = base, k, day = baseDate;
+    var rows = "", p = base, k, day = baseDate, finalPrice = base, actualN = 0;
     for(k=1;k<=n;k++){
       day = nextTradingDay(day);
       var L = limits(p, marginPct);
@@ -639,7 +2372,7 @@ footer b{color:var(--ink);font-weight:600}
       var stepPct = (next-p)/p*100;
       var totPct = (next-base)/base*100;
       var cls = up ? "pos" : "neg";
-      rows += '<tr><td>'+k+'</td><td class="date">'+fmtDay(day)+
+      rows += '<tr><td><span class="seans-badge">'+k+'</span></td><td class="date">'+fmtDay(day)+
               (BIST_HALF_DAYS[day] ? '<span class="half" title="Yarım gün seans">½</span>' : '')+'</td><td>'+fmt(p)+'</td><td class="val '+cls+'">'+fmt(next)+'</td>'+
               '<td class="'+cls+'">'+fmtPct(stepPct)+'</td><td class="'+cls+'">'+fmtPct(totPct)+'</td>';
       if(cost){
@@ -652,17 +2385,29 @@ footer b{color:var(--ink);font-weight:600}
         rows += '<td class="'+(amt>=0?"pos":"neg")+'">'+(amt>=0?"+":"−")+fmtBig(Math.abs(amt))+'</td>';
       }
       rows += '</tr>';
-      if(next === p) { rows += '<tr><td colspan="'+cols+'" style="text-align:left;color:var(--muted)">Fiyat sabitlendi; kademe hareket üretmiyor.</td></tr>'; break; }
+      finalPrice = next;
+      actualN = k;
+      if(next === p) { rows += '<tr><td colspan="'+cols+'" style="text-align:left;color:var(--text-sec)">Fiyat sabitlendi; kademe hareket üretmiyor.</td></tr>'; break; }
       p = next;
     }
     elTbody.innerHTML = rows;
+
+    var totalPct = (finalPrice - base) / base * 100;
+    elSeriesSummary.innerHTML =
+      actualN + ' seans · ' + fmt(base) + ' → <strong class="'+(up?"pos":"neg")+'">' + fmt(finalPrice) + ' TL</strong> (' +
+      '<span class="'+(up?"pos":"neg")+'">' + fmtPct(totalPct) + '</span>)';
   }
 
   function drawTarget(base, marginPct, target, baseDate){
+    elTargetHint.className = "target-result tnum";
     if(!isFinite(target) || target<=0){ elTargetHint.textContent=""; return; }
     var tc = snapNearest(toCents(target));
     var p = base, n = 0, up = tc > base;
-    if(tc === base){ elTargetHint.textContent = "Hedef baz fiyata eşit."; return; }
+    if(tc === base){
+      elTargetHint.className = "target-result tnum has-val";
+      elTargetHint.textContent = "Hedef baz fiyata eşit.";
+      return;
+    }
     while(n < 400){
       var L = limits(p, marginPct);
       var next = up ? L.top : L.bot;
@@ -672,9 +2417,11 @@ footer b{color:var(--ink);font-weight:600}
     }
     if(up ? p >= tc : p <= tc){
       var endDay = baseDate; for(var j=0;j<n;j++) endDay = nextTradingDay(endDay);
+      elTargetHint.className = "target-result tnum has-val " + (up ? "is-up" : "is-down");
       elTargetHint.textContent = fmt(tc)+" TL için "+n+" "+(up?"tavan":"taban")+" gerekir; en erken "+
         fmtDay(endDay, true)+" (seri sonu "+fmt(p)+" TL).";
     } else {
+      elTargetHint.className = "target-result tnum has-val";
       elTargetHint.textContent = "Hedefe bu yönde ulaşılamıyor.";
     }
   }
@@ -721,15 +2468,22 @@ footer b{color:var(--ink);font-weight:600}
     if(!isFinite(n) || n<1) n = 10;
     if(n>60) n = 60;
 
+    var pLabel = selected ? selected.s : (PRESET_LABELS[elPreset.value] || "Özel");
+    elTopStatusText.textContent = pLabel + " · ±" + mv.toLocaleString("tr-TR",{maximumFractionDigits:2}) + "%";
+
     if(!isFinite(bv) || bv<=0){
       elHint.className="hint warn";
       elHint.textContent="Geçerli bir fiyat gir.";
+      elStepBadge.textContent="Adım: —";
+      elSeriesSummary.textContent="—";
       elLadder.innerHTML=""; elThead.innerHTML=""; elTbody.innerHTML="";
       return;
     }
     var raw = toCents(bv);
     if(raw < 1) raw = 1;
     var base = snapNearest(raw);
+    elStepBadge.textContent = "Adım: " + fmt(tickAt(base)) + " TL";
+
     if(base !== raw){
       elHint.className="hint warn";
       elHint.textContent = "Kademeye uymuyor. "+fmt(base)+" TL üzerinden hesaplandı (adım "+fmt(tickAt(base))+").";
@@ -742,9 +2496,10 @@ footer b{color:var(--ink);font-weight:600}
       var plNow = (base-cost)/cost*100;
       var txt = "Maliyet "+fmt(cost)+" TL · baz fiyatta "+fmtPct(plNow);
       if(lot) txt += " · "+((base-cost)/100*lot >= 0 ? "+" : "−")+fmtBig(Math.abs((base-cost)/100*lot))+" TL";
-      elCostHint.className = "hint";
+      elCostHint.className = "hint " + (plNow >= 0 ? "ok" : "warn");
       elCostHint.textContent = txt;
     } else {
+      elCostHint.className = "hint";
       elCostHint.textContent = "";
     }
 
@@ -767,7 +2522,7 @@ footer b{color:var(--ink);font-weight:600}
     drawChart(base, mv, n, baseDate);
   }
 
-  // ---- fiyat grafiği ----
+  // ---- fiyat grafiği (Fey theme-aware SVG) ----
   var elChart = $("chart"), elChartWrap = $("chartWrap"), elChartTip = $("chartTip"),
       elChartSub = $("chartSub"), elChartNote = $("chartNote"),
       hist = null, histLoading = false, chartRange = 63, chartArgs = null, chartModel = null,
@@ -786,7 +2541,6 @@ footer b{color:var(--ink);font-weight:600}
       .then(function(){ histLoading = false; });
   }
 
-  // Seri hesabının aynısı: baz günden itibaren her seans tavan (taban) olursa
   function projection(base, marginPct, n, baseDate, up){
     var out = [], p = base, day = baseDate;
     for(var k=1;k<=n;k++){
@@ -813,7 +2567,8 @@ footer b{color:var(--ink);font-weight:600}
   function drawChart(base, marginPct, n, baseDate){
     chartArgs = [base, marginPct, n, baseDate];
     $("rangeTabs").hidden = !selected;
-    // geçmiş: seçili hissenin kapanışları (kuruş), baz günü dahil
+    var pal = chartPalette();
+
     var past = [];
     if(selected){
       loadHist();
@@ -834,12 +2589,10 @@ footer b{color:var(--ink);font-weight:600}
     past.forEach(function(pt){ if(pt.v > maxV) maxV = pt.v; });
     var volH = maxV > 0 ? 48 : 0;
     $("volKey").hidden = !volH;
-    var W = Math.max(240, elChartWrap.clientWidth), H = 236 + (volH ? volH + 10 : 0);
+    var W = Math.max(240, elChartWrap.clientWidth - 8), H = 228 + (volH ? volH + 10 : 0);
     var m = {l:8, r:62, t:10, b:22};
     var priceBottom = H - m.b - (volH ? volH + 10 : 0);
     var all = past.concat(up, dn).map(function(x){ return x.c; });
-    // Log ölçekte art arda tavan/taban (bileşik yüzde hareket) eşit adımlarla görünür;
-    // Normal ölçek fiyatı doğrudan gösterir
     var lo = Math.min.apply(null, all), hi = Math.max.apply(null, all);
     var tf = chartLog ? Math.log : function(v){ return v; };
     var inv = chartLog ? Math.exp : function(v){ return v; };
@@ -847,7 +2600,6 @@ footer b{color:var(--ink);font-weight:600}
     lLo -= lPad; lHi += lPad;
     if(!chartLog && lLo < 0) lLo = 0;
     var nProj = total - 1 - b, plotW = W - m.l - m.r;
-    // geçmiş genişliğin %70'ini, projeksiyon %30'unu kaplar (geçmiş yoksa projeksiyon tamamını)
     var split = b > 0 ? (nProj > 0 ? 0.7 : 1) : 0;
     var x = function(i){
       if(i <= b) return m.l + (b > 0 ? i/b : 0) * split * plotW;
@@ -860,34 +2612,41 @@ footer b{color:var(--ink);font-weight:600}
 
     elChart.setAttribute("viewBox", "0 0 "+W+" "+H);
     elChart.innerHTML = "";
+    var defs = svgEl("defs", {}, elChart);
+    var grad = svgEl("linearGradient", {id:"feyAreaGrad", x1:"0", y1:"0", x2:"0", y2:"1"}, defs);
+    svgEl("stop", {offset:"0%", "stop-color":pal.signal, "stop-opacity":pal.areaOpacity}, grad);
+    svgEl("stop", {offset:"100%", "stop-color":pal.signal, "stop-opacity":"0"}, grad);
+
     var g = svgEl("g", {}, elChart);
-    // yatay ızgara ve fiyat etiketleri (sağda)
+    // yatay ızgara ve fiyat etiketleri
     var eLo = inv(lLo), eHi = inv(lHi), step = niceStep(eHi - eLo, 5), lastY = Infinity;
     for(var t = Math.ceil(eLo/step)*step; t <= eHi; t += step){
       var ty = y(t);
-      if(lastY - ty < 22) continue; // log eksende üstteki çizgiler sıklaşır
+      if(lastY - ty < 22) continue;
       lastY = ty;
-      svgEl("line", {x1:m.l, x2:W-m.r, y1:ty, y2:ty, stroke:"#E2E8F0", "stroke-width":1}, g);
+      svgEl("line", {x1:m.l, x2:W-m.r, y1:ty, y2:ty, stroke:pal.grid, "stroke-width":1}, g);
       if(endYs.some(function(ey){ return Math.abs(ey - ty) < 14; })) continue;
       var tx = svgEl("text", {x:W-m.r+6, y:ty+4}, g);
       tx.textContent = fmt(t).replace(/,00$/, "");
     }
     // baz günü ayracı
-    svgEl("line", {x1:x(b), x2:x(b), y1:m.t, y2:H-m.b, stroke:"#C7D0DE", "stroke-width":1}, g);
-    // hacim paneli: fiyatın altında, kendi ölçeğiyle (sıfırdan başlayan çubuklar)
+    svgEl("line", {x1:x(b), x2:x(b), y1:m.t, y2:H-m.b, stroke:pal.axis, "stroke-width":1, "stroke-dasharray":"3 3"}, g);
+
+    // hacim paneli
     if(volH){
       var vTop = priceBottom + 10, vBot = H - m.b;
       var slot = b > 0 ? x(1) - x(0) : 8, bw = Math.max(1, Math.min(6, slot * 0.6));
-      svgEl("line", {x1:m.l, x2:W-m.r, y1:vBot, y2:vBot, stroke:"#E2E8F0", "stroke-width":1}, g);
+      svgEl("line", {x1:m.l, x2:W-m.r, y1:vBot, y2:vBot, stroke:pal.grid, "stroke-width":1}, g);
       past.forEach(function(pt, i){
         if(!(pt.v > 0)) return;
         var h = Math.max(1, pt.v / maxV * volH);
-        svgEl("rect", {x:x(i) - bw/2, y:vBot - h, width:bw, height:h, rx:Math.min(2, bw/2), fill:"#1D3FBF", "fill-opacity":.35}, g);
+        svgEl("rect", {x:x(i) - bw/2, y:vBot - h, width:bw, height:h, rx:Math.min(2, bw/2), fill:pal.signal, "fill-opacity":pal.volOpacity}, g);
       });
       var vl = svgEl("text", {x:W-m.r+6, y:vTop+8}, g); vl.textContent = fmtCompact(maxV);
       var vn = svgEl("text", {x:W-m.r+6, y:vBot}, g); vn.textContent = "hacim";
     }
-    // tarih etiketleri: ilk gün, baz günü, son seans
+
+    // tarih etiketleri
     function dateLabel(i, d, anchor){
       var e = svgEl("text", {x:x(i), y:H-6, "text-anchor":anchor}, g);
       e.textContent = new Date(d+"T12:00:00Z").toLocaleDateString("tr-TR",{day:"numeric",month:"short",timeZone:"UTC"});
@@ -905,30 +2664,31 @@ footer b{color:var(--ink);font-weight:600}
       svgEl("path", a, g);
     }
     function dot(i, c, color){
-      svgEl("circle", {cx:x(i), cy:y(c), r:4, fill:color, stroke:"#fff", "stroke-width":2}, g);
+      svgEl("circle", {cx:x(i), cy:y(c), r:4, fill:color, stroke:pal.dotStroke, "stroke-width":2}, g);
     }
-    // alan dolgusu sadece geçmişte, çok hafif
+
     if(past.length > 1){
       var area = past.map(function(pt, i){ return (i ? "L" : "M") + x(i).toFixed(1) + " " + y(pt.c).toFixed(1); }).join("") +
                  "L"+x(b).toFixed(1)+" "+priceBottom+"L"+x(0).toFixed(1)+" "+priceBottom+"Z";
-      svgEl("path", {d:area, fill:"#1D3FBF", "fill-opacity":.08}, g);
+      svgEl("path", {d:area, fill:"url(#feyAreaGrad)"}, g);
     }
-    path(past, 0, "#1D3FBF", false);
-    path([past[b]].concat(up), b, "#0A7250", true);
-    path([past[b]].concat(dn), b, "#B02418", true);
-    function endLabel(c){
+    path(past, 0, pal.signal, false);
+    path([past[b]].concat(up), b, pal.up, true);
+    path([past[b]].concat(dn), b, pal.down, true);
+
+    function endLabel(c, fillColor){
       var e = svgEl("text", {x:W-m.r+6, y:y(c)+4, "class":"val"}, g);
+      if(fillColor) e.style.fill = fillColor;
       e.textContent = fmt(c);
     }
-    if(up.length){ dot(total-1 - (Math.max(up.length,dn.length)-up.length), up[up.length-1].c, "#0A7250"); endLabel(up[up.length-1].c); }
-    if(dn.length){ dot(total-1 - (Math.max(up.length,dn.length)-dn.length), dn[dn.length-1].c, "#B02418"); endLabel(dn[dn.length-1].c); }
-    dot(b, base, "#1D3FBF");
+    if(up.length){ dot(total-1 - (Math.max(up.length,dn.length)-up.length), up[up.length-1].c, pal.up); endLabel(up[up.length-1].c, pal.up); }
+    if(dn.length){ dot(total-1 - (Math.max(up.length,dn.length)-dn.length), dn[dn.length-1].c, pal.down); endLabel(dn[dn.length-1].c, pal.down); }
+    dot(b, base, pal.signal);
 
     var hover = svgEl("g", {visibility:"hidden"}, elChart);
-    var cross = svgEl("line", {y1:m.t, y2:H-m.b, stroke:"#5C6A7E", "stroke-width":1}, hover);
+    var cross = svgEl("line", {y1:m.t, y2:H-m.b, stroke:pal.cross, "stroke-width":1, "stroke-dasharray":"2 2"}, hover);
     chartModel = {x:x, y:y, W:W, m:m, total:total, b:b, past:past, up:up, dn:dn, hover:hover, cross:cross};
 
-    // başlık ve not
     var dayOnly = function(d){
       return new Date(d+"T12:00:00Z").toLocaleDateString("tr-TR",{day:"numeric",month:"long",year:"numeric",timeZone:"UTC"});
     };
@@ -943,6 +2703,7 @@ footer b{color:var(--ink);font-weight:600}
 
   function chartHover(evt){
     var M = chartModel; if(!M) return;
+    var pal = chartPalette();
     var r = elChart.getBoundingClientRect();
     var px = (evt.clientX - r.left) * (M.W / r.width);
     var i = 0, best = Infinity;
@@ -950,14 +2711,13 @@ footer b{color:var(--ink);font-weight:600}
     var rowsOut = [], day;
     if(i <= M.b){
       var pt = M.past[i]; day = pt.d;
-      rowsOut.push(["#1D3FBF", pt.c, i === M.b ? "Baz" : "Kapanış", null]);
+      rowsOut.push([pal.signal, pt.c, i === M.b ? "Baz" : "Kapanış", null]);
       if(pt.v > 0) rowsOut.push([null, pt.v, "lot · ≈ "+fmtCompact(pt.v * pt.c / 100)+" TL", null]);
-    }
-    else {
+    } else {
       var u = M.up[i-M.b-1], d = M.dn[i-M.b-1];
       day = (u || d).d;
-      if(u) rowsOut.push(["#0A7250", u.c, "Tavan serisi", (u.c - M.past[M.b].c)/M.past[M.b].c*100]);
-      if(d) rowsOut.push(["#B02418", d.c, "Taban serisi", (d.c - M.past[M.b].c)/M.past[M.b].c*100]);
+      if(u) rowsOut.push([pal.up, u.c, "Tavan serisi", (u.c - M.past[M.b].c)/M.past[M.b].c*100]);
+      if(d) rowsOut.push([pal.down, d.c, "Taban serisi", (d.c - M.past[M.b].c)/M.past[M.b].c*100]);
     }
     M.cross.setAttribute("x1", M.x(i)); M.cross.setAttribute("x2", M.x(i));
     M.hover.setAttribute("visibility", "visible");
@@ -973,7 +2733,7 @@ footer b{color:var(--ink);font-weight:600}
     });
     elChartTip.hidden = false;
     var left = M.x(i) * (r.width / M.W), tw = elChartTip.offsetWidth;
-    elChartTip.style.left = Math.max(0, Math.min(r.width - tw, left + 12 + tw > r.width ? left - tw - 12 : left + 12)) + "px";
+    elChartTip.style.left = Math.max(4, Math.min(r.width - tw - 4, left + 12 + tw > r.width ? left - tw - 12 : left + 12)) + "px";
   }
   function chartLeave(){
     if(chartModel) chartModel.hover.setAttribute("visibility", "hidden");
@@ -1007,18 +2767,286 @@ footer b{color:var(--ink);font-weight:600}
   }
 
   // ---- olaylar ----
-  // Fiyat elle değiştirilirse seçili hissenin kapanış tarihi artık geçerli değil
+  themeToggle.addEventListener("click", function(){
+    var next = htmlEl.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+  });
+
+  // ---- Fey Command Palette (Cmd+K / Ctrl+K) — MİZAN Style ----
+  var cmdkModal = $("cmdk-modal"),
+      cmdkInput = $("cmdk-input"),
+      cmdkResults = $("cmdk-results"),
+      cmdkCount = $("cmdk-count"),
+      cmdkItems = [],
+      cmdkIndex = 0,
+      cmdkTimer = null;
+
+  var FEATURED_TICKERS = ["THYAO","ASELS","AKBNK","GARAN","KCHOL","TUPRS","ISCTR","BIMAS"];
+
+  function isCmdkOpen(){ return !cmdkModal.hidden; }
+
+  function openCmdk(initialQuery){
+    var q = typeof initialQuery === "string" ? initialQuery : "";
+    cmdkModal.hidden = false;
+    cmdkInput.value = q;
+    renderCmdkResults(q);
+    // Synchronous focus + caret at end so fast continuous typing never drops characters
+    cmdkInput.focus({preventScroll:true});
+    try { cmdkInput.setSelectionRange(q.length, q.length); } catch(_){}
+    requestAnimationFrame(function(){
+      if(!cmdkModal.hidden && document.activeElement !== cmdkInput){
+        cmdkInput.focus({preventScroll:true});
+        var len = cmdkInput.value.length;
+        try { cmdkInput.setSelectionRange(len, len); } catch(_){}
+      }
+    });
+  }
+
+  function closeCmdk(){
+    cmdkModal.hidden = true;
+  }
+
+  function clearSelectedStock(){
+    selected = null;
+    elStock.value = "";
+    syncStockControls();
+    update();
+  }
+
+  function buildQuickActions(){
+    var isDark = htmlEl.getAttribute("data-theme") === "dark";
+    var onStocks = location.hash === "#hisseler";
+    var acts = [
+      {
+        type: "act",
+        label: onStocks ? "Hesaplayıcıya Dön" : "Tüm BIST Hisselerini Aç",
+        hint: "Sekme",
+        run: function(){ location.hash = onStocks ? "" : "#hisseler"; }
+      },
+      {
+        type: "act",
+        label: dir > 0 ? "Taban Serisine Geç" : "Tavan Serisine Geç",
+        hint: "Seri",
+        run: function(){
+          if(location.hash === "#hisseler") location.hash = "";
+          (dir > 0 ? $("btnDown") : $("btnUp")).click();
+        }
+      },
+      {
+        type: "act",
+        label: chartLog ? "Grafik Ölçeği: Normal (Lineer)" : "Grafik Ölçeği: Logaritmik",
+        hint: "Grafik",
+        run: function(){
+          var targetBtn = document.querySelector('#scaleTabs button[data-s="'+(chartLog ? "lin" : "log")+'"]');
+          if(targetBtn) targetBtn.click();
+        }
+      },
+      {
+        type: "act",
+        label: isDark ? "Açık Moda Geç" : "Koyu Moda Geç",
+        hint: "Tema",
+        run: function(){ applyTheme(isDark ? "light" : "dark"); }
+      }
+    ];
+    if(selected){
+      acts.unshift({
+        type: "act",
+        label: "Seçili Hisseyi Temizle (" + selected.s + ")",
+        hint: "Sıfırla",
+        run: clearSelectedStock
+      });
+    }
+    return acts;
+  }
+
+  function renderCmdkResults(rawQ){
+    var q = fold((rawQ || "").trim());
+    var quickActions = buildQuickActions();
+    var matchedActs = q
+      ? quickActions.filter(function(a){ return fold(a.label + " " + a.hint).indexOf(q) > -1; })
+      : quickActions.slice(0, 3);
+
+    var matchedStocks = [];
+    if(stocks && stocks.length){
+      if(q){
+        matchedStocks = stocks.filter(function(o){ return o.key.indexOf(q) > -1; })
+          .sort(function(a, b){
+            var ae = fold(a.s) === q ? 2 : (fold(a.s).indexOf(q) === 0 ? 1 : 0);
+            var be = fold(b.s) === q ? 2 : (fold(b.s).indexOf(q) === 0 ? 1 : 0);
+            if(be !== ae) return be - ae;
+            return a.s.localeCompare(b.s, "tr");
+          })
+          .slice(0, 14)
+          .map(function(o){ return {type:"stock", stock:o}; });
+      } else {
+        var picks = [];
+        FEATURED_TICKERS.forEach(function(sym){
+          var found = stocks.filter(function(o){ return o.s === sym; })[0];
+          if(found) picks.push(found);
+        });
+        if(picks.length < 8){
+          stocks.slice(0, 12).forEach(function(o){
+            if(picks.length < 8 && picks.indexOf(o) === -1) picks.push(o);
+          });
+        }
+        matchedStocks = picks.map(function(o){ return {type:"stock", stock:o}; });
+      }
+    }
+
+    cmdkItems = matchedStocks.concat(matchedActs);
+    cmdkIndex = 0;
+
+    if(!cmdkItems.length){
+      cmdkResults.innerHTML = '<div class="cmdk-empty">' +
+        (stocks ? 'Eşleşen hisse veya komut bulunamadı.' : 'Hisse verileri yükleniyor…') +
+        '</div>';
+      return;
+    }
+
+    var html = "";
+    var stockCount = matchedStocks.length;
+    if(stockCount){
+      html += '<div class="cmdk-section">' + (q ? 'Hisseler' : 'Hızlı Erişim · BIST') + '</div>';
+    }
+    cmdkItems.forEach(function(item, idx){
+      if(idx === stockCount && matchedActs.length){
+        html += '<div class="cmdk-section">Komutlar</div>';
+      }
+      var activeCls = idx === 0 ? " is-active" : "";
+      if(item.type === "stock"){
+        var o = item.stock;
+        var chgCls = o.chg === null ? "" : (o.chg > 0 ? " pos" : (o.chg < 0 ? " neg" : ""));
+        var flagHtml = o.flag === 1
+          ? '<span class="cmdk-flag pos">TAVAN</span>'
+          : (o.flag === -1 ? '<span class="cmdk-flag neg">TABAN</span>' : '');
+        html += '<button type="button" role="option" data-cmdk="'+idx+'" class="cmdk-row'+activeCls+'">' +
+          '<div class="cmdk-row-left">' +
+            '<span class="cmdk-ticker">'+esc(o.s)+'</span>' +
+            '<span class="cmdk-name">'+esc(o.n || o.s)+'</span>' +
+          '</div>' +
+          '<div class="cmdk-row-right">' +
+            flagHtml +
+            '<span class="cmdk-price">'+fmt(o.c)+' TL</span>' +
+            '<span class="cmdk-chg'+chgCls+'">'+(o.chg === null ? "—" : fmtPct(o.chg))+'</span>' +
+          '</div>' +
+        '</button>';
+      } else {
+        html += '<button type="button" role="option" data-cmdk="'+idx+'" class="cmdk-row'+activeCls+'">' +
+          '<span class="cmdk-act-label">'+esc(item.label)+'</span>' +
+          '<span class="cmdk-act-hint">'+esc(item.hint)+'</span>' +
+        '</button>';
+      }
+    });
+    cmdkResults.innerHTML = html;
+
+    Array.prototype.forEach.call(cmdkResults.querySelectorAll("[data-cmdk]"), function(btn){
+      btn.addEventListener("click", function(){
+        executeCmdkItem(Number(btn.getAttribute("data-cmdk")));
+      });
+    });
+  }
+
+  function highlightCmdk(){
+    var btns = cmdkResults.querySelectorAll("[data-cmdk]");
+    Array.prototype.forEach.call(btns, function(el, i){
+      var on = i === cmdkIndex;
+      el.classList.toggle("is-active", on);
+      if(on) el.scrollIntoView({block:"nearest"});
+    });
+  }
+
+  function executeCmdkItem(idx){
+    var item = cmdkItems[idx];
+    if(!item) return;
+    closeCmdk();
+    if(item.type === "stock"){
+      if(location.hash === "#hisseler") location.hash = "";
+      selectStock(item.stock);
+    } else {
+      item.run();
+    }
+  }
+
+  cmdkInput.addEventListener("input", function(e){
+    var val = e.target.value;
+    clearTimeout(cmdkTimer);
+    cmdkTimer = setTimeout(function(){ renderCmdkResults(val); }, 60);
+  });
+
+  cmdkInput.addEventListener("keydown", function(e){
+    if(e.key === "ArrowDown" && cmdkItems.length){
+      e.preventDefault();
+      cmdkIndex = (cmdkIndex + 1) % cmdkItems.length;
+      highlightCmdk();
+    } else if(e.key === "ArrowUp" && cmdkItems.length){
+      e.preventDefault();
+      cmdkIndex = (cmdkIndex - 1 + cmdkItems.length) % cmdkItems.length;
+      highlightCmdk();
+    } else if(e.key === "Enter" && cmdkItems.length){
+      e.preventDefault();
+      executeCmdkItem(cmdkIndex);
+    } else if(e.key === "Escape"){
+      e.preventDefault();
+      closeCmdk();
+    }
+  });
+
+  cmdkModal.addEventListener("click", function(e){
+    if(e.target === cmdkModal) closeCmdk();
+  });
+  $("cmdk-esc").addEventListener("click", closeCmdk);
+  $("topCmdkBtn").addEventListener("click", function(){ openCmdk(""); });
+  elStockKbdBtn.addEventListener("click", function(){ openCmdk(""); });
+  elStockClearBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    clearSelectedStock();
+  });
+
+  // Global keyboard shortcuts: Ctrl+K / Cmd+K, Esc, and '/'
+  document.addEventListener("keydown", function(e){
+    if((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k"){
+      e.preventDefault();
+      if(isCmdkOpen()) closeCmdk();
+      else openCmdk("");
+      return;
+    }
+    if(e.key === "Escape" && isCmdkOpen()){
+      e.preventDefault();
+      closeCmdk();
+      return;
+    }
+    var tag = document.activeElement && document.activeElement.tagName;
+    if(e.key === "/" && tag !== "INPUT" && tag !== "TEXTAREA" && tag !== "SELECT" && !isCmdkOpen()){
+      e.preventDefault();
+      openCmdk("");
+    }
+  });
+
   elBase.addEventListener("input", function(){
-    if(selected && toCents(parseNum(elBase.value)) !== selected.c){ selected = null; elStock.value = ""; }
+    if(selected && toCents(parseNum(elBase.value)) !== selected.c){
+      selected = null;
+      elStock.value = "";
+      syncStockControls();
+    }
+  });
+
+  // Route clicking or typing in #stock directly into MİZAN Ctrl+K Command Palette
+  elStock.addEventListener("click", function(){
+    openCmdk("");
   });
   elStock.addEventListener("input", function(){
-    var v = fold(elStock.value.trim());
-    if(!v){ if(selected){ selected = null; update(); } return; }
-    var o = stocks && stocks.filter(function(x){ return fold(x.s) === v; })[0];
-    if(o) selectStock(o);
+    var val = elStock.value;
+    elStock.value = selected ? selected.s : "";
+    if(val && val.length > 0) openCmdk(val);
   });
-  elStock.addEventListener("change", function(){
-    if(!selected || fold(elStock.value.trim()) !== fold(selected.s)) elStock.value = selected ? selected.s : "";
+  elStock.addEventListener("keydown", function(e){
+    if(e.key === "Enter" || e.key === "ArrowDown" || e.key === " "){
+      e.preventDefault();
+      openCmdk("");
+    } else if((e.key === "Backspace" || e.key === "Delete") && selected){
+      e.preventDefault();
+      clearSelectedStock();
+    }
   });
   ["input","change"].forEach(function(ev){
     [elBase,elMargin,elCount,elLot,elCost,elTarget].forEach(function(el){ el.addEventListener(ev, update); });
@@ -1044,11 +3072,13 @@ footer b{color:var(--ink);font-weight:600}
   $("applyTicks").addEventListener("click", function(){
     readEditor(); renderTickEditor();
     elPreset.value = "ozel";
+    elTickHint.className = "hint ok";
     elTickHint.textContent = "Tablo uygulandı.";
     update();
   });
   $("resetTicks").addEventListener("click", function(){
     ticks = clone(PRESETS.pay); elPreset.value="pay"; renderTickEditor();
+    elTickHint.className = "hint";
     elTickHint.textContent = "Pay tablosu geri yüklendi.";
     update();
   });
@@ -1059,12 +3089,10 @@ footer b{color:var(--ink);font-weight:600}
       stocks = null, stocksLoading = false,
       stockFilter = "all", sortKey = "s", sortDir = 1;
 
-  // listedeki limitler, kullanıcının özel tablosundan bağımsız olarak pay tablosu ve %10 ile hesaplanır
   function withPayTicks(fn){
     var saved = ticks; ticks = PRESETS.pay;
     try { return fn(); } finally { ticks = saved; }
   }
-  // Yahoo şirket adlarını çoğunlukla Türkçe karaktersiz verdiği için arama harfleri sadeleştirir
   function fold(t){
     return String(t).toLocaleUpperCase("tr-TR").replace(/[ÇĞİÖŞÜÂÎÛ]/g, function(ch){ return "CGIOSUAIU"["ÇĞİÖŞÜÂÎÛ".indexOf(ch)]; });
   }
@@ -1131,6 +3159,7 @@ footer b{color:var(--ink);font-weight:600}
     elBase.value = (o.c/100).toFixed(2).replace(".", ",");
     elMargin.value = "10";
     if(elPreset.value !== "pay"){ elPreset.value = "pay"; ticks = clone(PRESETS.pay); renderTickEditor(); }
+    syncStockControls();
     update();
   }
 
@@ -1141,9 +3170,9 @@ footer b{color:var(--ink);font-weight:600}
       .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
       .then(function(data){
         stocks = prepareStocks(data.rows || []);
-        elStockList.innerHTML = stocks.map(function(o){
-          return '<option value="'+esc(o.s)+'">'+esc((o.n ? o.n+" · " : "")+fmt(o.c)+" TL")+'</option>';
-        }).join("");
+        elNavStockCount.textContent = stocks.length;
+        elNavStockCount.hidden = false;
+        cmdkCount.textContent = stocks.length + " BIST Hissesi · Ctrl+K";
         var last = stocks.reduce(function(m,o){ return o.d > m ? o.d : m; }, "");
         var ups = stocks.filter(function(o){ return o.flag === 1; }).length;
         var dns = stocks.filter(function(o){ return o.flag === -1; }).length;
@@ -1151,6 +3180,7 @@ footer b{color:var(--ink);font-weight:600}
           (last ? new Date(last+"T12:00:00").toLocaleDateString("tr-TR",{day:"numeric",month:"long",year:"numeric"}) : "—")+
           " · "+ups+" tavan, "+dns+" taban · kaynak: Yahoo Finance";
         drawStocks();
+        if(isCmdkOpen()) renderCmdkResults(cmdkInput.value);
       })
       .catch(function(){
         elStocksMeta.textContent = "Hisse verisi henüz yok veya yüklenemedi. Veri her iş günü seans sonrasında güncellenir.";
@@ -1187,11 +3217,19 @@ footer b{color:var(--ink);font-weight:600}
     var onStocks = location.hash === "#hisseler";
     $("viewCalc").hidden = onStocks;
     $("viewStocks").hidden = !onStocks;
-    if(onStocks){ $("tabStocks").setAttribute("aria-current","page"); $("tabCalc").removeAttribute("aria-current"); loadStocks(); }
-    else { $("tabCalc").setAttribute("aria-current","page"); $("tabStocks").removeAttribute("aria-current"); }
+    if(onStocks){
+      $("tabStocks").setAttribute("aria-current","page");
+      $("tabCalc").removeAttribute("aria-current");
+      loadStocks();
+    } else {
+      $("tabCalc").setAttribute("aria-current","page");
+      $("tabStocks").removeAttribute("aria-current");
+      if(chartArgs) setTimeout(function(){ drawChart.apply(null, chartArgs); }, 0);
+    }
   }
   window.addEventListener("hashchange", route);
 
+  applyTheme(savedTheme);
   renderTickEditor();
   update();
   route();
