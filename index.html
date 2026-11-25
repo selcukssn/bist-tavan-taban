@@ -650,23 +650,8 @@ html[data-theme="light"] .cmdk-dialog {
 }
 
 .cmdk-results {
-  max-height: min(380px, 56vh);
+  max-height: min(360px, 56vh);
   overflow-y: auto;
-}
-
-.cmdk-section {
-  padding: 8px 16px 5px;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--text-sec);
-  background: var(--surface-elevated);
-  border-bottom: 1px solid var(--border-soft);
-}
-
-html[data-theme="light"] .cmdk-section {
-  background: var(--surface-elevated);
 }
 
 .cmdk-row {
@@ -677,24 +662,27 @@ html[data-theme="light"] .cmdk-section {
   gap: 12px;
   padding: 10px 16px;
   border: 0;
-  border-bottom: 1px solid var(--border-soft);
-  border-left: 2px solid transparent;
+  border-bottom: 1px solid var(--border);
   background: transparent;
   color: var(--text-main);
   font-family: var(--font-calibre);
   text-align: left;
   cursor: pointer;
-  transition: background-color 0.1s ease, border-left-color 0.1s ease;
+  transition: background-color 0.1s ease;
 }
 
 .cmdk-row:last-child { border-bottom: 0; }
 
-.cmdk-row:hover, .cmdk-row.is-active {
-  background: var(--surface-hover);
+.cmdk-row.is-active {
+  background: rgba(255, 255, 255, 0.045);
 }
 
-.cmdk-row.is-active {
-  border-left-color: var(--signal);
+html[data-theme="light"] .cmdk-row.is-active {
+  background: rgba(11, 11, 11, 0.04);
+}
+
+.cmdk-row:hover {
+  background: var(--surface-hover);
 }
 
 .cmdk-row-left {
@@ -705,28 +693,73 @@ html[data-theme="light"] .cmdk-section {
   flex: 1 1 auto;
 }
 
-.cmdk-ticker {
+.stock-logo {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 58px;
-  padding: 3px 8px;
-  border-radius: 7px;
-  background: var(--surface-card);
-  border: 1px solid var(--border);
-  font-size: 12px;
+  flex: 0 0 auto;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme="light"] .stock-logo {
+  box-shadow: 0 0 0 1px rgba(11, 11, 11, 0.10);
+}
+
+.stock-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.stock-logo-fallback {
+  font-size: 9px;
+  font-weight: 700;
+  color: #0b0b0b;
+  letter-spacing: -0.03em;
+}
+
+.stock-input-logo {
+  position: absolute;
+  left: 9px;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.10);
+}
+
+.stock-input-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+#stock.has-logo {
+  padding-left: 38px;
+}
+
+.cmdk-ticker {
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text-main);
   flex: 0 0 auto;
 }
 
-.cmdk-row.is-active .cmdk-ticker {
-  border-color: var(--border-strong);
-}
-
 .cmdk-name {
-  font-size: 12.5px;
+  font-size: 12px;
   color: var(--text-sec);
   white-space: nowrap;
   overflow: hidden;
@@ -741,16 +774,33 @@ html[data-theme="light"] .cmdk-section {
   font-variant-numeric: tabular-nums;
 }
 
-.cmdk-price {
-  font-size: 13px;
-  font-weight: 700;
+.cmdk-price-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 9px;
+  border-radius: var(--radius-buttons);
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 600;
   color: var(--text-main);
+  white-space: nowrap;
+}
+
+.cmdk-price-pill.is-up {
+  border-color: var(--up-border);
+  color: var(--up);
+}
+
+.cmdk-price-pill.is-down {
+  border-color: var(--down-border);
+  color: var(--down);
 }
 
 .cmdk-chg {
-  font-size: 11.5px;
+  font-size: 11px;
   font-weight: 600;
-  min-width: 56px;
+  min-width: 52px;
   text-align: right;
   color: var(--text-sec);
 }
@@ -766,8 +816,19 @@ html[data-theme="light"] .cmdk-section {
 .cmdk-flag.pos { background: var(--up-bg); border: 1px solid var(--up-border); color: var(--up); }
 .cmdk-flag.neg { background: var(--down-bg); border: 1px solid var(--down-border); color: var(--down); }
 
+.stock-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.stock-cell-text {
+  min-width: 0;
+}
+
 .cmdk-act-label {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 500;
   color: var(--text-main);
 }
@@ -785,20 +846,20 @@ html[data-theme="light"] .cmdk-section {
 .cmdk-empty {
   padding: 32px 16px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--text-sec);
 }
 
 .cmdk-foot {
-  padding: 9px 16px;
+  padding: 8px 16px;
   border-top: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  font-size: 11px;
+  font-size: 10.5px;
   color: var(--text-sec);
-  background: var(--surface-card);
+  background: var(--surface-elevated);
 }
 
 .cmdk-trigger-pill {
@@ -1850,6 +1911,7 @@ details.card-details[open] summary .sum-icon::before { content: "–"; }
             <div class="field">
               <label for="stock">Hisse (kapanış)</label>
               <div class="input-wrap">
+                <span class="stock-input-logo" id="stockInputLogo" hidden></span>
                 <input id="stock" type="text" placeholder="Hisse seç…" autocomplete="off" autocapitalize="characters" spellcheck="false" aria-haspopup="dialog" aria-controls="cmdk-modal">
                 <button type="button" class="stock-kbd-btn" id="stockKbdBtn" title="Komut Paleti (Ctrl+K)">⌘K</button>
                 <button type="button" class="stock-clear-btn" id="stockClearBtn" title="Seçili hisseyi temizle" aria-label="Seçili hisseyi temizle" hidden>×</button>
@@ -2041,8 +2103,8 @@ details.card-details[open] summary .sum-icon::before { content: "–"; }
     </div>
     <div id="cmdk-results" class="cmdk-results" role="listbox"></div>
     <div class="cmdk-foot">
-      <span>↑↓ gezin · Enter seç · Esc kapat</span>
-      <span id="cmdk-count" class="tnum">BIST Hisseleri · Ctrl+K</span>
+      <span>↑↓ gezin · Enter aç · Esc kapat</span>
+      <span id="cmdk-count" class="tnum">BIST Hisseleri · Anında Yükleme</span>
     </div>
   </div>
 </div>
@@ -2262,14 +2324,43 @@ details.card-details[open] summary .sum-icon::before { content: "–"; }
       elTickRows=$("tickRows"), elTickHint=$("tickHint"),
       elStock=$("stock"), elStockHint=$("stockHint"),
       elStockKbdBtn=$("stockKbdBtn"), elStockClearBtn=$("stockClearBtn"),
+      elStockInputLogo=$("stockInputLogo"),
       elStepBadge=$("stepBadge"), elTopStatusText=$("topStatusText"),
       elSeriesSummary=$("seriesSummary"), elNavStockCount=$("navStockCount"),
       selected = null;
+
+  var LOGO_JPG_SET = {
+    BARMA:1,DIRIT:1,GEDZA:1,GLBMD:1,GLYHO:1,IHAAS:1,IHEVA:1,IHGZT:1,IHLAS:1,IHLGM:1,
+    IHYAY:1,KAPLM:1,KFEIN:1,KLSYN:1,MAKTK:1,MNDTR:1,MPARK:1,NETAS:1,OSMEN:1,OSTIM:1,
+    PAGYO:1,RUZYE:1,SEKUR:1,UNLU:1,YKBNK:1
+  };
+  function logoUrl(ticker){
+    var t = String(ticker || "").trim().toUpperCase();
+    if(!t) return "";
+    return "./logolar/" + encodeURIComponent(t) + "." + (LOGO_JPG_SET[t] ? "jpg" : "png");
+  }
+  function logoTileHtml(ticker){
+    var url = logoUrl(ticker);
+    var abbr = esc(String(ticker || "").slice(0, 4));
+    return '<span class="stock-logo">' +
+      '<img src="' + url + '" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.hidden=false">' +
+      '<span class="stock-logo-fallback" hidden>' + abbr + '</span>' +
+    '</span>';
+  }
 
   function syncStockControls(){
     var has = !!selected;
     elStockKbdBtn.hidden = has;
     elStockClearBtn.hidden = !has;
+    if(has){
+      elStockInputLogo.innerHTML = '<img src="' + logoUrl(selected.s) + '" alt="" onerror="this.parentElement.hidden=true;document.getElementById(\'stock\').classList.remove(\'has-logo\')">';
+      elStockInputLogo.hidden = false;
+      elStock.classList.add("has-logo");
+    } else {
+      elStockInputLogo.innerHTML = "";
+      elStockInputLogo.hidden = true;
+      elStock.classList.remove("has-logo");
+    }
   }
 
   function row(cls, tag, price, pct){
@@ -2904,29 +2995,24 @@ details.card-details[open] summary .sum-icon::before { content: "–"; }
     }
 
     var html = "";
-    var stockCount = matchedStocks.length;
-    if(stockCount){
-      html += '<div class="cmdk-section">' + (q ? 'Hisseler' : 'Hızlı Erişim · BIST') + '</div>';
-    }
     cmdkItems.forEach(function(item, idx){
-      if(idx === stockCount && matchedActs.length){
-        html += '<div class="cmdk-section">Komutlar</div>';
-      }
       var activeCls = idx === 0 ? " is-active" : "";
       if(item.type === "stock"){
         var o = item.stock;
         var chgCls = o.chg === null ? "" : (o.chg > 0 ? " pos" : (o.chg < 0 ? " neg" : ""));
+        var pillCls = o.flag === 1 ? " is-up" : (o.flag === -1 ? " is-down" : "");
         var flagHtml = o.flag === 1
           ? '<span class="cmdk-flag pos">TAVAN</span>'
           : (o.flag === -1 ? '<span class="cmdk-flag neg">TABAN</span>' : '');
         html += '<button type="button" role="option" data-cmdk="'+idx+'" class="cmdk-row'+activeCls+'">' +
           '<div class="cmdk-row-left">' +
+            logoTileHtml(o.s) +
             '<span class="cmdk-ticker">'+esc(o.s)+'</span>' +
             '<span class="cmdk-name">'+esc(o.n || o.s)+'</span>' +
           '</div>' +
           '<div class="cmdk-row-right">' +
             flagHtml +
-            '<span class="cmdk-price">'+fmt(o.c)+' TL</span>' +
+            '<span class="cmdk-price-pill'+pillCls+'">'+fmt(o.c)+' TL</span>' +
             '<span class="cmdk-chg'+chgCls+'">'+(o.chg === null ? "—" : fmtPct(o.chg))+'</span>' +
           '</div>' +
         '</button>';
@@ -3100,13 +3186,26 @@ details.card-details[open] summary .sum-icon::before { content: "–"; }
     return String(t).replace(/[&<>"']/g, function(ch){ return "&#"+ch.charCodeAt(0)+";"; });
   }
 
-  function prepareStocks(rows){
+  function prepareStocks(rows, mizanList){
+    var mizanMap = {};
+    if(Array.isArray(mizanList)){
+      mizanList.forEach(function(item){
+        if(!item || !item.c) return;
+        var info = {n: item.n || "", all: Array.isArray(item.all) ? item.all : [item.c]};
+        mizanMap[String(item.c).toUpperCase()] = info;
+        info.all.forEach(function(code){ mizanMap[String(code).toUpperCase()] = info; });
+      });
+    }
     return withPayTicks(function(){
       return rows.map(function(r){
         var c = snapNearest(Math.max(1, toCents(r.c)));
         var L = limits(c, 10);
-        var o = {s:r.s, n:r.n||"", d:r.d, c:c, v:(r.v >= 0 ? r.v : null), top:L.top, bot:L.bot, chg:null, flag:0,
-                 key:fold(r.s+" "+(r.n||""))};
+        var sym = String(r.s || "").toUpperCase();
+        var meta = mizanMap[sym];
+        var name = (meta && meta.n) ? meta.n : (r.n || "");
+        var aliases = meta ? meta.all.join(" ") : "";
+        var o = {s:r.s, n:name, d:r.d, c:c, v:(r.v >= 0 ? r.v : null), top:L.top, bot:L.bot, chg:null, flag:0,
+                 key:fold(r.s+" "+aliases+" "+name+" "+(r.n||""))};
         if(r.pc > 0){
           var pc = snapNearest(Math.max(1, toCents(r.pc)));
           var P = limits(pc, 10);
@@ -3145,7 +3244,7 @@ details.card-details[open] summary .sum-icon::before { content: "–"; }
     elStockTbody.innerHTML = list.map(function(o){
       var cls = o.chg === null ? "" : (o.chg > 0 ? "pos" : (o.chg < 0 ? "neg" : ""));
       var flag = o.flag === 1 ? '<span class="flag pos">TAVAN</span>' : (o.flag === -1 ? '<span class="flag neg">TABAN</span>' : "");
-      return '<tr data-s="'+esc(o.s)+'"><td>'+esc(o.s)+flag+(o.n ? '<small title="'+esc(o.n)+'">'+esc(o.n)+'</small>' : '')+'</td>'+
+      return '<tr data-s="'+esc(o.s)+'"><td><div class="stock-cell">'+logoTileHtml(o.s)+'<div class="stock-cell-text">'+esc(o.s)+flag+(o.n ? '<small title="'+esc(o.n)+'">'+esc(o.n)+'</small>' : '')+'</div></div></td>'+
              '<td class="val">'+fmt(o.c)+'</td>'+
              '<td class="'+cls+'">'+(o.chg === null ? "—" : fmtPct(o.chg))+'</td>'+
              '<td class="pos">'+fmt(o.top)+'</td>'+
@@ -3166,13 +3265,15 @@ details.card-details[open] summary .sum-icon::before { content: "–"; }
   function loadStocks(){
     if(stocks || stocksLoading) return;
     stocksLoading = true;
-    fetch("data/bist.json", {cache:"no-cache"})
-      .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function(data){
-        stocks = prepareStocks(data.rows || []);
+    var pBist = fetch("data/bist.json", {cache:"no-cache"}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); });
+    var pMizan = fetch("data/sirketler.json", {cache:"no-cache"}).then(function(r){ return r.ok ? r.json() : []; }).catch(function(){ return []; });
+    Promise.all([pBist, pMizan])
+      .then(function(res){
+        var data = res[0], mizanList = res[1];
+        stocks = prepareStocks(data.rows || [], mizanList);
         elNavStockCount.textContent = stocks.length;
         elNavStockCount.hidden = false;
-        cmdkCount.textContent = stocks.length + " BIST Hissesi · Ctrl+K";
+        cmdkCount.textContent = stocks.length + " BIST Hissesi · Anında Yükleme";
         var last = stocks.reduce(function(m,o){ return o.d > m ? o.d : m; }, "");
         var ups = stocks.filter(function(o){ return o.flag === 1; }).length;
         var dns = stocks.filter(function(o){ return o.flag === -1; }).length;

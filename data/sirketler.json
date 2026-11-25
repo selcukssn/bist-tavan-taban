@@ -1,0 +1,6286 @@
+[
+  {
+    "c": "A1CAP",
+    "all": [
+      "A1CAP",
+      "ACP"
+    ],
+    "n": "A1 CAPİTAL YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "A1YEN",
+    "all": [
+      "A1YEN"
+    ],
+    "n": "A1 YENİLENEBİLİR ENERJİ ÜRETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AAGYO",
+    "all": [
+      "AAGYO"
+    ],
+    "n": "AĞAOĞLU AVRASYA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REFORM BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ACSEL",
+    "all": [
+      "ACSEL"
+    ],
+    "n": "ACISELSAN ACIPAYAM SELÜLOZ SANAYİ VE TİCARET A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ADEL",
+    "all": [
+      "ADEL"
+    ],
+    "n": "ADEL KALEMCİLİK TİCARET VE SANAYİ A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ADESE",
+    "all": [
+      "ADESE"
+    ],
+    "n": "ADESE GAYRİMENKUL YATIRIM A.Ş.",
+    "ct": "KONYA",
+    "au": "TTK BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ADGYO",
+    "all": [
+      "ADGYO"
+    ],
+    "n": "ADRA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İZMİR",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AEFES",
+    "all": [
+      "AEFES"
+    ],
+    "n": "ANADOLU EFES BİRACILIK VE MALT SANAYİİ A.Ş.",
+    "ct": "",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AFYON",
+    "all": [
+      "AFYON"
+    ],
+    "n": "AFYON ÇİMENTO SANAYİ T.A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AGESA",
+    "all": [
+      "AGESA"
+    ],
+    "n": "AGESA HAYAT VE EMEKLİLİK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "AGHOL",
+    "all": [
+      "AGHOL"
+    ],
+    "n": "AG ANADOLU GRUBU HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AGROT",
+    "all": [
+      "AGROT"
+    ],
+    "n": "AGROTECH YÜKSEK TEKNOLOJİ VE YATIRIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANALİZ BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AGYO",
+    "all": [
+      "AGYO"
+    ],
+    "n": "ATAKULE GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AHGAZ",
+    "all": [
+      "AHGAZ"
+    ],
+    "n": "AHLATCI DOĞAL GAZ DAĞITIM ENERJİ VE YATIRIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AHSGY",
+    "all": [
+      "AHSGY"
+    ],
+    "n": "AHES GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKBNK",
+    "all": [
+      "AKBNK"
+    ],
+    "n": "AKBANK T.A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "AKCNS",
+    "all": [
+      "AKCNS"
+    ],
+    "n": "AKÇANSA ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKENR",
+    "all": [
+      "AKENR"
+    ],
+    "n": "AKENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKFGY",
+    "all": [
+      "AKFGY"
+    ],
+    "n": "AKFEN GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKFIS",
+    "all": [
+      "AKFIS"
+    ],
+    "n": "AKFEN İNŞAAT TURİZM VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKFYE",
+    "all": [
+      "AKFYE"
+    ],
+    "n": "AKFEN YENİLENEBİLİR ENERJİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKGRT",
+    "all": [
+      "AKGRT"
+    ],
+    "n": "AKSİGORTA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "AKHAN",
+    "all": [
+      "AKHAN"
+    ],
+    "n": "AKHAN UN FABRİKASI VE TARIM ÜRÜNLERİ GIDA SANAYİ TİCARET A.Ş.",
+    "ct": "ADANA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKMGY",
+    "all": [
+      "AKMGY"
+    ],
+    "n": "AKMERKEZ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKSA",
+    "all": [
+      "AKSA"
+    ],
+    "n": "AKSA AKRİLİK KİMYA SANAYİİ A.Ş.",
+    "ct": "YALOVA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKSEN",
+    "all": [
+      "AKSEN"
+    ],
+    "n": "AKSA ENERJİ ÜRETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKSGY",
+    "all": [
+      "AKSGY"
+    ],
+    "n": "AKİŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKSUE",
+    "all": [
+      "AKSUE"
+    ],
+    "n": "AKSU ENERJİ VE TİCARET A.Ş.",
+    "ct": "ISPARTA",
+    "au": "GÜÇBİR BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AKYHO",
+    "all": [
+      "AKYHO"
+    ],
+    "n": "AKDENİZ YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "NOTE OFFİCE ULUSLARARASI BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALARK",
+    "all": [
+      "ALARK"
+    ],
+    "n": "ALARKO HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALBRK",
+    "all": [
+      "ALBRK",
+      "ALK"
+    ],
+    "n": "ALBARAKA TÜRK KATILIM BANKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "UFRS"
+  },
+  {
+    "c": "ALBTN",
+    "all": [
+      "ALBTN"
+    ],
+    "n": "ALBAYRAK HAZIR BETON SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALCAR",
+    "all": [
+      "ALCAR"
+    ],
+    "n": "ALARKO CARRIER SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALCTL",
+    "all": [
+      "ALCTL"
+    ],
+    "n": "ALCATEL LUCENT TELETAŞ TELEKOMÜNİKASYON A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALFAS",
+    "all": [
+      "ALFAS"
+    ],
+    "n": "ALFA SOLAR ENERJİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "REFORM BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALGYO",
+    "all": [
+      "ALGYO"
+    ],
+    "n": "ALARKO GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALKA",
+    "all": [
+      "ALKA"
+    ],
+    "n": "ALKİM KAĞIT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALKIM",
+    "all": [
+      "ALKIM"
+    ],
+    "n": "ALKİM ALKALİ KİMYA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALKLC",
+    "all": [
+      "ALKLC"
+    ],
+    "n": "ALTINKILIÇ GIDA VE SÜT SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALTNY",
+    "all": [
+      "ALTNY"
+    ],
+    "n": "ALTINAY SAVUNMA TEKNOLOJİLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ALVES",
+    "all": [
+      "ALVES"
+    ],
+    "n": "ALVES KABLO SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "NOTE OFFİCE ULUSLARARASI BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ANELE",
+    "all": [
+      "ANELE"
+    ],
+    "n": "ANEL ELEKTRİK PROJE TAAHHÜT VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "CNS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ANGEN",
+    "all": [
+      "ANGEN"
+    ],
+    "n": "ANATOLİA TANI VE BİYOTEKNOLOJİ ÜRÜNLERİ ARAŞTIRMA GELİŞTİRME SANAYİ VE TİCARET A.Ş.",
+    "ct": "",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ANHYT",
+    "all": [
+      "ANHYT"
+    ],
+    "n": "ANADOLU HAYAT EMEKLİLİK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "UFRS"
+  },
+  {
+    "c": "ANSGR",
+    "all": [
+      "ANSGR"
+    ],
+    "n": "ANADOLU ANONİM TÜRK SİGORTA ŞİRKETİ",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "UFRS"
+  },
+  {
+    "c": "ARASE",
+    "all": [
+      "ARASE"
+    ],
+    "n": "DOĞU ARAS ENERJİ YATIRIMLARI A.Ş.",
+    "ct": "ERZURUM",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARCLK",
+    "all": [
+      "ARCLK"
+    ],
+    "n": "ARÇELİK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARDYZ",
+    "all": [
+      "ARDYZ"
+    ],
+    "n": "ARD GRUP BİLİŞİM TEKNOLOJİLERİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARENA",
+    "all": [
+      "ARENA"
+    ],
+    "n": "ARENA BİLGİSAYAR SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARFYE",
+    "all": [
+      "ARFYE"
+    ],
+    "n": "ARF BİO YENİLENEBİLİR ENERJİ ÜRETİM A.Ş.",
+    "ct": "ANKARA",
+    "au": "TİTANYUM BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARMGD",
+    "all": [
+      "ARMGD"
+    ],
+    "n": "ARMADA GIDA TİCARET SANAYİ A.Ş.",
+    "ct": "MERSİN",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARSAN",
+    "all": [
+      "ARSAN"
+    ],
+    "n": "ARSAN HOLDİNG A.Ş.",
+    "ct": "KAHRAMANMARAŞ",
+    "au": "YKY BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARTMS",
+    "all": [
+      "ARTMS"
+    ],
+    "n": "ARTEMİS HALI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ARZUM",
+    "all": [
+      "ARZUM"
+    ],
+    "n": "ARZUM ELEKTRİKLİ EV ALETLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ASELS",
+    "all": [
+      "ASELS"
+    ],
+    "n": "ASELSAN ELEKTRONİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ASGYO",
+    "all": [
+      "ASGYO"
+    ],
+    "n": "ASCE GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "GAZİANTEP",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ASTOR",
+    "all": [
+      "ASTOR"
+    ],
+    "n": "ASTOR ENERJİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ASUZU",
+    "all": [
+      "ASUZU"
+    ],
+    "n": "ANADOLU ISUZU OTOMOTİV SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ATAGY",
+    "all": [
+      "ATAGY"
+    ],
+    "n": "ATA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ATAKP",
+    "all": [
+      "ATAKP"
+    ],
+    "n": "ATAKEY PATATES GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ATATP",
+    "all": [
+      "ATATP"
+    ],
+    "n": "ATP YAZILIM VE TEKNOLOJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ATATR",
+    "all": [
+      "ATATR"
+    ],
+    "n": "ATA TURİZM İŞLETMECİLİK TAŞIMACILIK MADENCİLİK KUYUMCULUK SANAYİ VE DIŞ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ATEKS",
+    "all": [
+      "ATEKS"
+    ],
+    "n": "AKIN TEKSTİL A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKT BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ATLAS",
+    "all": [
+      "ATLAS"
+    ],
+    "n": "ATLAS MENKUL KIYMETLER YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BD BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ATSYH",
+    "all": [
+      "ATSYH"
+    ],
+    "n": "ATLANTİS YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "TTK BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AVGYO",
+    "all": [
+      "AVGYO"
+    ],
+    "n": "AVRASYA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BD BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AVHOL",
+    "all": [
+      "AVHOL"
+    ],
+    "n": "AVRUPA YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ULUSAL BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AVOD",
+    "all": [
+      "AVOD"
+    ],
+    "n": "A.V.O.D. KURUTULMUŞ GIDA VE TARIM ÜRÜNLERİ SANAYİ TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "ARTI DEĞER ULUSLARARASI BAĞIMSIZ DENETİM VE YMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AVPGY",
+    "all": [
+      "AVPGY"
+    ],
+    "n": "AVRUPAKENT GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AVTUR",
+    "all": [
+      "AVTUR"
+    ],
+    "n": "AVRASYA PETROL VE TURİSTİK TESİSLER YATIRIMLAR A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BD BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AYCES",
+    "all": [
+      "AYCES"
+    ],
+    "n": "ALTIN YUNUS ÇEŞME TURİSTİK TESİSLER A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AYDEM",
+    "all": [
+      "AYDEM"
+    ],
+    "n": "AYDEM YENİLENEBİLİR ENERJİ A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AYEN",
+    "all": [
+      "AYEN"
+    ],
+    "n": "AYEN ENERJİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AYES",
+    "all": [
+      "AYES"
+    ],
+    "n": "AYES ÇELİK HASIR VE ÇİT SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARILAR BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AYGAZ",
+    "all": [
+      "AYGAZ"
+    ],
+    "n": "AYGAZ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "AZTEK",
+    "all": [
+      "AZTEK"
+    ],
+    "n": "AZTEK TEKNOLOJİ ÜRÜNLERİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BAGFS",
+    "all": [
+      "BAGFS"
+    ],
+    "n": "BAGFAŞ BANDIRMA GÜBRE FABRİKALARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BAHKM",
+    "all": [
+      "BAHKM"
+    ],
+    "n": "BAHADIR KİMYA SANAYİ VE TİCARET A.Ş.",
+    "ct": "KIRIKKALE",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BAKAB",
+    "all": [
+      "BAKAB"
+    ],
+    "n": "BAK AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BALAT",
+    "all": [
+      "BALAT"
+    ],
+    "n": "BALATACILAR BALATACILIK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BALSU",
+    "all": [
+      "BALSU"
+    ],
+    "n": "BALSU GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BANVT",
+    "all": [
+      "BANVT"
+    ],
+    "n": "BANVİT BANDIRMA VİTAMİNLİ YEM SANAYİ A.Ş.",
+    "ct": "BALIKESİR",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BARMA",
+    "all": [
+      "BARMA"
+    ],
+    "n": "BAREM AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "EDİT BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BASCM",
+    "all": [
+      "BASCM"
+    ],
+    "n": "BAŞTAŞ BAŞKENT ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BASGZ",
+    "all": [
+      "BASGZ"
+    ],
+    "n": "BAŞKENT DOĞALGAZ DAĞITIM GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BAYRK",
+    "all": [
+      "BAYRK"
+    ],
+    "n": "BAYRAK EBT TABAN SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BEGYO",
+    "all": [
+      "BEGYO"
+    ],
+    "n": "BATI EGE GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BERA",
+    "all": [
+      "BERA"
+    ],
+    "n": "BERA HOLDİNG A.Ş.",
+    "ct": "KONYA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BESLR",
+    "all": [
+      "BESLR"
+    ],
+    "n": "BESLER GIDA VE KİMYA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BESTE",
+    "all": [
+      "BESTE"
+    ],
+    "n": "BEST BRANDS GRUP ENERJİ YATIRIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ÇÖZÜM ÜNLÜER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BETAE",
+    "all": [
+      "BETAE"
+    ],
+    "n": "BETA ENERJİ VE TEKNOLOJİ A.Ş.",
+    "ct": "ADANA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BEYAZ",
+    "all": [
+      "BEYAZ"
+    ],
+    "n": "BEYAZ FİLO OTO KİRALAMA A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BFREN",
+    "all": [
+      "BFREN"
+    ],
+    "n": "BOSCH FREN SİSTEMLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "BURSA",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BIENY",
+    "all": [
+      "BIENY"
+    ],
+    "n": "BİEN YAPI ÜRÜNLERİ SANAYİ TURİZM VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BIGCH",
+    "all": [
+      "BIGCH"
+    ],
+    "n": "BÜYÜK ŞEFLER GIDA TURİZM TEKSTİL DANIŞMANLIK ORGANİZASYON EĞİTİM SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BIGEN",
+    "all": [
+      "BIGEN"
+    ],
+    "n": "BİRLEŞİM GRUP ENERJİ YATIRIMLARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BIGTK",
+    "all": [
+      "BIGTK"
+    ],
+    "n": "BİG MEDYA TEKNOLOJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BIMAS",
+    "all": [
+      "BIMAS"
+    ],
+    "n": "BİM BİRLEŞİK MAĞAZALAR A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BINBN",
+    "all": [
+      "BINBN"
+    ],
+    "n": "BİN ULAŞIM VE AKILLI ŞEHİR TEKNOLOJİLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BINHO",
+    "all": [
+      "BINHO"
+    ],
+    "n": "1000 YATIRIMLAR HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BIOEN",
+    "all": [
+      "BIOEN"
+    ],
+    "n": "BİOTREND ÇEVRE VE ENERJİ YATIRIMLARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BIZIM",
+    "all": [
+      "BIZIM"
+    ],
+    "n": "BİZİM TOPTAN SATIŞ MAĞAZALARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BJKAS",
+    "all": [
+      "BJKAS"
+    ],
+    "n": "BEŞİKTAŞ FUTBOL YATIRIMLARI SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BKRGY",
+    "all": [
+      "BKRGY"
+    ],
+    "n": "BAKIRCI GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BLCYT",
+    "all": [
+      "BLCYT"
+    ],
+    "n": "BİLİCİ YATIRIM SANAYİ VE TİCARET A.Ş.",
+    "ct": "ADANA",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BLUME",
+    "all": [
+      "BLUME"
+    ],
+    "n": "BLUME METAL KİMYA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VENTERA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BMSCH",
+    "all": [
+      "BMSCH"
+    ],
+    "n": "BMS ÇELİK HASIR SANAYİ VE TİCARET A.Ş.",
+    "ct": "MANİSA",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BMSTL",
+    "all": [
+      "BMSTL"
+    ],
+    "n": "BMS BİRLEŞİK METAL SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ATA ULUSLARARASI BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BNTAS",
+    "all": [
+      "BNTAS"
+    ],
+    "n": "BANTAŞ BANDIRMA AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "ct": "BALIKESİR",
+    "au": "ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BOBET",
+    "all": [
+      "BOBET"
+    ],
+    "n": "BOĞAZİÇİ BETON SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REANDA AREN BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BORLS",
+    "all": [
+      "BORLS"
+    ],
+    "n": "BORLEASE OTOMOTİV A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BORSK",
+    "all": [
+      "BORSK"
+    ],
+    "n": "BOR ŞEKER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BOSSA",
+    "all": [
+      "BOSSA"
+    ],
+    "n": "BOSSA TİCARET VE SANAYİ İŞLETMELERİ T.A.Ş.",
+    "ct": "ADANA",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BRISA",
+    "all": [
+      "BRISA"
+    ],
+    "n": "BRİSA BRİDGESTONE SABANCI LASTİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BRKO",
+    "all": [
+      "BRKO"
+    ],
+    "n": "BİRKO BİRLEŞİK KOYUNLULULAR MENSUCAT TİCARET VE SANAYİ A.Ş.",
+    "ct": "NİĞDE",
+    "au": "MERİDYEN KURUMSAL ÇÖZÜM VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BRKSN",
+    "all": [
+      "BRKSN"
+    ],
+    "n": "BERKOSAN YALITIM VE TECRİT MADDELERİ ÜRETİM VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BRKVY",
+    "all": [
+      "BRKVY"
+    ],
+    "n": "BİRİKİM VARLIK YÖNETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "UFRS_B"
+  },
+  {
+    "c": "BRLSM",
+    "all": [
+      "BRLSM"
+    ],
+    "n": "BİRLEŞİM MÜHENDİSLİK ISITMA SOĞUTMA HAVALANDIRMA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BRMEN",
+    "all": [
+      "BRMEN"
+    ],
+    "n": "BİRLİK MENSUCAT TİCARET VE SANAYİ İŞLETMESİ A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "BD BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BRSAN",
+    "all": [
+      "BRSAN"
+    ],
+    "n": "BORUSAN BİRLEŞİK BORU FABRİKALARI SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BRYAT",
+    "all": [
+      "BRYAT"
+    ],
+    "n": "BORUSAN YATIRIM VE PAZARLAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BSOKE",
+    "all": [
+      "BSOKE"
+    ],
+    "n": "BATIÇİM ÇİMENTO SANAYİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BTCIM",
+    "all": [
+      "BTCIM"
+    ],
+    "n": "BATIÇİM BATI ANADOLU SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BUCIM",
+    "all": [
+      "BUCIM"
+    ],
+    "n": "BURSA ÇİMENTO FABRİKASI A.Ş.",
+    "ct": "BURSA",
+    "au": "SUN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BULGS",
+    "all": [
+      "BULGS"
+    ],
+    "n": "BULLS GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MİTRA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BURCE",
+    "all": [
+      "BURCE"
+    ],
+    "n": "BURÇELİK BURSA ÇELİK DÖKÜM SANAYİİ A.Ş.",
+    "ct": "BURSA",
+    "au": "KAVRAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BURVA",
+    "all": [
+      "BURVA"
+    ],
+    "n": "BURÇELİK VANA SANAYİ VE TİCARET A.Ş.",
+    "ct": "BURSA",
+    "au": "KAVRAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BVSAN",
+    "all": [
+      "BVSAN"
+    ],
+    "n": "BÜLBÜLOĞLU VİNÇ SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "TESLA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "BYDNR",
+    "all": [
+      "BYDNR"
+    ],
+    "n": "BAYDÖNER RESTORANLARI A.Ş.",
+    "ct": "İZMİR",
+    "au": "SUN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CANTE",
+    "all": [
+      "CANTE"
+    ],
+    "n": "ÇAN2 TERMİK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AS BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CASA",
+    "all": [
+      "CASA"
+    ],
+    "n": "CASA EMTİA PETROL KİMYEVİ VE TÜREVLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MERİDYEN KURUMSAL ÇÖZÜM VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CATES",
+    "all": [
+      "CATES"
+    ],
+    "n": "ÇATES ELEKTRİK ÜRETİM A.Ş.",
+    "ct": "ZONGULDAK",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CCOLA",
+    "all": [
+      "CCOLA"
+    ],
+    "n": "COCA-COLA İÇECEK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CELHA",
+    "all": [
+      "CELHA"
+    ],
+    "n": "ÇELİK HALAT VE TEL SANAYİİ A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "RASYONEL BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CEMAS",
+    "all": [
+      "CEMAS"
+    ],
+    "n": "ÇEMAŞ DÖKÜM SANAYİ A.Ş.",
+    "ct": "KIRŞEHİR",
+    "au": "ANALİZ BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CEMTS",
+    "all": [
+      "CEMTS"
+    ],
+    "n": "ÇEMTAŞ ÇELİK MAKİNA SANAYİ VE TİCARET A.Ş.",
+    "ct": "BURSA",
+    "au": "SUN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CEMZY",
+    "all": [
+      "CEMZY"
+    ],
+    "n": "CEM ZEYTİN A.Ş.",
+    "ct": "İZMİR",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CEOEM",
+    "all": [
+      "CEOEM"
+    ],
+    "n": "CEO EVENT MEDYA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KAİZEN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CGCAM",
+    "all": [
+      "CGCAM"
+    ],
+    "n": "ÇAĞDAŞ CAM SANAYİ VE TİCARET A.Ş.",
+    "ct": "AYDIN",
+    "au": "ATA ULUSLARARASI BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CIMSA",
+    "all": [
+      "CIMSA"
+    ],
+    "n": "ÇİMSA ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CITAS",
+    "all": [
+      "CITAS"
+    ],
+    "n": "ÇİTLEKÇİ MAĞAZACILIK GIDA A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CLEBI",
+    "all": [
+      "CLEBI"
+    ],
+    "n": "ÇELEBİ HAVA SERVİSİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CMBTN",
+    "all": [
+      "CMBTN"
+    ],
+    "n": "ÇİMBETON HAZIRBETON VE PREFABRİK YAPI ELEMANLARI SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CMENT",
+    "all": [
+      "CMENT"
+    ],
+    "n": "ÇİMENTAŞ İZMİR ÇİMENTO FABRİKASI T.A.Ş.",
+    "ct": "İZMİR",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CONSE",
+    "all": [
+      "CONSE"
+    ],
+    "n": "CONSUS ENERJİ İŞLETMECİLİĞİ VE HİZMETLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "COSMO",
+    "all": [
+      "COSMO"
+    ],
+    "n": "COSMOS YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CRDFA",
+    "all": [
+      "CRDFA"
+    ],
+    "n": "CREDITWEST FAKTORİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "CRFSA",
+    "all": [
+      "CRFSA"
+    ],
+    "n": "CARREFOURSA CARREFOUR SABANCI TİCARET MERKEZİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CUSAN",
+    "all": [
+      "CUSAN"
+    ],
+    "n": "ÇUHADAROĞLU METAL SANAYİ VE PAZARLAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CVKMD",
+    "all": [
+      "CVKMD"
+    ],
+    "n": "CVK MADEN İŞLETMELERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "CWENE",
+    "all": [
+      "CWENE"
+    ],
+    "n": "CW ENERJİ MÜHENDİSLİK TİCARET VE SANAYİ A.Ş.",
+    "ct": "ANTALYA",
+    "au": "ECOVIS VARLIK BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DAGI",
+    "all": [
+      "DAGI"
+    ],
+    "n": "DAGİ GİYİM SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DAPGM",
+    "all": [
+      "DAPGM"
+    ],
+    "n": "DAP GAYRİMENKUL GELİŞTİRME A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ATA ULUSLARARASI BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DARDL",
+    "all": [
+      "DARDL"
+    ],
+    "n": "DARDANEL ÖNENTAŞ GIDA SANAYİ A.Ş.",
+    "ct": "ÇANAKKALE",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DCTTR",
+    "all": [
+      "DCTTR"
+    ],
+    "n": "DCT TRADİNG DIŞ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DENGE",
+    "all": [
+      "DENGE"
+    ],
+    "n": "DENGE YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MİTRA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DERHL",
+    "all": [
+      "DERHL"
+    ],
+    "n": "DERLÜKS YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANALİZ BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DERIM",
+    "all": [
+      "DERIM"
+    ],
+    "n": "DERİMOD KONFEKSİYON AYAKKABI DERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "TEKİRDAĞ",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DESA",
+    "all": [
+      "DESA"
+    ],
+    "n": "DESA DERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REFORM BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DESPC",
+    "all": [
+      "DESPC"
+    ],
+    "n": "DESPEC BİLGİSAYAR PAZARLAMA VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DEVA",
+    "all": [
+      "DEVA"
+    ],
+    "n": "DEVA HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DGATE",
+    "all": [
+      "DGATE"
+    ],
+    "n": "DATAGATE BİLGİSAYAR MALZEMELERİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MGI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DGGYO",
+    "all": [
+      "DGGYO"
+    ],
+    "n": "DOĞUŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DGNMO",
+    "all": [
+      "DGNMO"
+    ],
+    "n": "DOĞANLAR MOBİLYA GRUBU İMALAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DIRIT",
+    "all": [
+      "DIRIT"
+    ],
+    "n": "DİRİTEKS DİRİLİŞ TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "ct": "ISPARTA",
+    "au": "MERİDYEN KURUMSAL ÇÖZÜM VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DITAS",
+    "all": [
+      "DITAS"
+    ],
+    "n": "DİTAŞ BDY YEDEK PARÇA İMALAT VE TEKNİK A.Ş.",
+    "ct": "NİĞDE",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DMRGD",
+    "all": [
+      "DMRGD"
+    ],
+    "n": "DMR UNLU MAMULLER ÜRETİM GIDA TOPTAN PERAKENDE İHRACAT A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DMSAS",
+    "all": [
+      "DMSAS"
+    ],
+    "n": "DEMİSAŞ DÖKÜM EMAYE MAMÜLLERİ SANAYİ A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DNISI",
+    "all": [
+      "DNISI"
+    ],
+    "n": "DİNAMİK ISI MAKİNA YALITIM MALZEMELERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "ARTI DEĞER ULUSLARARASI BAĞIMSIZ DENETİM VE YMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DOAS",
+    "all": [
+      "DOAS"
+    ],
+    "n": "DOĞUŞ OTOMOTİV SERVİS VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DOCO",
+    "all": [
+      "DOCO"
+    ],
+    "n": "DO & CO AKTIENGESELLSCHAFT",
+    "ct": "",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "UFRS_A"
+  },
+  {
+    "c": "DOFER",
+    "all": [
+      "DOFER"
+    ],
+    "n": "DOFER YAPI MALZEMELERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DOFRB",
+    "all": [
+      "DOFRB"
+    ],
+    "n": "DOF ROBOTİK SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DOGUB",
+    "all": [
+      "DOGUB"
+    ],
+    "n": "DOĞUSAN BORU SANAYİ VE TİCARET A.Ş.",
+    "ct": "ERZİNCAN",
+    "au": "REPORT BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DOHOL",
+    "all": [
+      "DOHOL"
+    ],
+    "n": "DOĞAN ŞİRKETLER GRUBU HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DOKTA",
+    "all": [
+      "DOKTA"
+    ],
+    "n": "DÖKTAŞ DÖKÜMCÜLÜK TİCARET VE SANAYİ A.Ş.",
+    "ct": "BURSA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DSTKF",
+    "all": [
+      "DSTKF"
+    ],
+    "n": "DESTEK FİNANS FAKTORİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "DUNYH",
+    "all": [
+      "DUNYH"
+    ],
+    "n": "DÜNYA HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MİTRA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DURDO",
+    "all": [
+      "DURDO"
+    ],
+    "n": "DURAN DOĞAN BASIM VE AMBALAJ SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DURKN",
+    "all": [
+      "DURKN"
+    ],
+    "n": "DURUKAN ŞEKERLEME SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DYOBY",
+    "all": [
+      "DYOBY"
+    ],
+    "n": "DYO BOYA FABRİKALARI SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "DZGYO",
+    "all": [
+      "DZGYO"
+    ],
+    "n": "DENİZ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EBEBK",
+    "all": [
+      "EBEBK"
+    ],
+    "n": "EBEBEK MAĞAZACILIK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ECILC",
+    "all": [
+      "ECILC"
+    ],
+    "n": "EİS ECZACIBAŞI İLAÇ SINAİ VE FİNANSAL YATIRIMLAR SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ECOGR",
+    "all": [
+      "ECOGR"
+    ],
+    "n": "ECOGREEN ENERJİ HOLDİNG A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "AS BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ECZYT",
+    "all": [
+      "ECZYT"
+    ],
+    "n": "ECZACIBAŞI YATIRIM HOLDİNG ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EDATA",
+    "all": [
+      "EDATA"
+    ],
+    "n": "E-DATA TEKNOLOJİ PAZARLAMA A.Ş.",
+    "ct": "ANKARA",
+    "au": "TESLA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EDIP",
+    "all": [
+      "EDIP"
+    ],
+    "n": "EDİP GAYRİMENKUL YATIRIM SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EFOR",
+    "all": [
+      "EFOR"
+    ],
+    "n": "EFOR YATIRIM SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EGEEN",
+    "all": [
+      "EGEEN"
+    ],
+    "n": "EGE ENDÜSTRİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EGEGY",
+    "all": [
+      "EGEGY"
+    ],
+    "n": "EGEYAPI AVRUPA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EGEPO",
+    "all": [
+      "EGEPO"
+    ],
+    "n": "NASMED ÖZEL SAĞLIK HİZMETLERİ TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EGGUB",
+    "all": [
+      "EGGUB"
+    ],
+    "n": "EGE GÜBRE SANAYİİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "ANIL YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EGPRO",
+    "all": [
+      "EGPRO"
+    ],
+    "n": "EGE PROFİL TİCARET VE SANAYİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EGSER",
+    "all": [
+      "EGSER"
+    ],
+    "n": "EGE SERAMİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "MBK BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EKDMR",
+    "all": [
+      "EKDMR"
+    ],
+    "n": "EKİNCİLER DEMİR VE ÇELİK SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKADEMİK BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EKGYO",
+    "all": [
+      "EKGYO"
+    ],
+    "n": "EMLAK KONUT GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EKIM",
+    "all": [
+      "EKIM"
+    ],
+    "n": "EKİM TURİZM TİCARET VE SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REANDA AREN BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EKIZ",
+    "all": [
+      "EKIZ"
+    ],
+    "n": "EKİZ KİMYA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "HLB SAYGIN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EKOS",
+    "all": [
+      "EKOS"
+    ],
+    "n": "EKOS TEKNOLOJİ VE ELEKTRİK A.Ş.",
+    "ct": "BALIKESİR",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EKSUN",
+    "all": [
+      "EKSUN"
+    ],
+    "n": "EKSUN GIDA TARIM SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VEZİN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ELITE",
+    "all": [
+      "ELITE"
+    ],
+    "n": "ELİTE NATUREL ORGANİK GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EMKEL",
+    "all": [
+      "EMKEL"
+    ],
+    "n": "EMEK ELEKTRİK ENDÜSTRİSİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EMNIS",
+    "all": [
+      "EMNIS"
+    ],
+    "n": "EMİNİŞ AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "CNS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EMPAE",
+    "all": [
+      "EMPAE"
+    ],
+    "n": "EMPA ELEKTRONİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ECOVIS VARLIK BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ENDAE",
+    "all": [
+      "ENDAE"
+    ],
+    "n": "ENDA ENERJİ HOLDİNG A.Ş.",
+    "ct": "İZMİR",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ENERY",
+    "all": [
+      "ENERY"
+    ],
+    "n": "ENERYA ENERJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ENJSA",
+    "all": [
+      "ENJSA"
+    ],
+    "n": "ENERJİSA ENERJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ENKAI",
+    "all": [
+      "ENKAI"
+    ],
+    "n": "ENKA İNŞAAT VE SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ENPRA",
+    "all": [
+      "ENPRA"
+    ],
+    "n": "ENPARA BANK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "ENSRI",
+    "all": [
+      "ENSRI"
+    ],
+    "n": "ENSARİ SINAİ YATIRIMLAR A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ENTRA",
+    "all": [
+      "ENTRA"
+    ],
+    "n": "IC ENTERRA YENİLENEBİLİR ENERJİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EPLAS",
+    "all": [
+      "EPLAS"
+    ],
+    "n": "EGEPLAST EGE PLASTİK TİCARET VE SANAYİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ERBOS",
+    "all": [
+      "ERBOS"
+    ],
+    "n": "ERBOSAN ERCİYAS BORU SANAYİ VE TİCARET A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "GÜÇBİR BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ERCB",
+    "all": [
+      "ERCB"
+    ],
+    "n": "ERCİYAS ÇELİK BORU SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EREGL",
+    "all": [
+      "EREGL"
+    ],
+    "n": "EREĞLİ DEMİR VE ÇELİK FABRİKALARI T.A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ERSU",
+    "all": [
+      "ERSU"
+    ],
+    "n": "ERSU MEYVE VE GIDA SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "NOTE OFFİCE ULUSLARARASI BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ESCAR",
+    "all": [
+      "ESCAR"
+    ],
+    "n": "ESCAR FİLO KİRALAMA HİZMETLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ESCOM",
+    "all": [
+      "ESCOM"
+    ],
+    "n": "ESCORT TEKNOLOJİ YATIRIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ESEN",
+    "all": [
+      "ESEN"
+    ],
+    "n": "ESENBOĞA ELEKTRİK ÜRETİM A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ETILR",
+    "all": [
+      "ETILR"
+    ],
+    "n": "ETİLER GIDA VE TİCARİ YATIRIMLAR SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ETYAT",
+    "all": [
+      "ETYAT"
+    ],
+    "n": "EURO TREND YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EUHOL",
+    "all": [
+      "EUHOL"
+    ],
+    "n": "EURO YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EUKYO",
+    "all": [
+      "EUKYO"
+    ],
+    "n": "EURO KAPİTAL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EUPWR",
+    "all": [
+      "EUPWR"
+    ],
+    "n": "EUROPOWER ENERJİ VE OTOMASYON TEKNOLOJİLERİ SANAYİ TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EUREN",
+    "all": [
+      "EUREN"
+    ],
+    "n": "EUROPEN ENDÜSTRİ İNŞAAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "ESKİŞEHİR",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EUYO",
+    "all": [
+      "EUYO"
+    ],
+    "n": "EURO MENKUL KIYMET YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "EYGYO",
+    "all": [
+      "EYGYO"
+    ],
+    "n": "EYG GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FADE",
+    "all": [
+      "FADE"
+    ],
+    "n": "FADE GIDA YATIRIM SANAYİ TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FENER",
+    "all": [
+      "FENER"
+    ],
+    "n": "FENERBAHÇE FUTBOL A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FLAP",
+    "all": [
+      "FLAP"
+    ],
+    "n": "FLAP KONGRE TOPLANTI HİZMETLERİ OTOMOTİV VE TURİZM A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FMIZP",
+    "all": [
+      "FMIZP"
+    ],
+    "n": "FEDERAL MOGUL İZMİT PİSTON VE PİM ÜRETİM TESİSLERİ A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FONET",
+    "all": [
+      "FONET"
+    ],
+    "n": "FONET BİLGİ TEKNOLOJİLERİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FORMT",
+    "all": [
+      "FORMT"
+    ],
+    "n": "FORMET METAL VE CAM SANAYİ A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FORTE",
+    "all": [
+      "FORTE"
+    ],
+    "n": "FORTE BİLGİ İLETİŞİM TEKNOLOJİLERİ VE SAVUNMA SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FRIGO",
+    "all": [
+      "FRIGO"
+    ],
+    "n": "FRİGO-PAK GIDA MADDELERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ÇÖZÜM ÜNLÜER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FRMPL",
+    "all": [
+      "FRMPL"
+    ],
+    "n": "FORMÜL PLASTİK VE METAL SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKADEMİK BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FROTO",
+    "all": [
+      "FROTO"
+    ],
+    "n": "FORD OTOMOTİV SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "FZLGY",
+    "all": [
+      "FZLGY"
+    ],
+    "n": "FUZUL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GARAN",
+    "all": [
+      "GARAN",
+      "TGB"
+    ],
+    "n": "TÜRKİYE GARANTİ BANKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "GARFA",
+    "all": [
+      "GARFA"
+    ],
+    "n": "GARANTİ FAKTORİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "GATEG",
+    "all": [
+      "GATEG"
+    ],
+    "n": "GATE GROUP TEKNOLOJİ MEDYA VE SİBER GÜVENLİK HİZMETLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "FİNACTA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GEDIK",
+    "all": [
+      "GEDIK"
+    ],
+    "n": "GEDİK YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GEDZA",
+    "all": [
+      "GEDZA"
+    ],
+    "n": "GEDİZ AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "ct": "KÜTAHYA",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GENIL",
+    "all": [
+      "GENIL"
+    ],
+    "n": "GEN İLAÇ VE SAĞLIK ÜRÜNLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENGE ANKARA BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GENKM",
+    "all": [
+      "GENKM"
+    ],
+    "n": "GENTAŞ KİMYA SANAYİ VE TİCARET PAZARLAMA A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GENTS",
+    "all": [
+      "GENTS"
+    ],
+    "n": "GENTAŞ DEKORATİF YÜZEYLER SANAYİ VE TİCARET A.Ş.",
+    "ct": "BOLU",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GEREL",
+    "all": [
+      "GEREL"
+    ],
+    "n": "GERSAN ELEKTRİK TİCARET VE SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GESAN",
+    "all": [
+      "GESAN"
+    ],
+    "n": "GİRİŞİM ELEKTRİK SANAYİ TAAHHÜT VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GIPTA",
+    "all": [
+      "GIPTA"
+    ],
+    "n": "GIPTA OFİS KIRTASİYE VE PROMOSYON ÜRÜNLERİ İMALAT SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "VEZİN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GLBMD",
+    "all": [
+      "GLB",
+      "GLBMD"
+    ],
+    "n": "GLOBAL MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GLCVY",
+    "all": [
+      "GLCVY"
+    ],
+    "n": "GELECEK VARLIK YÖNETİMİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS_B"
+  },
+  {
+    "c": "GLRMK",
+    "all": [
+      "GLRMK"
+    ],
+    "n": "GÜLERMAK AĞIR SANAYİ İNŞAAT VE TAAHHÜT A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GLRYH",
+    "all": [
+      "GLRYH"
+    ],
+    "n": "GÜLER YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GLYHO",
+    "all": [
+      "GLYHO"
+    ],
+    "n": "GLOBAL YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GMTAS",
+    "all": [
+      "GMTAS"
+    ],
+    "n": "GİMAT MAĞAZACILIK SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GOKNR",
+    "all": [
+      "GOKNR"
+    ],
+    "n": "GÖKNUR GIDA MADDELERİ ENERJİ İMALAT İTHALAT İHRACAT TİCARET VE SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "VEZİN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GOLDA",
+    "all": [
+      "GOLDA"
+    ],
+    "n": "GOLDA GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "KONYA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GOLTS",
+    "all": [
+      "GOLTS"
+    ],
+    "n": "GÖLTAŞ GÖLLER BÖLGESİ ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENGE ANKARA BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GOODY",
+    "all": [
+      "GOODY"
+    ],
+    "n": "GOODYEAR LASTİKLERİ T.A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GOZDE",
+    "all": [
+      "GOZDE"
+    ],
+    "n": "GÖZDE GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GRNYO",
+    "all": [
+      "GRNYO"
+    ],
+    "n": "GARANTİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GRSEL",
+    "all": [
+      "GRSEL"
+    ],
+    "n": "GÜR-SEL TURİZM TAŞIMACILIK VE SERVİS TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GRTHO",
+    "all": [
+      "GRTHO"
+    ],
+    "n": "GRAINTURK HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GSDDE",
+    "all": [
+      "GSDDE"
+    ],
+    "n": "GSD DENİZCİLİK GAYRİMENKUL İNŞAAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GSDHO",
+    "all": [
+      "GSDHO"
+    ],
+    "n": "GSD HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GSRAY",
+    "all": [
+      "GSRAY"
+    ],
+    "n": "GALATASARAY SPORTİF SINAİ VE TİCARİ YATIRIMLAR A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GUBRF",
+    "all": [
+      "GUBRF"
+    ],
+    "n": "GÜBRE FABRİKALARI T.A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GUNDG",
+    "all": [
+      "GUNDG"
+    ],
+    "n": "GÜNDOĞDU GIDA SÜT ÜRÜNLERİ SANAYİ VE DIŞ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GWIND",
+    "all": [
+      "GWIND"
+    ],
+    "n": "GALATA WIND ENERJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "GZNMI",
+    "all": [
+      "GZNMI"
+    ],
+    "n": "GEZİNOMİ SEYAHAT TURİZM TİCARET A.Ş.",
+    "ct": "ANTALYA",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HALKB",
+    "all": [
+      "HALKB",
+      "THL"
+    ],
+    "n": "TÜRKİYE HALK BANKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "HATEK",
+    "all": [
+      "HATEK"
+    ],
+    "n": "HATEKS HATAY TEKSTİL İŞLETMELERİ A.Ş.",
+    "ct": "HATAY",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HATSN",
+    "all": [
+      "HATSN"
+    ],
+    "n": "HAT-SAN GEMİ İNŞAA BAKIM ONARIM DENİZ NAKLİYAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKC BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HDFGS",
+    "all": [
+      "HDFGS"
+    ],
+    "n": "HEDEF GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARTI DEĞER ULUSLARARASI BAĞIMSIZ DENETİM VE YMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HEDEF",
+    "all": [
+      "HEDEF"
+    ],
+    "n": "HEDEF HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HEKTS",
+    "all": [
+      "HEKTS"
+    ],
+    "n": "HEKTAŞ TİCARET T.A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HKTM",
+    "all": [
+      "HKTM"
+    ],
+    "n": "HİDROPAR HAREKET KONTROL TEKNOLOJİLERİ MERKEZİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "NOTE OFFİCE ULUSLARARASI BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HLGYO",
+    "all": [
+      "HLGYO"
+    ],
+    "n": "HALK GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HOROZ",
+    "all": [
+      "HOROZ"
+    ],
+    "n": "HOROZ LOJİSTİK KARGO HİZMETLERİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HRKET",
+    "all": [
+      "HRKET"
+    ],
+    "n": "HAREKET PROJE TAŞIMACILIĞI VE YÜK MÜHENDİSLİĞİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HTTBT",
+    "all": [
+      "HTTBT"
+    ],
+    "n": "HİTİT BİLGİSAYAR HİZMETLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HUBVC",
+    "all": [
+      "HUBVC"
+    ],
+    "n": "HUB GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HUNER",
+    "all": [
+      "HUNER"
+    ],
+    "n": "HUN YENİLENEBİLİR ENERJİ ÜRETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BM BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "HURGZ",
+    "all": [
+      "HURGZ"
+    ],
+    "n": "HÜRRİYET GAZETECİLİK VE MATBAACILIK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KAİZEN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ICBCT",
+    "all": [
+      "ICB",
+      "ICBCT"
+    ],
+    "n": "ICBC TURKEY BANK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "ICUGS",
+    "all": [
+      "ICUGS"
+    ],
+    "n": "ICU GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İZMİR",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IDGYO",
+    "all": [
+      "IDGYO"
+    ],
+    "n": "İDEALİST GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IEYHO",
+    "all": [
+      "IEYHO"
+    ],
+    "n": "IŞIKLAR ENERJİ VE YAPI HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IHAAS",
+    "all": [
+      "IHAAS"
+    ],
+    "n": "İHLAS HABER AJANSI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IHEVA",
+    "all": [
+      "IHEVA"
+    ],
+    "n": "İHLAS EV ALETLERİ İMALAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IHGZT",
+    "all": [
+      "IHGZT"
+    ],
+    "n": "İHLAS GAZETECİLİK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IHLAS",
+    "all": [
+      "IHLAS"
+    ],
+    "n": "İHLAS HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IHLGM",
+    "all": [
+      "IHLGM"
+    ],
+    "n": "İHLAS GAYRİMENKUL PROJE GELİŞTİRME VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IHYAY",
+    "all": [
+      "IHYAY"
+    ],
+    "n": "İHLAS YAYIN HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IMASM",
+    "all": [
+      "IMASM"
+    ],
+    "n": "İMAŞ MAKİNA SANAYİ A.Ş.",
+    "ct": "KONYA",
+    "au": "TTK BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INDES",
+    "all": [
+      "INDES"
+    ],
+    "n": "İNDEKS BİLGİSAYAR SİSTEMLERİ MÜHENDİSLİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INFO",
+    "all": [
+      "INFO",
+      "IYF"
+    ],
+    "n": "İNFO YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INGRM",
+    "all": [
+      "INGRM"
+    ],
+    "n": "INGRAM MİCRO BİLİŞİM SİSTEMLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INTEK",
+    "all": [
+      "INTEK"
+    ],
+    "n": "İNNOSA TEKNOLOJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INTEM",
+    "all": [
+      "INTEM"
+    ],
+    "n": "İNTEMA İNŞAAT VE TESİSAT MALZEMELERİ YATIRIM VE PAZARLAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INTET",
+    "all": [
+      "INTET"
+    ],
+    "n": "İNTETRA TEKNOLOJİ VE BİLİŞİM HİZMETLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INVEO",
+    "all": [
+      "INVEO"
+    ],
+    "n": "INVEO YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "INVES",
+    "all": [
+      "INVES"
+    ],
+    "n": "INVESTCO HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISBIR",
+    "all": [
+      "ISBIR"
+    ],
+    "n": "İŞBİR HOLDİNG A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISCTR",
+    "all": [
+      "ISATR",
+      "ISBTR",
+      "ISCTR",
+      "ISKUR",
+      "TIB"
+    ],
+    "n": "TÜRKİYE İŞ BANKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "UFRS"
+  },
+  {
+    "c": "ISDMR",
+    "all": [
+      "ISDMR"
+    ],
+    "n": "İSKENDERUN DEMİR VE ÇELİK A.Ş.",
+    "ct": "HATAY",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISFIN",
+    "all": [
+      "ISFIN"
+    ],
+    "n": "İŞ FİNANSAL KİRALAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "ISGSY",
+    "all": [
+      "ISGSY"
+    ],
+    "n": "İŞ GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISGYO",
+    "all": [
+      "ISGYO"
+    ],
+    "n": "İŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISKPL",
+    "all": [
+      "ISKPL"
+    ],
+    "n": "IŞIK PLASTİK SANAYİ VE DIŞ TİCARET PAZARLAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISMEN",
+    "all": [
+      "ISMEN",
+      "IYM"
+    ],
+    "n": "İŞ YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISSEN",
+    "all": [
+      "ISSEN"
+    ],
+    "n": "İŞBİR SENTETİK DOKUMA SANAYİ A.Ş.",
+    "ct": "BALIKESİR",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISVEA",
+    "all": [
+      "ISVEA"
+    ],
+    "n": "İSVEA SERAMİK VE BANYO ÜRÜNLERİ SANAYİ A.Ş.",
+    "ct": "ÇORUM",
+    "au": "REFORM BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ISYAT",
+    "all": [
+      "ISYAT"
+    ],
+    "n": "İŞ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IZENR",
+    "all": [
+      "IZENR"
+    ],
+    "n": "İZDEMİR ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IZFAS",
+    "all": [
+      "IZFAS"
+    ],
+    "n": "İZMİR FIRÇA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "AKT BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IZINV",
+    "all": [
+      "IZINV"
+    ],
+    "n": "İZ YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKADEMİK BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "IZMDC",
+    "all": [
+      "IZMDC"
+    ],
+    "n": "İZMİR DEMİR ÇELİK SANAYİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "JANTS",
+    "all": [
+      "JANTS"
+    ],
+    "n": "JANTSA JANT SANAYİ VE TİCARET A.Ş.",
+    "ct": "AYDIN",
+    "au": "SUN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KAPLM",
+    "all": [
+      "KAPLM"
+    ],
+    "n": "KAPLAMİN AMBALAJ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KARCL",
+    "all": [
+      "KARCL"
+    ],
+    "n": "KARDEMİR ÇELİK SANAYİ A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "AKADEMİK BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KAREL",
+    "all": [
+      "KAREL"
+    ],
+    "n": "KAREL ELEKTRONİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KARSN",
+    "all": [
+      "KARSN"
+    ],
+    "n": "KARSAN OTOMOTİV SANAYİİ VE TİCARET A.Ş.",
+    "ct": "BURSA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KARTN",
+    "all": [
+      "KARTN"
+    ],
+    "n": "KARTONSAN KARTON SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MGI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KATMR",
+    "all": [
+      "KATMR"
+    ],
+    "n": "KATMERCİLER ARAÇ ÜSTÜ EKİPMAN SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KAYSE",
+    "all": [
+      "KAYSE"
+    ],
+    "n": "KAYSERİ ŞEKER FABRİKASI A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KBORU",
+    "all": [
+      "KBORU"
+    ],
+    "n": "KUZEY BORU A.Ş.",
+    "ct": "AKSARAY",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KCAER",
+    "all": [
+      "KCAER"
+    ],
+    "n": "KOCAER ÇELİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KCHOL",
+    "all": [
+      "KCHOL"
+    ],
+    "n": "KOÇ HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KENT",
+    "all": [
+      "KENT"
+    ],
+    "n": "KENT GIDA MADDELERİ SANAYİİ VE TİCARET A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KERVN",
+    "all": [
+      "KERVN"
+    ],
+    "n": "KERVANSARAY YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MEGA GLOBAL ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KFEIN",
+    "all": [
+      "KFEIN"
+    ],
+    "n": "KAFEİN YAZILIM HİZMETLERİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KGYO",
+    "all": [
+      "KGYO"
+    ],
+    "n": "KORAY GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KIMMR",
+    "all": [
+      "KIMMR"
+    ],
+    "n": "ERSAN ALIŞVERİŞ HİZMETLERİ VE GIDA SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BOĞAZİÇİ BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KLGYO",
+    "all": [
+      "KLGYO"
+    ],
+    "n": "KİLER GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ÇÖZÜM ÜNLÜER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KLKIM",
+    "all": [
+      "KLKIM"
+    ],
+    "n": "KALEKİM KİMYEVİ MADDELER SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KLMSN",
+    "all": [
+      "KLMSN"
+    ],
+    "n": "KLİMASAN KLİMA SANAYİ VE TİCARET A.Ş.",
+    "ct": "MANİSA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KLNMA",
+    "all": [
+      "KLN",
+      "KLNMA"
+    ],
+    "n": "TÜRKİYE KALKINMA VE YATIRIM BANKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "KLRHO",
+    "all": [
+      "KLRHO"
+    ],
+    "n": "KİLER HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ÇÖZÜM ÜNLÜER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KLSER",
+    "all": [
+      "KLSER"
+    ],
+    "n": "KALESERAMİK ÇANAKKALE KALEBODUR SERAMİK SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KLSYN",
+    "all": [
+      "KLSYN"
+    ],
+    "n": "KOLEKSİYON MOBİLYA SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KLYPV",
+    "all": [
+      "KLYPV"
+    ],
+    "n": "KALYON GÜNEŞ TEKNOLOJİLERİ ÜRETİM A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KMPUR",
+    "all": [
+      "KMPUR"
+    ],
+    "n": "KİMTEKS POLİÜRETAN SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KNFRT",
+    "all": [
+      "KNFRT"
+    ],
+    "n": "KONFRUT TARIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANALİZ BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KOCMT",
+    "all": [
+      "KOCMT"
+    ],
+    "n": "KOÇ METALURJİ A.Ş.",
+    "ct": "HATAY",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KONKA",
+    "all": [
+      "KONKA"
+    ],
+    "n": "KONYA KAĞIT SANAYİ VE TİCARET A.Ş.",
+    "ct": "KONYA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KONTR",
+    "all": [
+      "KONTR"
+    ],
+    "n": "KONTROLMATİK TEKNOLOJİ ENERJİ VE MÜHENDİSLİK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KONYA",
+    "all": [
+      "KONYA"
+    ],
+    "n": "KONYA ÇİMENTO SANAYİİ A.Ş.",
+    "ct": "KONYA",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KOPOL",
+    "all": [
+      "KOPOL"
+    ],
+    "n": "KOZA POLYESTER SANAYİ VE TİCARET A.Ş.",
+    "ct": "GAZİANTEP",
+    "au": "ATA ULUSLARARASI BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KORDS",
+    "all": [
+      "KORDS"
+    ],
+    "n": "KORDSA TEKNİK TEKSTİL A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KOTON",
+    "all": [
+      "KOTON"
+    ],
+    "n": "KOTON MAĞAZACILIK TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KPEKS",
+    "all": [
+      "KPEKS"
+    ],
+    "n": "KAPEKS KİMYA SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENGE ANKARA BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KRDMD",
+    "all": [
+      "KRDMA",
+      "KRDMB",
+      "KRDMD"
+    ],
+    "n": "KARDEMİR KARABÜK DEMİR ÇELİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "KARABÜK",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KRGYO",
+    "all": [
+      "KRGYO"
+    ],
+    "n": "KÖRFEZ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KRONT",
+    "all": [
+      "KRONT"
+    ],
+    "n": "KRON TEKNOLOJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KAVRAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KRPLS",
+    "all": [
+      "KRPLS"
+    ],
+    "n": "KOROPLAST TEMİZLİK AMBALAJ ÜRÜNLERİ SANAYİ VE DIŞ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KRSTL",
+    "all": [
+      "KRSTL"
+    ],
+    "n": "KRİSTAL KOLA VE MEŞRUBAT SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KRTEK",
+    "all": [
+      "KRTEK"
+    ],
+    "n": "KARSU TEKSTİL SANAYİİ VE TİCARET A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KRVGD",
+    "all": [
+      "KRVGD"
+    ],
+    "n": "KERVAN GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KSTUR",
+    "all": [
+      "KSTUR"
+    ],
+    "n": "KUŞTUR KUŞADASI TURİZM ENDÜSTRİSİ A.Ş.",
+    "ct": "AYDIN",
+    "au": "KAVRAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KTLEV",
+    "all": [
+      "KTLEV"
+    ],
+    "n": "KATILIMEVİM TASARRUF FİNANSMAN A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKSİS ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "KTSKR",
+    "all": [
+      "KTSKR"
+    ],
+    "n": "KÜTAHYA ŞEKER FABRİKASI A.Ş.",
+    "ct": "KÜTAHYA",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KUTPO",
+    "all": [
+      "KUTPO"
+    ],
+    "n": "KÜTAHYA PORSELEN SANAYİ A.Ş.",
+    "ct": "KÜTAHYA",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KUVVA",
+    "all": [
+      "KUVVA"
+    ],
+    "n": "KUVVA GIDA TİCARET VE SANAYİ YATIRIMLARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "CNS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KUYAS",
+    "all": [
+      "KUYAS"
+    ],
+    "n": "KUYAŞ YATIRIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KZBGY",
+    "all": [
+      "KZBGY"
+    ],
+    "n": "KIZILBÜK GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "KZGYO",
+    "all": [
+      "KZGYO"
+    ],
+    "n": "KUZUGRUP GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LIDER",
+    "all": [
+      "LIDER"
+    ],
+    "n": "LDR TURİZM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MODEL BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LIDFA",
+    "all": [
+      "LIDFA"
+    ],
+    "n": "LİDER FAKTORİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "LILAK",
+    "all": [
+      "LILAK"
+    ],
+    "n": "LİLA KAĞIT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LINK",
+    "all": [
+      "LINK"
+    ],
+    "n": "LİNK BİLGİSAYAR SİSTEMLERİ YAZILIMI VE DONANIMI SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LKMNH",
+    "all": [
+      "LKMNH"
+    ],
+    "n": "LOKMAN HEKİM ENGÜRÜSAĞ SAĞLIK TURİZM EĞİTİM HİZMETLERİ VE İNŞAAT TAAHHÜT A.Ş.",
+    "ct": "ANKARA",
+    "au": "VEZİN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LMKDC",
+    "all": [
+      "LMKDC"
+    ],
+    "n": "LİMAK DOĞU ANADOLU ÇİMENTO SANAYİ VE TİCARET A.Ş.",
+    "ct": "ŞANLIURFA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LOGO",
+    "all": [
+      "LOGO"
+    ],
+    "n": "LOGO YAZILIM SANAYİ VE TİCARET A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LRSHO",
+    "all": [
+      "LRSHO"
+    ],
+    "n": "LORAS HOLDİNG A.Ş.",
+    "ct": "KONYA",
+    "au": "TTK BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LUKSK",
+    "all": [
+      "LUKSK"
+    ],
+    "n": "LÜKS KADİFE TİCARET VE SANAYİİ A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "ARILAR BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LXGYO",
+    "all": [
+      "LXGYO"
+    ],
+    "n": "LUXERA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LYDHO",
+    "all": [
+      "LYDHO"
+    ],
+    "n": "LYDİA HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "LYDYE",
+    "all": [
+      "LYDYE"
+    ],
+    "n": "LYDİA YEŞİL ENERJİ KAYNAKLARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MAALT",
+    "all": [
+      "MAALT"
+    ],
+    "n": "MARMARİS ALTINYUNUS TURİSTİK TESİSLER A.Ş.",
+    "ct": "ANTALYA",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MACKO",
+    "all": [
+      "MACKO"
+    ],
+    "n": "MACKOLİK İNTERNET HİZMETLERİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MAGEN",
+    "all": [
+      "MAGEN"
+    ],
+    "n": "MARGÜN ENERJİ ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MAKIM",
+    "all": [
+      "MAKIM"
+    ],
+    "n": "MAKİM MAKİNA TEKNOLOJİLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MAKTK",
+    "all": [
+      "MAKTK"
+    ],
+    "n": "MAKİNA TAKIM ENDÜSTRİSİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MANAS",
+    "all": [
+      "MANAS"
+    ],
+    "n": "MANAS ENERJİ YÖNETİMİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "ULUSAL BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MARBL",
+    "all": [
+      "MARBL"
+    ],
+    "n": "TUREKS TURUNÇ MADENCİLİK İÇ VE DIŞ TİCARET A.Ş.",
+    "ct": "AFYONKARAHİSAR",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MARMR",
+    "all": [
+      "MARMR"
+    ],
+    "n": "MARMARA HOLDİNG A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MARTI",
+    "all": [
+      "MARTI"
+    ],
+    "n": "MARTI OTEL İŞLETMELERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MASFN",
+    "all": [
+      "MASFN"
+    ],
+    "n": "MASFEN ENERJİ A.Ş.",
+    "ct": "ISPARTA",
+    "au": "REFORM BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MAVI",
+    "all": [
+      "MAVI"
+    ],
+    "n": "MAVİ GİYİM SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MCARD",
+    "all": [
+      "MCARD"
+    ],
+    "n": "METROPAL KURUMSAL HİZMETLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MEDTR",
+    "all": [
+      "MEDTR"
+    ],
+    "n": "MEDİTERA TIBBİ MALZEME SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "ARTI DEĞER ULUSLARARASI BAĞIMSIZ DENETİM VE YMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MEGAP",
+    "all": [
+      "MEGAP"
+    ],
+    "n": "MEGA POLİETİLEN KÖPÜK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ATR BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MEGMT",
+    "all": [
+      "MEGMT"
+    ],
+    "n": "MEGA METAL SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MİTRA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MEKAG",
+    "all": [
+      "MEKAG"
+    ],
+    "n": "MEKA GLOBAL MAKİNE İMALAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MEPET",
+    "all": [
+      "MEPET"
+    ],
+    "n": "MEPET METRO PETROL VE TESİSLERİ SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BD BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MERCN",
+    "all": [
+      "MERCN"
+    ],
+    "n": "MERCAN KİMYA SANAYİ VE TİCARET A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MERIT",
+    "all": [
+      "MERIT"
+    ],
+    "n": "MERİT TURİZM YATIRIM VE İŞLETME A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MERKO",
+    "all": [
+      "MERKO"
+    ],
+    "n": "MERKO GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ÇÖZÜM ÜNLÜER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "METEN",
+    "all": [
+      "METEN"
+    ],
+    "n": "METGÜN ENERJİ YATIRIMLARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "METRO",
+    "all": [
+      "METRO"
+    ],
+    "n": "METRO TİCARİ VE MALİ YATIRIMLAR HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BD BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MEYSU",
+    "all": [
+      "MEYSU"
+    ],
+    "n": "MEYSU GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MGROS",
+    "all": [
+      "MGROS"
+    ],
+    "n": "MİGROS TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MHRGY",
+    "all": [
+      "MHRGY"
+    ],
+    "n": "MHR GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MIATK",
+    "all": [
+      "MIATK"
+    ],
+    "n": "MİA TEKNOLOJİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MMCAS",
+    "all": [
+      "MMCAS"
+    ],
+    "n": "MMC SANAYİ VE TİCARİ YATIRIMLAR A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARILAR BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MNDRS",
+    "all": [
+      "MNDRS"
+    ],
+    "n": "MENDERES TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MNDTR",
+    "all": [
+      "MNDTR"
+    ],
+    "n": "MONDİ TURKEY OLUKLU MUKAVVA KAĞIT VE AMBALAJ SANAYİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MOBTL",
+    "all": [
+      "MOBTL"
+    ],
+    "n": "MOBİLTEL İLETİŞİM HİZMETLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MOGAN",
+    "all": [
+      "MOGAN"
+    ],
+    "n": "MOGAN ENERJİ YATIRIM HOLDİNG A.Ş.",
+    "ct": "ANKARA",
+    "au": "AS BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MOPAS",
+    "all": [
+      "MOPAS"
+    ],
+    "n": "MOPAŞ MARKETÇİLİK GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MPARK",
+    "all": [
+      "MPARK"
+    ],
+    "n": "MLP SAĞLIK HİZMETLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MRGYO",
+    "all": [
+      "MRGYO"
+    ],
+    "n": "MARTI GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MRSHL",
+    "all": [
+      "MRSHL"
+    ],
+    "n": "MARSHALL BOYA VE VERNİK SANAYİİ A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MSGYO",
+    "all": [
+      "MSGYO"
+    ],
+    "n": "MİSTRAL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İZMİR",
+    "au": "ÇÖZÜM ÜNLÜER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MTRKS",
+    "all": [
+      "MTRKS"
+    ],
+    "n": "MATRİKS FİNANSAL TEKNOLOJİLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ÇÖZÜM ÜNLÜER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MTRYO",
+    "all": [
+      "MTRYO"
+    ],
+    "n": "METRO YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BD BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "MZHLD",
+    "all": [
+      "MZHLD"
+    ],
+    "n": "MAZHAR ZORLU HOLDİNG A.Ş.",
+    "ct": "İZMİR",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NATEN",
+    "all": [
+      "NATEN"
+    ],
+    "n": "NATUREL YENİLENEBİLİR ENERJİ TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NETAS",
+    "all": [
+      "NETAS"
+    ],
+    "n": "NETAŞ TELEKOMÜNİKASYON A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NETCD",
+    "all": [
+      "NETCD"
+    ],
+    "n": "NETCAD YAZILIM A.Ş.",
+    "ct": "ANKARA",
+    "au": "VEZİN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NETGL",
+    "all": [
+      "NETGL"
+    ],
+    "n": "NET GLOBAL ENDÜSTRİYEL YATIRIMLAR A.Ş.",
+    "ct": "SİVAS",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NIBAS",
+    "all": [
+      "NIBAS"
+    ],
+    "n": "NİĞBAŞ NİĞDE BETON SANAYİ VE TİCARET A.Ş.",
+    "ct": "NİĞDE",
+    "au": "TTK BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NTGAZ",
+    "all": [
+      "NTGAZ"
+    ],
+    "n": "NATURELGAZ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NTHOL",
+    "all": [
+      "NTHOL"
+    ],
+    "n": "NET HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NUGYO",
+    "all": [
+      "NUGYO"
+    ],
+    "n": "NUROL GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "NUHCM",
+    "all": [
+      "NUHCM"
+    ],
+    "n": "NUH ÇİMENTO SANAYİ A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OBAMS",
+    "all": [
+      "OBAMS"
+    ],
+    "n": "OBA MAKARNACILIK SANAYİ VE TİCARET A.Ş.",
+    "ct": "GAZİANTEP",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OBASE",
+    "all": [
+      "OBASE"
+    ],
+    "n": "OBASE BİLGİSAYAR VE DANIŞMANLIK HİZMETLERİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KAVRAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ODAS",
+    "all": [
+      "ODAS"
+    ],
+    "n": "ODAŞ ELEKTRİK ÜRETİM SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AS BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ODINE",
+    "all": [
+      "ODINE"
+    ],
+    "n": "ODİNE SOLUTİONS TEKNOLOJİ TİCARET VE SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OFSYM",
+    "all": [
+      "OFSYM"
+    ],
+    "n": "OFİS YEM GIDA SANAYİ TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ONCSM",
+    "all": [
+      "ONCSM"
+    ],
+    "n": "ONCOSEM ONKOLOJİK SİSTEMLER SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ONRYT",
+    "all": [
+      "ONRYT"
+    ],
+    "n": "ONUR YÜKSEK TEKNOLOJİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "NOTE OFFİCE ULUSLARARASI BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ORCAY",
+    "all": [
+      "ORCAY"
+    ],
+    "n": "ORÇAY ORTAKÖY ÇAY SANAYİ VE TİCARET A.Ş.",
+    "ct": "RİZE",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ORGE",
+    "all": [
+      "ORGE"
+    ],
+    "n": "ORGE ENERJİ ELEKTRİK TAAHHÜT A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ORMA",
+    "all": [
+      "ORMA"
+    ],
+    "n": "ORMA ORMAN MAHSÜLLERİ İNTEGRE SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENGE ANKARA BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ORZAX",
+    "all": [
+      "ORZAX"
+    ],
+    "n": "ORZAKS İLAÇ VE KİMYA SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OSMEN",
+    "all": [
+      "OMD",
+      "OSMEN"
+    ],
+    "n": "OSMANLI YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OSTIM",
+    "all": [
+      "OSTIM"
+    ],
+    "n": "OSTİM ENDÜSTRİYEL YATIRIMLAR VE İŞLETME A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OTKAR",
+    "all": [
+      "OTKAR"
+    ],
+    "n": "OTOKAR OTOMOTİV VE SAVUNMA SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OTTO",
+    "all": [
+      "OTTO"
+    ],
+    "n": "OTTO HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "TTK BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OYAKC",
+    "all": [
+      "OYAKC"
+    ],
+    "n": "OYAK ÇİMENTO FABRİKALARI A.Ş.",
+    "ct": "ANKARA",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OYAYO",
+    "all": [
+      "OYAYO"
+    ],
+    "n": "OYAK YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OYLUM",
+    "all": [
+      "OYLUM"
+    ],
+    "n": "OYLUM SINAİ YATIRIMLAR A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OYYAT",
+    "all": [
+      "OYA",
+      "OYYAT"
+    ],
+    "n": "OYAK YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OZATD",
+    "all": [
+      "OZATD"
+    ],
+    "n": "ÖZATA DENİZCİLİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "YALOVA",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OZGYO",
+    "all": [
+      "OZGYO"
+    ],
+    "n": "ÖZDERİCİ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REPORT BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OZKGY",
+    "all": [
+      "OZKGY"
+    ],
+    "n": "ÖZAK GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OZRDN",
+    "all": [
+      "OZRDN"
+    ],
+    "n": "ÖZERDEN AMBALAJ SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MİTRA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OZSUB",
+    "all": [
+      "OZSUB"
+    ],
+    "n": "ÖZSU BALIK ÜRETİM A.Ş.",
+    "ct": "İZMİR",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "OZYSR",
+    "all": [
+      "OZYSR"
+    ],
+    "n": "ÖZYAŞAR TEL VE GALVANİZLEME SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PAGYO",
+    "all": [
+      "PAGYO"
+    ],
+    "n": "PANORA GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PAHOL",
+    "all": [
+      "PAHOL"
+    ],
+    "n": "PASİFİK HOLDİNG A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PAMEL",
+    "all": [
+      "PAMEL"
+    ],
+    "n": "PAMEL YENİLENEBİLİR ELEKTRİK ÜRETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PAPIL",
+    "all": [
+      "PAPIL"
+    ],
+    "n": "PAPİLON SAVUNMA TEKNOLOJİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "A1 BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PARSN",
+    "all": [
+      "PARSN"
+    ],
+    "n": "PARSAN MAKİNA PARÇALARI SANAYİİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PASEU",
+    "all": [
+      "PASEU"
+    ],
+    "n": "PASİFİK EURASİA LOJİSTİK DIŞ TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PATEK",
+    "all": [
+      "PATEK"
+    ],
+    "n": "PASİFİK TEKNOLOJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PCILT",
+    "all": [
+      "PCILT"
+    ],
+    "n": "PC İLETİŞİM VE MEDYA HİZMETLERİ SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VİZYON GRUP BAĞIMSIZ DENETİM.A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PEKGY",
+    "all": [
+      "PEKGY"
+    ],
+    "n": "PEKER GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PENGD",
+    "all": [
+      "PENGD"
+    ],
+    "n": "PENGUEN GIDA SANAYİ A.Ş.",
+    "ct": "BURSA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PENTA",
+    "all": [
+      "PENTA"
+    ],
+    "n": "PENTA TEKNOLOJİ ÜRÜNLERİ DAĞITIM TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PETKM",
+    "all": [
+      "PETKM"
+    ],
+    "n": "PETKİM PETROKİMYA HOLDİNG A.Ş.",
+    "ct": "İZMİR",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PETUN",
+    "all": [
+      "PETUN"
+    ],
+    "n": "PINAR ENTEGRE ET VE UN SANAYİİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PGSUS",
+    "all": [
+      "PGSUS"
+    ],
+    "n": "PEGASUS HAVA TAŞIMACILIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PINSU",
+    "all": [
+      "PINSU"
+    ],
+    "n": "PINAR SU VE İÇECEK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PKART",
+    "all": [
+      "PKART"
+    ],
+    "n": "PLASTİKKART AKILLI KART İLETİŞİM SİSTEMLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PKENT",
+    "all": [
+      "PKENT"
+    ],
+    "n": "PETROKENT TURİZM A.Ş.",
+    "ct": "ANKARA",
+    "au": "C&Ç BAĞIMSIZ DENETİM VE YÖNETİM DANIŞMANLIĞI A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PLTUR",
+    "all": [
+      "PLTUR"
+    ],
+    "n": "PLATFORM TURİZM TAŞIMACILIK GIDA İNŞAAT TEMİZLİK HİZMETLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKSİS ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PNLSN",
+    "all": [
+      "PNLSN"
+    ],
+    "n": "PANELSAN ÇATI CEPHE SİSTEMLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PNSUT",
+    "all": [
+      "PNSUT"
+    ],
+    "n": "PINAR SÜT MAMÜLLERİ SANAYİİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "POLHO",
+    "all": [
+      "POLHO"
+    ],
+    "n": "POLİSAN HOLDİNG A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "POLTK",
+    "all": [
+      "POLTK"
+    ],
+    "n": "POLİTEKNİK METAL SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PRDGS",
+    "all": [
+      "PRDGS"
+    ],
+    "n": "PARDUS GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PRKAB",
+    "all": [
+      "PRKAB"
+    ],
+    "n": "TÜRK PRYSMİAN KABLO VE SİSTEMLERİ A.Ş.",
+    "ct": "BURSA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PRKME",
+    "all": [
+      "PRKME"
+    ],
+    "n": "PARK ELEKTRİK ÜRETİM MADENCİLİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PRZMA",
+    "all": [
+      "PRZMA"
+    ],
+    "n": "PRİZMA PRES MATBAACILIK YAYINCILIK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GRC BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PSDTC",
+    "all": [
+      "PSDTC"
+    ],
+    "n": "PERGAMON STATUS DIŞ TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "REANDA AREN BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "PSGYO",
+    "all": [
+      "PSGYO"
+    ],
+    "n": "PASİFİK GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "QNBFK",
+    "all": [
+      "QNBFK"
+    ],
+    "n": "QNB FİNANSAL KİRALAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "QNBTR",
+    "all": [
+      "FIN",
+      "QNBTR"
+    ],
+    "n": "QNB BANK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "QUAGR",
+    "all": [
+      "QUAGR"
+    ],
+    "n": "QUA GRANITE HAYAL YAPI VE ÜRÜNLERİ SANAYİ TİCARET A.Ş.",
+    "ct": "AYDIN",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "QUICK",
+    "all": [
+      "QUICK"
+    ],
+    "n": "QUİCK SİGORTA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "RALYH",
+    "all": [
+      "RALYH"
+    ],
+    "n": "RAL YATIRIM HOLDİNG A.Ş.",
+    "ct": "ANKARA",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RAYSG",
+    "all": [
+      "RAYSG"
+    ],
+    "n": "RAY SİGORTA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "REEDR",
+    "all": [
+      "REEDR"
+    ],
+    "n": "REEDER TEKNOLOJİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "SAMSUN",
+    "au": "TESLA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RGYAS",
+    "all": [
+      "RGYAS"
+    ],
+    "n": "RÖNESANS GAYRİMENKUL YATIRIM A.Ş.",
+    "ct": "ANKARA",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RNPOL",
+    "all": [
+      "RNPOL"
+    ],
+    "n": "RAİNBOW POLİKARBONAT SANAYİ TİCARET A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "NOTE OFFİCE ULUSLARARASI BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RODRG",
+    "all": [
+      "RODRG"
+    ],
+    "n": "RODRİGO TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "VENTERA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RTALB",
+    "all": [
+      "RTALB"
+    ],
+    "n": "RTA LABORATUVARLARI BİYOLOJİK ÜRÜNLER İLAÇ VE MAKİNE SANAYİ TİCARET A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RUBNS",
+    "all": [
+      "RUBNS"
+    ],
+    "n": "RUBENİS TEKSTİL SANAYİ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RUZYE",
+    "all": [
+      "RUZYE"
+    ],
+    "n": "RUZY MADENCİLİK VE ENERJİ YATIRIMLARI SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RYGYO",
+    "all": [
+      "RYGYO"
+    ],
+    "n": "REYSAŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "RYSAS",
+    "all": [
+      "RYSAS"
+    ],
+    "n": "REYSAŞ TAŞIMACILIK VE LOJİSTİK TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SAFKR",
+    "all": [
+      "SAFKR"
+    ],
+    "n": "SAFKAR EGE SOĞUTMACILIK KLİMA SOĞUK HAVA TESİSLERİ İHRACAT İTHALAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SAHOL",
+    "all": [
+      "SAHOL"
+    ],
+    "n": "HACI ÖMER SABANCI HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SAMAT",
+    "all": [
+      "SAMAT"
+    ],
+    "n": "SARAY MATBAACILIK KAĞITÇILIK KIRTASİYECİLİK TİCARET VE SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SANEL",
+    "all": [
+      "SANEL"
+    ],
+    "n": "SAN-EL MÜHENDİSLİK ELEKTRİK TAAHHÜT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SANFM",
+    "all": [
+      "SANFM"
+    ],
+    "n": "SANİFOAM ENDÜSTRİ VE TÜKETİM ÜRÜNLERİ SANAYİ TİCARET A.Ş.",
+    "ct": "TEKİRDAĞ",
+    "au": "İRFAN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SANKO",
+    "all": [
+      "SANKO"
+    ],
+    "n": "SANKO PAZARLAMA İTHALAT İHRACAT A.Ş.",
+    "ct": "GAZİANTEP",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SARAE",
+    "all": [
+      "SARAE"
+    ],
+    "n": "ŞA-RA ENERJİ İNŞAAT TİCARET VE SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "A1 BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SARKY",
+    "all": [
+      "SARKY"
+    ],
+    "n": "SARKUYSAN ELEKTROLİTİK BAKIR SANAYİ VE TİCARET A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "MGI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SASA",
+    "all": [
+      "SASA"
+    ],
+    "n": "SASA POLYESTER SANAYİ A.Ş.",
+    "ct": "ADANA",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SAYAS",
+    "all": [
+      "SAYAS"
+    ],
+    "n": "SAY YENİLENEBİLİR ENERJİ EKİPMANLARI SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SDTTR",
+    "all": [
+      "SDTTR"
+    ],
+    "n": "SDT UZAY VE SAVUNMA TEKNOLOJİLERİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "RAM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SEGMN",
+    "all": [
+      "SEGMN"
+    ],
+    "n": "SEĞMEN KARDEŞLER GIDA ÜRETİM VE AMBALAJ SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SEGYO",
+    "all": [
+      "SEGYO"
+    ],
+    "n": "ŞEKER GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SEKFK",
+    "all": [
+      "SEKFK"
+    ],
+    "n": "ŞEKER FİNANSAL KİRALAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "SEKUR",
+    "all": [
+      "SEKUR"
+    ],
+    "n": "SEKURO PLASTİK AMBALAJ SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "A1 BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SELEC",
+    "all": [
+      "SELEC"
+    ],
+    "n": "SELÇUK ECZA DEPOSU TİCARET VE SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SELVA",
+    "all": [
+      "SELVA"
+    ],
+    "n": "SELVA GIDA SANAYİ A.Ş.",
+    "ct": "KONYA",
+    "au": "TTK BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SERNT",
+    "all": [
+      "SERNT"
+    ],
+    "n": "SERANİT GRANİT SERAMİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SEYKM",
+    "all": [
+      "SEYKM"
+    ],
+    "n": "SEYİTLER KİMYA SANAYİ A.Ş.",
+    "ct": "MANİSA",
+    "au": "ARTI DEĞER ULUSLARARASI BAĞIMSIZ DENETİM VE YMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SILVR",
+    "all": [
+      "SILVR"
+    ],
+    "n": "SİLVERLİNE ENDÜSTRİ VE TİCARET A.Ş.",
+    "ct": "AMASYA",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SISE",
+    "all": [
+      "SISE"
+    ],
+    "n": "TÜRKİYE ŞİŞE VE CAM FABRİKALARI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SKBNK",
+    "all": [
+      "SEK",
+      "SKBNK"
+    ],
+    "n": "ŞEKERBANK T.A.Ş.",
+    "ct": "",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "SKTAS",
+    "all": [
+      "SKTAS"
+    ],
+    "n": "SÖKTAŞ TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "ct": "AYDIN",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SKYLP",
+    "all": [
+      "SKYLP"
+    ],
+    "n": "SKYALP FİNANSAL TEKNOLOJİLER VE DANIŞMANLIK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARTI DEĞER ULUSLARARASI BAĞIMSIZ DENETİM VE YMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SKYMD",
+    "all": [
+      "SKY",
+      "SKYMD"
+    ],
+    "n": "ŞEKER YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SMART",
+    "all": [
+      "SMART"
+    ],
+    "n": "SMARTİKS YAZILIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SMRTG",
+    "all": [
+      "SMRTG"
+    ],
+    "n": "SMART GÜNEŞ ENERJİSİ TEKNOLOJİLERİ ARAŞTIRMA GELİŞTİRME ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SMRVA",
+    "all": [
+      "SMRVA"
+    ],
+    "n": "SÜMER VARLIK YÖNETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "UFRS_B"
+  },
+  {
+    "c": "SNGYO",
+    "all": [
+      "SNGYO"
+    ],
+    "n": "SİNPAŞ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SNICA",
+    "all": [
+      "SNICA"
+    ],
+    "n": "SANİCA ISI SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "FİNACTA BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SNPAM",
+    "all": [
+      "SNPAM"
+    ],
+    "n": "SÖNMEZ PAMUKLU SANAYİİ A.Ş.",
+    "ct": "BURSA",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SODSN",
+    "all": [
+      "SODSN"
+    ],
+    "n": "SODAŞ SODYUM SANAYİİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "RSM TURKEY ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SOHOE",
+    "all": [
+      "SOHOE"
+    ],
+    "n": "SOHO GİYİM VE ENERJİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANALİZ BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SOKE",
+    "all": [
+      "SOKE"
+    ],
+    "n": "SÖKE DEĞİRMENCİLİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "AYDIN",
+    "au": "GÜÇBİR BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SOKM",
+    "all": [
+      "SOKM"
+    ],
+    "n": "ŞOK MARKETLER TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SONME",
+    "all": [
+      "SONME"
+    ],
+    "n": "SÖNMEZ FİLAMENT SENTETİK İPLİK VE ELYAF SANAYİ A.Ş.",
+    "ct": "BURSA",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SRVGY",
+    "all": [
+      "SRVGY"
+    ],
+    "n": "SERVET GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SSAAT",
+    "all": [
+      "SSAAT"
+    ],
+    "n": "SAAT VE SAAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "YEDİTEPE BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SUMAS",
+    "all": [
+      "SUMAS"
+    ],
+    "n": "SUMAŞ SUNİ TAHTA VE MOBİLYA SANAYİİ A.Ş.",
+    "ct": "BALIKESİR",
+    "au": "İBD İSTANBUL BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SUNTK",
+    "all": [
+      "SUNTK"
+    ],
+    "n": "SUN TEKSTİL SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "SUN BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SURGY",
+    "all": [
+      "SURGY"
+    ],
+    "n": "SUR TATİL EVLERİ GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SUWEN",
+    "all": [
+      "SUWEN"
+    ],
+    "n": "SUWEN TEKSTİL SANAYİ PAZARLAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "SVGYO",
+    "all": [
+      "SVGYO"
+    ],
+    "n": "SAVUR GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ARSEN BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TABGD",
+    "all": [
+      "TABGD"
+    ],
+    "n": "TAB GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TARKM",
+    "all": [
+      "TARKM"
+    ],
+    "n": "TARKİM BİTKİ KORUMA SANAYİ VE TİCARET A.Ş.",
+    "ct": "MANİSA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TATEN",
+    "all": [
+      "TATEN"
+    ],
+    "n": "TATLIPINAR ENERJİ ÜRETİM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "REFORM BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TATGD",
+    "all": [
+      "TATGD"
+    ],
+    "n": "TAT GIDA SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TAVHL",
+    "all": [
+      "TAVHL"
+    ],
+    "n": "TAV HAVALİMANLARI HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TBORG",
+    "all": [
+      "TBORG"
+    ],
+    "n": "TÜRK TUBORG BİRA VE MALT SANAYİİ A.Ş.",
+    "ct": "İZMİR",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TCELL",
+    "all": [
+      "TCELL"
+    ],
+    "n": "TURKCELL İLETİŞİM HİZMETLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TCKRC",
+    "all": [
+      "TCKRC"
+    ],
+    "n": "KIRAÇ GALVANİZ TELEKOMİNİKASYON METAL MAKİNE İNŞAAT ELEKTRİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "BURSA",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TDGYO",
+    "all": [
+      "TDGYO"
+    ],
+    "n": "TREND GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TEHOL",
+    "all": [
+      "TEHOL"
+    ],
+    "n": "TERA YATIRIM TEKNOLOJİ HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ULUSAL BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TEKTU",
+    "all": [
+      "TEKTU"
+    ],
+    "n": "TEK-ART İNŞAAT TİCARET TURİZM SANAYİ VE YATIRIMLAR A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MGI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TERA",
+    "all": [
+      "TERA",
+      "TRA"
+    ],
+    "n": "TERA YATIRIM MENKUL DEĞERLER A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TEZOL",
+    "all": [
+      "TEZOL"
+    ],
+    "n": "EUROPAP TEZOL KAĞIT SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TGSAS",
+    "all": [
+      "TGSAS"
+    ],
+    "n": "TGS DIŞ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "THYAO",
+    "all": [
+      "THYAO"
+    ],
+    "n": "TÜRK HAVA YOLLARI A.O.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TKFEN",
+    "all": [
+      "TKFEN"
+    ],
+    "n": "TEKFEN HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TKNKA",
+    "all": [
+      "TKNKA"
+    ],
+    "n": "TEKNİKA PLAST TEKNİK KALIP PLASTİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "MANİSA",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TKNSA",
+    "all": [
+      "TKNSA"
+    ],
+    "n": "TEKNOSA İÇ VE DIŞ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TLMAN",
+    "all": [
+      "TLMAN"
+    ],
+    "n": "TRABZON LİMAN İŞLETMECİLİĞİ A.Ş.",
+    "ct": "TRABZON",
+    "au": "TENET BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TMPOL",
+    "all": [
+      "TMPOL"
+    ],
+    "n": "TEMAPOL POLİMER PLASTİK VE İNŞAAT SANAYİ TİCARET A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "REHBER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TMSN",
+    "all": [
+      "TMSN"
+    ],
+    "n": "TÜMOSAN MOTOR VE TRAKTÖR SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "AKSİS ULUSLARARASI BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TNZTP",
+    "all": [
+      "TNZTP"
+    ],
+    "n": "TAPDİ OKSİJEN ÖZEL SAĞLIK VE EĞİTİM HİZMETLERİ SANAYİ TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TOASO",
+    "all": [
+      "TOASO"
+    ],
+    "n": "TOFAŞ TÜRK OTOMOBİL FABRİKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TRALT",
+    "all": [
+      "TRALT"
+    ],
+    "n": "TÜRK ALTIN İŞLETMELERİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TRCAS",
+    "all": [
+      "TRCAS"
+    ],
+    "n": "TURCAS HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TRENJ",
+    "all": [
+      "TRENJ"
+    ],
+    "n": "TR DOĞAL ENERJİ KAYNAKLARI ARAŞTIRMA VE ÜRETİM A.Ş.",
+    "ct": "ANKARA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TRGYO",
+    "all": [
+      "TRGYO"
+    ],
+    "n": "TORUNLAR GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TRHOL",
+    "all": [
+      "TRHOL"
+    ],
+    "n": "TERA FİNANSAL YATIRIMLAR HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ULUSAL BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TRILC",
+    "all": [
+      "TRILC"
+    ],
+    "n": "TURK İLAÇ VE SERUM SANAYİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TRMET",
+    "all": [
+      "TRMET"
+    ],
+    "n": "TR ANADOLU METAL MADENCİLİK İŞLETMELERİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TSGYO",
+    "all": [
+      "TSGYO"
+    ],
+    "n": "TSKB GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TSKB",
+    "all": [
+      "TSK",
+      "TSKB"
+    ],
+    "n": "TÜRKİYE SINAİ KALKINMA BANKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "UFRS"
+  },
+  {
+    "c": "TSPOR",
+    "all": [
+      "TSPOR"
+    ],
+    "n": "TRABZONSPOR SPORTİF YATIRIM VE FUTBOL İŞLETMECİLİĞİ TİCARET A.Ş.",
+    "ct": "TRABZON",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TTKOM",
+    "all": [
+      "TTKOM"
+    ],
+    "n": "TÜRK TELEKOMÜNİKASYON A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TTRAK",
+    "all": [
+      "TTRAK"
+    ],
+    "n": "TÜRK TRAKTÖR VE ZİRAAT MAKİNELERİ A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TUCLK",
+    "all": [
+      "TUCLK"
+    ],
+    "n": "TUĞÇELİK ALÜMİNYUM VE METAL MAMÜLLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TUKAS",
+    "all": [
+      "TUKAS"
+    ],
+    "n": "TUKAŞ GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TUPRS",
+    "all": [
+      "TUPRS"
+    ],
+    "n": "TÜPRAŞ-TÜRKİYE PETROL RAFİNERİLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TUREX",
+    "all": [
+      "TUREX"
+    ],
+    "n": "TUREKS TURİZM TAŞIMACILIK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TURGG",
+    "all": [
+      "TURGG"
+    ],
+    "n": "TÜRKER PROJE GAYRİMENKUL VE YATIRIM GELİŞTİRME A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "TURSG",
+    "all": [
+      "TURSG"
+    ],
+    "n": "TÜRKİYE SİGORTA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "UFRS"
+  },
+  {
+    "c": "UCAYM",
+    "all": [
+      "UCAYM"
+    ],
+    "n": "ÜÇAY MÜHENDİSLİK ENERJİ VE İKLİMLENDİRME TEKNOLOJİLERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "BDO DENET BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "UFUK",
+    "all": [
+      "UFUK"
+    ],
+    "n": "UFUK YATIRIM YÖNETİM VE GAYRİMENKUL A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ANY PARTNERS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ULAS",
+    "all": [
+      "ULAS"
+    ],
+    "n": "ULAŞLAR TURİZM ENERJİ TARIM GIDA VE İNŞAAT YATIRIMLARI A.Ş.",
+    "ct": "ANKARA",
+    "au": "ULUSAL BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ULKER",
+    "all": [
+      "ULKER"
+    ],
+    "n": "ÜLKER BİSKÜVİ SANAYİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ULUFA",
+    "all": [
+      "ULUFA"
+    ],
+    "n": "ULUSAL FAKTORİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "ULUSE",
+    "all": [
+      "ULUSE"
+    ],
+    "n": "ULUSOY ELEKTRİK İMALAT TAAHHÜT VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ULUUN",
+    "all": [
+      "ULUUN"
+    ],
+    "n": "ULUSOY UN SANAYİ VE TİCARET A.Ş.",
+    "ct": "SAMSUN",
+    "au": "GÜÇBİR BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "UMPAS",
+    "all": [
+      "UMPAS"
+    ],
+    "n": "UMPAŞ HOLDİNG A.Ş.",
+    "ct": "UŞAK",
+    "au": "MERİDYEN KURUMSAL ÇÖZÜM VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "UNLU",
+    "all": [
+      "UNLU"
+    ],
+    "n": "ÜNLÜ YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "USAK",
+    "all": [
+      "USAK"
+    ],
+    "n": "UŞAK SERAMİK SANAYİ A.Ş.",
+    "ct": "UŞAK",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "USHOL",
+    "all": [
+      "USHOL"
+    ],
+    "n": "US YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "C&Ç BAĞIMSIZ DENETİM VE YÖNETİM DANIŞMANLIĞI A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VAKBN",
+    "all": [
+      "TVB",
+      "VAKBN"
+    ],
+    "n": "TÜRKİYE VAKIFLAR BANKASI T.A.O.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "VAKFA",
+    "all": [
+      "VAKFA"
+    ],
+    "n": "VAKIF FAKTORİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "VAKFN",
+    "all": [
+      "VAKFN"
+    ],
+    "n": "VAKIF FİNANSAL KİRALAMA A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29K"
+  },
+  {
+    "c": "VAKKO",
+    "all": [
+      "VAKKO"
+    ],
+    "n": "VAKKO TEKSTİL VE HAZIR GİYİM SANAYİ İŞLETMELERİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VANGD",
+    "all": [
+      "VANGD"
+    ],
+    "n": "VANET GIDA SANAYİ İÇ VE DIŞ TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "MERİDYEN KURUMSAL ÇÖZÜM VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VBTYZ",
+    "all": [
+      "VBTYZ"
+    ],
+    "n": "VBT YAZILIM A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "NOTE OFFİCE ULUSLARARASI BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VERTU",
+    "all": [
+      "VERTU"
+    ],
+    "n": "VERUSATURK GİRİŞİM SERMAYESİ YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VERUS",
+    "all": [
+      "VERUS"
+    ],
+    "n": "VERUSA HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VESBE",
+    "all": [
+      "VESBE"
+    ],
+    "n": "VESTEL BEYAZ EŞYA SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VESTL",
+    "all": [
+      "VESTL"
+    ],
+    "n": "VESTEL ELEKTRONİK SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VEYAS",
+    "all": [
+      "VEYAS"
+    ],
+    "n": "TÜRKER VANGÖLÜ ENERJİ YATIRIM A.Ş.",
+    "ct": "ANKARA",
+    "au": "DRT BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VKFYO",
+    "all": [
+      "VKFYO"
+    ],
+    "n": "VAKIF MENKUL KIYMET YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VKGYO",
+    "all": [
+      "VKGYO"
+    ],
+    "n": "VAKIF GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VKING",
+    "all": [
+      "VKING"
+    ],
+    "n": "VİKİNG KAĞIT VE SELÜLOZ A.Ş.",
+    "ct": "İZMİR",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VRGYO",
+    "all": [
+      "VRGYO"
+    ],
+    "n": "VERA KONSEPT GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "VSNMD",
+    "all": [
+      "VSNMD"
+    ],
+    "n": "VİŞNE MADENCİLİK ÜRETİM SANAYİ VE TİCARET A.Ş.",
+    "ct": "İZMİR",
+    "au": "REANDA AREN BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YAPRK",
+    "all": [
+      "YAPRK"
+    ],
+    "n": "YAPRAK SÜT VE BESİ ÇİFTLİKLERİ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "ECOVİS DEĞER BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YATAS",
+    "all": [
+      "YATAS"
+    ],
+    "n": "YATAŞ YATAK VE YORGAN SANAYİ TİCARET A.Ş.",
+    "ct": "KAYSERİ",
+    "au": "ATA ULUSLARARASI BAĞIMSIZ DENETİM VE SMMM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YAYLA",
+    "all": [
+      "YAYLA"
+    ],
+    "n": "YAYLA ENERJİ ÜRETİM TURİZM VE İNŞAAT TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "KARAR BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YBTAS",
+    "all": [
+      "YBTAS"
+    ],
+    "n": "YİBİTAŞ YOZGAT İŞÇİ BİRLİĞİ İNŞAAT MALZEMELERİ TİCARET VE SANAYİ A.Ş.",
+    "ct": "YOZGAT",
+    "au": "DENGE ANKARA BAĞIMSIZ DENETİM VE YEMİNLİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YEOTK",
+    "all": [
+      "YEOTK"
+    ],
+    "n": "YEO TEKNOLOJİ ENERJİ VE ENDÜSTRİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜRELİ YEMİNLİ MALİ MÜŞAVİRLİK VE BAĞIMSIZ DENETİM HİZMETLERİ A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YESIL",
+    "all": [
+      "YESIL"
+    ],
+    "n": "YEŞİL YATIRIM HOLDİNG A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YGGYO",
+    "all": [
+      "YGGYO"
+    ],
+    "n": "YENİ GİMAT GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YIGIT",
+    "all": [
+      "YIGIT"
+    ],
+    "n": "YİĞİT AKÜ MALZEMELERİ NAKLİYAT TURİZM İNŞAAT SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "DENEYİM BAĞIMSIZ DENETİM VE DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YKBNK",
+    "all": [
+      "YKB",
+      "YKBNK"
+    ],
+    "n": "YAPI VE KREDİ BANKASI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "UFRS"
+  },
+  {
+    "c": "YKSLN",
+    "all": [
+      "YKSLN"
+    ],
+    "n": "YÜKSELEN ÇELİK A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "HSY DANIŞMANLIK VE BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YONGA",
+    "all": [
+      "YONGA"
+    ],
+    "n": "YONGA MOBİLYA SANAYİ VE TİCARET A.Ş.",
+    "ct": "DENİZLİ",
+    "au": "NEVADOS BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YUNSA",
+    "all": [
+      "YUNSA"
+    ],
+    "n": "YÜNSA YÜNLÜ SANAYİ VE TİCARET A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "GÜNEY BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YYAPI",
+    "all": [
+      "YYAPI"
+    ],
+    "n": "YEŞİL YAPI ENDÜSTRİSİ A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PKF ADAY BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "YYLGD",
+    "all": [
+      "YYLGD"
+    ],
+    "n": "YAYLA AGRO GIDA SANAYİ VE TİCARET A.Ş.",
+    "ct": "ANKARA",
+    "au": "EREN BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ZEDUR",
+    "all": [
+      "ZEDUR"
+    ],
+    "n": "ZEDUR ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜNCEL BAĞIMSIZ DENETİM DANIŞMANLIK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ZERGY",
+    "all": [
+      "ZERGY"
+    ],
+    "n": "ZERAY GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "KOCAELİ",
+    "au": "AKADEMİK BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ZGYO",
+    "all": [
+      "ZGYO"
+    ],
+    "n": "Z GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "ANKARA",
+    "au": "GÜÇBİR BAĞIMSIZ DENETİM A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ZOREN",
+    "all": [
+      "ZOREN"
+    ],
+    "n": "ZORLU ENERJİ ELEKTRİK ÜRETİM A.Ş.",
+    "ct": "BURSA",
+    "au": "KPMG BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş.",
+    "fg": "XI_29"
+  },
+  {
+    "c": "ZRGYO",
+    "all": [
+      "ZRGYO"
+    ],
+    "n": "ZİRAAT GAYRİMENKUL YATIRIM ORTAKLIĞI A.Ş.",
+    "ct": "İSTANBUL",
+    "au": "PwC BAĞIMSIZ DENETİM VE SERBEST MUHASEBECİ MALİ MÜŞAVİRLİK A.Ş",
+    "fg": "XI_29"
+  }
+]
