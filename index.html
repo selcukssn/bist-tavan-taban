@@ -461,11 +461,13 @@ html[data-theme="light"] input::placeholder { color: #9ca3af; }
 select {
   appearance: none;
   -webkit-appearance: none;
-  padding-right: 28px;
+  font-size: 12.5px;
+  padding: 8.5px 24px 8.5px 10px;
+  text-overflow: ellipsis;
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23868f97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23868f97' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 9px center;
+  background-position: right 8px center;
 }
 
 input:hover, select:hover { border-color: var(--border-strong); }
@@ -485,23 +487,27 @@ button:focus-visible, summary:focus-visible {
 }
 
 #base, #stock {
-  font-size: 20px;
+  height: 42px;
   font-weight: 700;
-  letter-spacing: -0.035em;
   line-height: 1.2;
-  padding: 9px 12px;
 }
 
-#base { padding-right: 34px; }
+#base {
+  font-size: 18px;
+  letter-spacing: -0.035em;
+  padding: 8px 30px 8px 11px;
+}
 
 #stock {
+  font-size: 14.5px;
+  letter-spacing: -0.015em;
   text-transform: uppercase;
-  padding-right: 52px;
+  padding: 8px 42px 8px 11px;
   cursor: pointer;
 }
 
 #stock::placeholder {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
@@ -509,18 +515,18 @@ button:focus-visible, summary:focus-visible {
 
 .stock-kbd-btn {
   position: absolute;
-  right: 8px;
+  right: 7px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 22px;
-  padding: 0 7px;
+  height: 20px;
+  padding: 0 6px;
   border-radius: var(--radius-buttons);
   background: var(--surface-card);
   border: 1px solid var(--border);
   color: var(--text-sec);
   font-family: var(--font-calibre);
-  font-size: 10.5px;
+  font-size: 10px;
   font-weight: 600;
   cursor: pointer;
   transition: color 0.14s ease, border-color 0.14s ease, background-color 0.14s ease;
@@ -533,14 +539,14 @@ button:focus-visible, summary:focus-visible {
 
 .stock-clear-btn {
   position: absolute;
-  right: 8px;
-  width: 22px;
-  height: 22px;
+  right: 7px;
+  width: 20px;
+  height: 20px;
   border-radius: var(--radius-buttons);
   background: var(--surface-card);
   border: 1px solid var(--border);
   color: var(--text-sec);
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -726,10 +732,10 @@ html[data-theme="light"] .stock-logo {
 
 .stock-input-logo {
   position: absolute;
-  left: 9px;
-  width: 22px;
-  height: 22px;
-  border-radius: 6px;
+  left: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
   overflow: hidden;
   background: #ffffff;
   display: inline-flex;
@@ -747,7 +753,8 @@ html[data-theme="light"] .stock-logo {
 }
 
 #stock.has-logo {
-  padding-left: 38px;
+  padding-left: 34px;
+  padding-right: 30px;
 }
 
 .cmdk-ticker {
